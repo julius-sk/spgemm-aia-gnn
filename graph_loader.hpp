@@ -69,15 +69,20 @@ CSR<idType, valType> load_graph_from_spgemm_pruning(const std::string& data_path
         
         // Initialize CSR structure
         graph.nrow = v_num;
-        graph.ncol = v_num;  // Assume square matrix
+        graph.ncolumn = v_num;  // Use ncolumn (not ncol)
         graph.nnz = e_num;
+        graph.host_malloc = true;
+        graph.device_malloc = false;
         
-        graph.alloc_cpu_csr();
+        // Allocate CPU memory manually (no alloc_cpu_csr function)
+        graph.rpt = new idType[v_num + 1];
+        graph.colids = new idType[e_num];
+        graph.values = new valType[e_num];
         
         // Copy data to CSR structure
-        std::copy(indptr.begin(), indptr.end(), graph.h_rpt);
-        std::copy(indices.begin(), indices.end(), graph.h_colids);
-        std::copy(values.begin(), values.end(), graph.h_values);
+        std::copy(indptr.begin(), indptr.end(), graph.rpt);
+        std::copy(indices.begin(), indices.end(), graph.colids);
+        std::copy(values.begin(), values.end(), graph.values);
         
         return graph;
         
