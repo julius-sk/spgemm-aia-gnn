@@ -1,0 +1,3346 @@
+SpGEMM Performance Comparison: Hash vs Hash+AIA vs cuSPARSE
+Feature matrix dimension: 256
+Sparsity levels: 0.5, 0.25, 0.125, 0.0625
+Loading graphs from .indices/.indptr format
+
+=== Testing Dataset: reddit ===
+Loading graph: reddit
+  indptr file: /home/labuser/MaxK-GNN/kernels/graphs/reddit.indptr
+  indices file: /home/labuser/MaxK-GNN/kernels/graphs/reddit.indices
+  Vertices: 232965
+  Edges: 114848857
+  Average degree: 492.988
+Graph loaded: 232965 nodes, 114848857 edges
+
+--- Testing sparsity: 0.5 ---
+        Dataset      Implementation  Sparsity FeatDim   Total(ms)   AIA(ms)      GFLOPS     Speedup
+------------------------------------------------------------------------------------------------------------------------
+Feature matrix: 232965x256, nnz=29818297
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Matrix data is copied to Host
+         reddit    Hash_without_AIA     0.500     256      269.83      0.00      108.95        1.00x
+
+--- Testing sparsity: 0.25 ---
+        Dataset      Implementation  Sparsity FeatDim   Total(ms)   AIA(ms)      GFLOPS     Speedup
+------------------------------------------------------------------------------------------------------------------------
+Feature matrix: 232965x256, nnz=14914023
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Matrix data is copied to Host
+         reddit    Hash_without_AIA     0.250     256      124.55      0.00      118.04        1.00x
+
+--- Testing sparsity: 0.12 ---
+        Dataset      Implementation  Sparsity FeatDim   Total(ms)   AIA(ms)      GFLOPS     Speedup
+------------------------------------------------------------------------------------------------------------------------
+Feature matrix: 232965x256, nnz=7458086
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Matrix data is copied to Host
+         reddit    Hash_without_AIA     0.125     256      107.15      0.00       68.57        1.00x
+
+--- Testing sparsity: 0.06 ---
+        Dataset      Implementation  Sparsity FeatDim   Total(ms)   AIA(ms)      GFLOPS     Speedup
+------------------------------------------------------------------------------------------------------------------------
+Feature matrix: 232965x256, nnz=3728659
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Matrix data is copied to Host
+         reddit    Hash_without_AIA     0.062     256       71.67      0.00       51.27        1.00x
+
+=== Testing Dataset: flickr ===
+Loading graph: flickr
+  indptr file: /home/labuser/MaxK-GNN/kernels/graphs/flickr.indptr
+  indices file: /home/labuser/MaxK-GNN/kernels/graphs/flickr.indices
+  Vertices: 89250
+  Edges: 989006
+  Average degree: 11.08
+Graph loaded: 89250 nodes, 989006 edges
+
+--- Testing sparsity: 0.50 ---
+        Dataset      Implementation  Sparsity FeatDim   Total(ms)   AIA(ms)      GFLOPS     Speedup
+------------------------------------------------------------------------------------------------------------------------
+Feature matrix: 89250x256, nnz=11419716
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Matrix data is copied to Host
+         flickr    Hash_without_AIA     0.500     256       15.56      0.00       16.24        1.00x
+
+--- Testing sparsity: 0.25 ---
+        Dataset      Implementation  Sparsity FeatDim   Total(ms)   AIA(ms)      GFLOPS     Speedup
+------------------------------------------------------------------------------------------------------------------------
+Feature matrix: 89250x256, nnz=5713081
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Matrix data is copied to Host
+         flickr    Hash_without_AIA     0.250     256        9.56      0.00       13.24        1.00x
+
+--- Testing sparsity: 0.12 ---
+        Dataset      Implementation  Sparsity FeatDim   Total(ms)   AIA(ms)      GFLOPS     Speedup
+------------------------------------------------------------------------------------------------------------------------
+Feature matrix: 89250x256, nnz=2858046
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Matrix data is copied to Host
+         flickr    Hash_without_AIA     0.125     256        6.58      0.00        9.63        1.00x
+
+--- Testing sparsity: 0.06 ---
+        Dataset      Implementation  Sparsity FeatDim   Total(ms)   AIA(ms)      GFLOPS     Speedup
+------------------------------------------------------------------------------------------------------------------------
+Feature matrix: 89250x256, nnz=1426819
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Matrix data is copied to Host
+         flickr    Hash_without_AIA     0.062     256        4.69      0.00        6.73        1.00x
+
+=== Testing Dataset: yelp ===
+Loading graph: yelp
+  indptr file: /home/labuser/MaxK-GNN/kernels/graphs/yelp.indptr
+  indices file: /home/labuser/MaxK-GNN/kernels/graphs/yelp.indices
+  Vertices: 716847
+  Edges: 13954819
+  Average degree: 19.47
+Graph loaded: 716847 nodes, 13954819 edges
+
+--- Testing sparsity: 0.50 ---
+        Dataset      Implementation  Sparsity FeatDim   Total(ms)   AIA(ms)      GFLOPS     Speedup
+------------------------------------------------------------------------------------------------------------------------
+Feature matrix: 716847x256, nnz=91762654
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Matrix data is copied to Host
+           yelp    Hash_without_AIA     0.500     256       36.75      0.00       97.19        1.00x
+
+--- Testing sparsity: 0.25 ---
+        Dataset      Implementation  Sparsity FeatDim   Total(ms)   AIA(ms)      GFLOPS     Speedup
+------------------------------------------------------------------------------------------------------------------------
+Feature matrix: 716847x256, nnz=45878824
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Matrix data is copied to Host
+           yelp    Hash_without_AIA     0.250     256       24.99      0.00       71.52        1.00x
+
+--- Testing sparsity: 0.12 ---
+        Dataset      Implementation  Sparsity FeatDim   Total(ms)   AIA(ms)      GFLOPS     Speedup
+------------------------------------------------------------------------------------------------------------------------
+Feature matrix: 716847x256, nnz=22939544
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Matrix data is copied to Host
+           yelp    Hash_without_AIA     0.125     256       17.90      0.00       49.82        1.00x
+
+--- Testing sparsity: 0.06 ---
+        Dataset      Implementation  Sparsity FeatDim   Total(ms)   AIA(ms)      GFLOPS     Speedup
+------------------------------------------------------------------------------------------------------------------------
+Feature matrix: 716847x256, nnz=11463564
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Matrix data is copied to Host
+           yelp    Hash_without_AIA     0.062     256       14.69      0.00       30.36        1.00x
+
+=== Testing Dataset: products ===
+Loading graph: products
+  indptr file: /home/labuser/MaxK-GNN/kernels/graphs/products.indptr
+  indices file: /home/labuser/MaxK-GNN/kernels/graphs/products.indices
+  Vertices: 2449029
+  Edges: 123718280
+  Average degree: 50.52
+Graph loaded: 2449029 nodes, 123718280 edges
+
+--- Testing sparsity: 0.50 ---
+        Dataset      Implementation  Sparsity FeatDim   Total(ms)   AIA(ms)      GFLOPS     Speedup
+------------------------------------------------------------------------------------------------------------------------
+Feature matrix: 2449029x256, nnz=313486834
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Matrix data is copied to Host
+       products    Hash_without_AIA     0.500     256      263.53      0.00      120.20        1.00x
+
+--- Testing sparsity: 0.25 ---
+        Dataset      Implementation  Sparsity FeatDim   Total(ms)   AIA(ms)      GFLOPS     Speedup
+------------------------------------------------------------------------------------------------------------------------
+Feature matrix: 2449029x256, nnz=156731251
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Matrix data is copied to Host
+       products    Hash_without_AIA     0.250     256      146.88      0.00      107.83        1.00x
+
+--- Testing sparsity: 0.12 ---
+        Dataset      Implementation  Sparsity FeatDim   Total(ms)   AIA(ms)      GFLOPS     Speedup
+------------------------------------------------------------------------------------------------------------------------
+Feature matrix: 2449029x256, nnz=78357324
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Matrix data is copied to Host
+       products    Hash_without_AIA     0.125     256      110.82      0.00       71.44        1.00x
+
+--- Testing sparsity: 0.06 ---
+        Dataset      Implementation  Sparsity FeatDim   Total(ms)   AIA(ms)      GFLOPS     Speedup
+------------------------------------------------------------------------------------------------------------------------
+Feature matrix: 2449029x256, nnz=39190916
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Matrix data is copied to Host
+       products    Hash_without_AIA     0.062     256       86.12      0.00       45.99        1.00x
+
+=== Testing Dataset: protein ===
+Unknown dataset: protein
+
+Benchmark completed!
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+SpGEMM Performance Comparison: Hash vs Hash+AIA vs cuSPARSE
+Feature matrix dimension: 256
+Sparsity levels: 0.5, 0.25, 0.125, 0.0625
+Loading graphs from .indices/.indptr format
+
+=== Testing Dataset: reddit ===
+Loading graph: reddit
+  indptr file: /home/labuser/MaxK-GNN/kernels/graphs/reddit.indptr
+  indices file: /home/labuser/MaxK-GNN/kernels/graphs/reddit.indices
+  Vertices: 232965
+  Edges: 114848857
+  Average degree: 492.988
+Graph loaded: 232965 nodes, 114848857 edges
+
+--- Testing sparsity: 0.5 ---
+        Dataset      Implementation  Sparsity FeatDim   Total(ms)   AIA(ms)      GFLOPS     Speedup
+------------------------------------------------------------------------------------------------------------------------
+Feature matrix: 232965x256, nnz=29823096
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+AIA runtime: 12.4049
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 9.80362
+case 1 finish
+hash_numeric done
+AIA runtime: 11.6552
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 11.1736
+case 1 finish
+hash_numeric done
+AIA runtime: 14.3082
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 9.76122
+case 1 finish
+hash_numeric done
+AIA runtime: 13.065
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 9.32211
+case 1 finish
+hash_numeric done
+AIA runtime: 13.2827
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 10.1768
+case 1 finish
+hash_numeric done
+AIA runtime: 13.3583
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 9.4487
+case 1 finish
+hash_numeric done
+AIA runtime: 12.418
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 9.74589
+case 1 finish
+hash_numeric done
+AIA runtime: 13.485
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 9.66861
+case 1 finish
+hash_numeric done
+AIA runtime: 13.3897
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 9.3071
+case 1 finish
+hash_numeric done
+AIA runtime: 14.3313
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 9.91242
+case 1 finish
+hash_numeric done
+AIA runtime: 13.0981
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 9.92794
+case 1 finish
+hash_numeric done
+Matrix data is copied to Host
+         reddit       Hash_with_AIA     0.500     256      188.23     23.08      156.21        1.00x
+AIA overhead: 12.3%
+
+--- Testing sparsity: 0.2 ---
+        Dataset      Implementation  Sparsity FeatDim   Total(ms)   AIA(ms)      GFLOPS     Speedup
+------------------------------------------------------------------------------------------------------------------------
+Feature matrix: 232965x256, nnz=14907562
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+AIA runtime: 13.3
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 9.9
+case 1 finish
+hash_numeric done
+AIA runtime: 15.0
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 9.2
+case 1 finish
+hash_numeric done
+AIA runtime: 13.2
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 9.8
+case 1 finish
+hash_numeric done
+AIA runtime: 14.3
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 10.3
+case 1 finish
+hash_numeric done
+AIA runtime: 13.1
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 9.1
+case 1 finish
+hash_numeric done
+AIA runtime: 13.2
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 9.2
+case 1 finish
+hash_numeric done
+AIA runtime: 13.7
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 9.0
+case 1 finish
+hash_numeric done
+AIA runtime: 13.2
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 10.8
+case 1 finish
+hash_numeric done
+AIA runtime: 13.4
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 9.9
+case 1 finish
+hash_numeric done
+AIA runtime: 11.6
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 9.9
+case 1 finish
+hash_numeric done
+AIA runtime: 13.1
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 8.9
+case 1 finish
+hash_numeric done
+Matrix data is copied to Host
+         reddit       Hash_with_AIA     0.250     256      104.23     22.98      140.98        1.00x
+AIA overhead: 22.0%
+
+--- Testing sparsity: 0.1 ---
+        Dataset      Implementation  Sparsity FeatDim   Total(ms)   AIA(ms)      GFLOPS     Speedup
+------------------------------------------------------------------------------------------------------------------------
+Feature matrix: 232965x256, nnz=7455124
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+AIA runtime: 13.5
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 9.6
+case 1 finish
+hash_numeric done
+AIA runtime: 14.6
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 9.9
+case 1 finish
+hash_numeric done
+AIA runtime: 13.3
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 10.7
+case 1 finish
+hash_numeric done
+AIA runtime: 13.7
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 9.7
+case 1 finish
+hash_numeric done
+AIA runtime: 13.5
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 9.4
+case 1 finish
+hash_numeric done
+AIA runtime: 14.0
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 10.2
+case 1 finish
+hash_numeric done
+AIA runtime: 14.4
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 9.7
+case 1 finish
+hash_numeric done
+AIA runtime: 15.2
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 9.8
+case 1 finish
+hash_numeric done
+AIA runtime: 14.4
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 9.9
+case 1 finish
+hash_numeric done
+AIA runtime: 14.3
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 9.7
+case 1 finish
+hash_numeric done
+AIA runtime: 13.3
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 9.6
+case 1 finish
+hash_numeric done
+Matrix data is copied to Host
+         reddit       Hash_with_AIA     0.125     256       80.65     23.93       91.08        1.00x
+AIA overhead: 29.7%
+
+--- Testing sparsity: 0.1 ---
+        Dataset      Implementation  Sparsity FeatDim   Total(ms)   AIA(ms)      GFLOPS     Speedup
+------------------------------------------------------------------------------------------------------------------------
+Feature matrix: 232965x256, nnz=3728143
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+AIA runtime: 15.6
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 10.0
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 15.6
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.2
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 14.0
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 10.2
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 16.0
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.4
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 14.8
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.6
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 14.3
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.7
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 14.8
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.2
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 16.4
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.3
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 16.0
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.1
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 16.5
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.7
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 16.7
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.4
+case 1 finish
+case 0 finish
+hash_numeric done
+Matrix data is copied to Host
+         reddit       Hash_with_AIA     0.062     256       82.11     25.01       44.83        1.00x
+AIA overhead: 30.5%
+
+=== Testing Dataset: flickr ===
+Loading graph: flickr
+  indptr file: /home/labuser/MaxK-GNN/kernels/graphs/flickr.indptr
+  indices file: /home/labuser/MaxK-GNN/kernels/graphs/flickr.indices
+  Vertices: 89250
+  Edges: 989006
+  Average degree: 11.1
+Graph loaded: 89250 nodes, 989006 edges
+
+--- Testing sparsity: 0.5 ---
+        Dataset      Implementation  Sparsity FeatDim   Total(ms)   AIA(ms)      GFLOPS     Speedup
+------------------------------------------------------------------------------------------------------------------------
+Feature matrix: 89250x256, nnz=11422756
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+AIA runtime: 1.7
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.4
+case 1 finish
+hash_numeric done
+AIA runtime: 1.7
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.3
+case 1 finish
+hash_numeric done
+AIA runtime: 1.7
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.3
+case 1 finish
+hash_numeric done
+AIA runtime: 1.7
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.3
+case 1 finish
+hash_numeric done
+AIA runtime: 1.6
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.3
+case 1 finish
+hash_numeric done
+AIA runtime: 2.3
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.3
+case 1 finish
+hash_numeric done
+AIA runtime: 1.7
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.3
+case 1 finish
+hash_numeric done
+AIA runtime: 1.7
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.3
+case 1 finish
+hash_numeric done
+AIA runtime: 1.7
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.3
+case 1 finish
+hash_numeric done
+AIA runtime: 1.7
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.3
+case 1 finish
+hash_numeric done
+AIA runtime: 1.7
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.3
+case 1 finish
+hash_numeric done
+Matrix data is copied to Host
+         flickr       Hash_with_AIA     0.500     256       15.22      3.06       16.64        1.00x
+AIA overhead: 20.1%
+
+--- Testing sparsity: 0.2 ---
+        Dataset      Implementation  Sparsity FeatDim   Total(ms)   AIA(ms)      GFLOPS     Speedup
+------------------------------------------------------------------------------------------------------------------------
+Feature matrix: 89250x256, nnz=5711005
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+AIA runtime: 1.5
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.3
+case 1 finish
+hash_numeric done
+AIA runtime: 1.7
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.3
+case 1 finish
+hash_numeric done
+AIA runtime: 1.5
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.3
+case 1 finish
+hash_numeric done
+AIA runtime: 1.5
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.3
+case 1 finish
+hash_numeric done
+AIA runtime: 1.6
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.3
+case 1 finish
+hash_numeric done
+AIA runtime: 1.5
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.3
+case 1 finish
+hash_numeric done
+AIA runtime: 1.7
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.4
+case 1 finish
+hash_numeric done
+AIA runtime: 1.8
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.3
+case 1 finish
+hash_numeric done
+AIA runtime: 1.6
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.3
+case 1 finish
+hash_numeric done
+AIA runtime: 1.8
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.3
+case 1 finish
+hash_numeric done
+AIA runtime: 1.7
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.3
+case 1 finish
+hash_numeric done
+Matrix data is copied to Host
+         flickr       Hash_with_AIA     0.250     256        9.18      2.93       13.82        1.00x
+AIA overhead: 31.9%
+
+--- Testing sparsity: 0.1 ---
+        Dataset      Implementation  Sparsity FeatDim   Total(ms)   AIA(ms)      GFLOPS     Speedup
+------------------------------------------------------------------------------------------------------------------------
+Feature matrix: 89250x256, nnz=2857246
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+AIA runtime: 1.6
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.3
+case 1 finish
+hash_numeric done
+AIA runtime: 1.6
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.2
+case 1 finish
+hash_numeric done
+AIA runtime: 1.6
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.3
+case 1 finish
+hash_numeric done
+AIA runtime: 1.6
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.3
+case 1 finish
+hash_numeric done
+AIA runtime: 1.6
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.3
+case 1 finish
+hash_numeric done
+AIA runtime: 1.6
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.3
+case 1 finish
+hash_numeric done
+AIA runtime: 1.6
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.3
+case 1 finish
+hash_numeric done
+AIA runtime: 1.6
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.3
+case 1 finish
+hash_numeric done
+AIA runtime: 1.6
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.3
+case 1 finish
+hash_numeric done
+AIA runtime: 1.5
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.3
+case 1 finish
+hash_numeric done
+AIA runtime: 1.5
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.3
+case 1 finish
+hash_numeric done
+Matrix data is copied to Host
+         flickr       Hash_with_AIA     0.125     256        8.28      2.86        7.64        1.00x
+AIA overhead: 34.5%
+
+--- Testing sparsity: 0.1 ---
+        Dataset      Implementation  Sparsity FeatDim   Total(ms)   AIA(ms)      GFLOPS     Speedup
+------------------------------------------------------------------------------------------------------------------------
+Feature matrix: 89250x256, nnz=1429529
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+AIA runtime: 1.6
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 1.3
+case 1 finish
+hash_numeric done
+AIA runtime: 1.7
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 1.2
+case 1 finish
+hash_numeric done
+AIA runtime: 1.7
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 1.3
+case 1 finish
+hash_numeric done
+AIA runtime: 1.7
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 1.2
+case 1 finish
+hash_numeric done
+AIA runtime: 1.7
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 1.3
+case 1 finish
+hash_numeric done
+AIA runtime: 1.7
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 1.2
+case 1 finish
+hash_numeric done
+AIA runtime: 1.6
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 1.2
+case 1 finish
+hash_numeric done
+AIA runtime: 1.7
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 1.4
+case 1 finish
+hash_numeric done
+AIA runtime: 1.6
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 1.2
+case 1 finish
+hash_numeric done
+AIA runtime: 1.7
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 1.3
+case 1 finish
+hash_numeric done
+AIA runtime: 1.7
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 1.2
+case 1 finish
+hash_numeric done
+Matrix data is copied to Host
+         flickr       Hash_with_AIA     0.062     256        8.09      2.94        3.91        1.00x
+AIA overhead: 36.4%
+
+=== Testing Dataset: yelp ===
+Loading graph: yelp
+  indptr file: /home/labuser/MaxK-GNN/kernels/graphs/yelp.indptr
+  indices file: /home/labuser/MaxK-GNN/kernels/graphs/yelp.indices
+  Vertices: 716847
+  Edges: 13954819
+  Average degree: 19.5
+Graph loaded: 716847 nodes, 13954819 edges
+
+--- Testing sparsity: 0.5 ---
+        Dataset      Implementation  Sparsity FeatDim   Total(ms)   AIA(ms)      GFLOPS     Speedup
+------------------------------------------------------------------------------------------------------------------------
+Feature matrix: 716847x256, nnz=91759559
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+AIA runtime: 2.8
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 2.0
+case 1 finish
+hash_numeric done
+AIA runtime: 3.2
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 2.0
+case 1 finish
+hash_numeric done
+AIA runtime: 2.8
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 2.0
+case 1 finish
+hash_numeric done
+AIA runtime: 2.7
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.9
+case 1 finish
+hash_numeric done
+AIA runtime: 3.0
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 2.1
+case 1 finish
+hash_numeric done
+AIA runtime: 3.0
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.9
+case 1 finish
+hash_numeric done
+AIA runtime: 2.6
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 2.0
+case 1 finish
+hash_numeric done
+AIA runtime: 3.0
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 2.0
+case 1 finish
+hash_numeric done
+AIA runtime: 2.8
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.9
+case 1 finish
+hash_numeric done
+AIA runtime: 2.9
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 2.0
+case 1 finish
+hash_numeric done
+AIA runtime: 2.7
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.9
+case 1 finish
+hash_numeric done
+Matrix data is copied to Host
+           yelp       Hash_with_AIA     0.500     256       42.92      4.84       83.19        1.00x
+AIA overhead: 11.3%
+
+--- Testing sparsity: 0.2 ---
+        Dataset      Implementation  Sparsity FeatDim   Total(ms)   AIA(ms)      GFLOPS     Speedup
+------------------------------------------------------------------------------------------------------------------------
+Feature matrix: 716847x256, nnz=45873351
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+AIA runtime: 3.5
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.9
+case 1 finish
+hash_numeric done
+AIA runtime: 2.9
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 2.0
+case 1 finish
+hash_numeric done
+AIA runtime: 4.2
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 2.0
+case 1 finish
+hash_numeric done
+AIA runtime: 3.5
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 2.0
+case 1 finish
+hash_numeric done
+AIA runtime: 3.6
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 2.0
+case 1 finish
+hash_numeric done
+AIA runtime: 2.8
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 2.0
+case 1 finish
+hash_numeric done
+AIA runtime: 3.4
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 2.0
+case 1 finish
+hash_numeric done
+AIA runtime: 3.2
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 2.0
+case 1 finish
+hash_numeric done
+AIA runtime: 3.6
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 2.0
+case 1 finish
+hash_numeric done
+AIA runtime: 3.4
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.9
+case 1 finish
+hash_numeric done
+AIA runtime: 2.9
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 2.0
+case 1 finish
+hash_numeric done
+Matrix data is copied to Host
+           yelp       Hash_with_AIA     0.250     256       26.54      5.34       67.27        1.00x
+AIA overhead: 20.1%
+
+--- Testing sparsity: 0.1 ---
+        Dataset      Implementation  Sparsity FeatDim   Total(ms)   AIA(ms)      GFLOPS     Speedup
+------------------------------------------------------------------------------------------------------------------------
+Feature matrix: 716847x256, nnz=22942579
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+AIA runtime: 3.7
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 2.0
+case 1 finish
+hash_numeric done
+AIA runtime: 3.9
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 2.1
+case 1 finish
+hash_numeric done
+AIA runtime: 3.5
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 2.0
+case 1 finish
+hash_numeric done
+AIA runtime: 3.5
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.9
+case 1 finish
+hash_numeric done
+AIA runtime: 3.4
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 2.0
+case 1 finish
+hash_numeric done
+AIA runtime: 3.5
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 2.0
+case 1 finish
+hash_numeric done
+AIA runtime: 3.5
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 2.0
+case 1 finish
+hash_numeric done
+AIA runtime: 3.8
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 2.0
+case 1 finish
+hash_numeric done
+AIA runtime: 3.7
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 2.0
+case 1 finish
+hash_numeric done
+AIA runtime: 3.8
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 1.9
+case 1 finish
+hash_numeric done
+AIA runtime: 3.6
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 2.0
+case 1 finish
+hash_numeric done
+Matrix data is copied to Host
+           yelp       Hash_with_AIA     0.125     256       21.20      5.61       42.08        1.00x
+AIA overhead: 26.5%
+
+--- Testing sparsity: 0.1 ---
+        Dataset      Implementation  Sparsity FeatDim   Total(ms)   AIA(ms)      GFLOPS     Speedup
+------------------------------------------------------------------------------------------------------------------------
+Feature matrix: 716847x256, nnz=11475776
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+AIA runtime: 5.2
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 2.0
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 4.5
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 2.0
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 4.5
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 1.9
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 4.4
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 2.0
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 4.4
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 2.1
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 5.1
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 2.0
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 4.5
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 2.0
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 4.7
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 2.0
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 4.6
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 1.9
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 4.9
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 2.1
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 4.6
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 1.9
+case 1 finish
+case 0 finish
+hash_numeric done
+Matrix data is copied to Host
+           yelp       Hash_with_AIA     0.062     256       20.00      6.61       22.31        1.00x
+AIA overhead: 33.1%
+
+=== Testing Dataset: ogbn-products ===
+Loading graph: products
+  indptr file: /home/labuser/MaxK-GNN/kernels/graphs/products.indptr
+  indices file: /home/labuser/MaxK-GNN/kernels/graphs/products.indices
+  Vertices: 2449029
+  Edges: 123718280
+  Average degree: 50.5
+Graph loaded: 2449029 nodes, 123718280 edges
+
+--- Testing sparsity: 0.5 ---
+        Dataset      Implementation  Sparsity FeatDim   Total(ms)   AIA(ms)      GFLOPS     Speedup
+------------------------------------------------------------------------------------------------------------------------
+Feature matrix: 2449029x256, nnz=313475871
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+AIA runtime: 14.3
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 8.8
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 14.9
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.2
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 15.1
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.2
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 15.2
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.1
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 14.8
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.0
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 14.9
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.0
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 15.1
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.2
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 15.2
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 8.9
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 15.1
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.1
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 15.1
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.0
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 15.1
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.0
+case 1 finish
+case 0 finish
+hash_numeric done
+Matrix data is copied to Host
+  ogbn-products       Hash_with_AIA     0.500     256      207.48     24.14      152.66        1.00x
+AIA overhead: 11.6%
+
+--- Testing sparsity: 0.2 ---
+        Dataset      Implementation  Sparsity FeatDim   Total(ms)   AIA(ms)      GFLOPS     Speedup
+------------------------------------------------------------------------------------------------------------------------
+Feature matrix: 2449029x256, nnz=156739314
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+AIA runtime: 17.2
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.2
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 18.7
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.0
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 18.3
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.3
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 18.1
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.2
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 18.4
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.1
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 18.5
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.2
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 18.1
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.0
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 17.9
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.0
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 17.9
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.1
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 18.5
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.0
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 18.2
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.1
+case 1 finish
+case 0 finish
+hash_numeric done
+Matrix data is copied to Host
+  ogbn-products       Hash_with_AIA     0.250     256      137.70     27.36      115.00        1.00x
+AIA overhead: 19.9%
+
+--- Testing sparsity: 0.1 ---
+        Dataset      Implementation  Sparsity FeatDim   Total(ms)   AIA(ms)      GFLOPS     Speedup
+------------------------------------------------------------------------------------------------------------------------
+Feature matrix: 2449029x256, nnz=78366136
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+AIA runtime: 17.3
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 8.9
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 17.9
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.0
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 19.2
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 8.8
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 19.1
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.0
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 17.9
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.0
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 19.2
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.1
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 19.1
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.3
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 17.9
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.0
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 18.9
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.0
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 18.1
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.0
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 17.9
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 8.9
+case 1 finish
+case 0 finish
+hash_numeric done
+Matrix data is copied to Host
+  ogbn-products       Hash_with_AIA     0.125     256      106.72     27.52       74.22        1.00x
+AIA overhead: 25.8%
+
+--- Testing sparsity: 0.1 ---
+        Dataset      Implementation  Sparsity FeatDim   Total(ms)   AIA(ms)      GFLOPS     Speedup
+------------------------------------------------------------------------------------------------------------------------
+Feature matrix: 2449029x256, nnz=39189049
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+AIA runtime: 18.5
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.1
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 22.1
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.1
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 18.3
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.1
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 18.5
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.2
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 20.4
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.2
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 18.1
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.2
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 18.2
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.1
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 19.5
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.0
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 18.6
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.1
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 19.6
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.2
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 18.3
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 9.3
+case 1 finish
+case 0 finish
+hash_numeric done
+Matrix data is copied to Host
+  ogbn-products       Hash_with_AIA     0.062     256      100.11     28.30       39.56        1.00x
+AIA overhead: 28.3%
+
+=== Testing Dataset: ogbn-proteins ===
+Loading graph: protein
+  indptr file: /home/labuser/MaxK-GNN/kernels/graphs/protein.indptr
+  indices file: /home/labuser/MaxK-GNN/kernels/graphs/protein.indices
+  Vertices: 132534
+  Edges: 79122504
+  Average degree: 597.0
+Graph loaded: 132534 nodes, 79122504 edges
+
+--- Testing sparsity: 0.5 ---
+        Dataset      Implementation  Sparsity FeatDim   Total(ms)   AIA(ms)      GFLOPS     Speedup
+------------------------------------------------------------------------------------------------------------------------
+Feature matrix: 132534x256, nnz=16967203
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+AIA runtime: 5.0
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 5.3
+case 1 finish
+hash_numeric done
+AIA runtime: 5.3
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 5.3
+case 1 finish
+hash_numeric done
+AIA runtime: 5.5
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 5.0
+case 1 finish
+hash_numeric done
+AIA runtime: 4.9
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 5.2
+case 1 finish
+hash_numeric done
+AIA runtime: 5.2
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 5.1
+case 1 finish
+hash_numeric done
+AIA runtime: 5.2
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 5.1
+case 1 finish
+hash_numeric done
+AIA runtime: 5.2
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 5.0
+case 1 finish
+hash_numeric done
+AIA runtime: 5.2
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 5.1
+case 1 finish
+hash_numeric done
+AIA runtime: 5.3
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 5.1
+case 1 finish
+hash_numeric done
+AIA runtime: 4.9
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 5.1
+case 1 finish
+hash_numeric done
+AIA runtime: 5.2
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 5.2
+case 1 finish
+hash_numeric done
+Matrix data is copied to Host
+  ogbn-proteins       Hash_with_AIA     0.500     256      105.44     10.32      192.11        1.00x
+AIA overhead: 9.8%
+
+--- Testing sparsity: 0.2 ---
+        Dataset      Implementation  Sparsity FeatDim   Total(ms)   AIA(ms)      GFLOPS     Speedup
+------------------------------------------------------------------------------------------------------------------------
+Feature matrix: 132534x256, nnz=8483307
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+AIA runtime: 7.8
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 5.2
+case 1 finish
+hash_numeric done
+AIA runtime: 5.0
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 5.3
+case 1 finish
+hash_numeric done
+AIA runtime: 4.9
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 5.1
+case 1 finish
+hash_numeric done
+AIA runtime: 5.9
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 5.1
+case 1 finish
+hash_numeric done
+AIA runtime: 5.7
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 5.0
+case 1 finish
+hash_numeric done
+AIA runtime: 5.6
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 5.2
+case 1 finish
+hash_numeric done
+AIA runtime: 5.0
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 5.2
+case 1 finish
+hash_numeric done
+AIA runtime: 5.2
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 5.3
+case 1 finish
+hash_numeric done
+AIA runtime: 5.5
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 5.3
+case 1 finish
+hash_numeric done
+AIA runtime: 5.3
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 5.2
+case 1 finish
+hash_numeric done
+AIA runtime: 5.4
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+hash_symbolic done
+AIA2 runtime: 5.4
+case 1 finish
+hash_numeric done
+Matrix data is copied to Host
+  ogbn-proteins       Hash_with_AIA     0.250     256       58.24     10.56      174.07        1.00x
+AIA overhead: 18.1%
+
+--- Testing sparsity: 0.1 ---
+        Dataset      Implementation  Sparsity FeatDim   Total(ms)   AIA(ms)      GFLOPS     Speedup
+------------------------------------------------------------------------------------------------------------------------
+Feature matrix: 132534x256, nnz=4240492
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+AIA runtime: 5.7
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 5.3
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 5.5
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 5.1
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 5.1
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 5.1
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 5.5
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 5.2
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 5.6
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 5.1
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 5.7
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 5.1
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 5.5
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 5.2
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 5.2
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 5.2
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 6.0
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 5.1
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 5.4
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 5.2
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 6.0
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 5.2
+case 1 finish
+case 0 finish
+hash_numeric done
+Matrix data is copied to Host
+  ogbn-proteins       Hash_with_AIA     0.125     256       45.06     10.69      112.42        1.00x
+AIA overhead: 23.7%
+
+--- Testing sparsity: 0.1 ---
+        Dataset      Implementation  Sparsity FeatDim   Total(ms)   AIA(ms)      GFLOPS     Speedup
+------------------------------------------------------------------------------------------------------------------------
+Feature matrix: 132534x256, nnz=2119850
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+Allocating memory space for matrix data on device memory
+Copying matrix data to GPU device
+AIA runtime: 6.2
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 5.2
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 6.5
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 5.2
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 6.6
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 5.2
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 6.1
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 5.1
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 5.9
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 5.1
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 5.9
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 5.4
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 5.9
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 5.2
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 6.2
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 5.1
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 6.5
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 5.2
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 6.2
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 5.0
+case 1 finish
+case 0 finish
+hash_numeric done
+AIA runtime: 5.8
+case 6 start
+case 6 finish
+case 5 finish
+case 4 finish
+case 3 finish
+case 2 finish
+case 1 finish
+case 0 finish
+hash_symbolic done
+AIA2 runtime: 5.2
+case 1 finish
+case 0 finish
+hash_numeric done
+Matrix data is copied to Host
+  ogbn-proteins       Hash_with_AIA     0.062     256       45.42     11.32       55.75        1.00x
+AIA overhead: 24.9%
+
+Benchmark completed!
