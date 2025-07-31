@@ -7,6 +7,21 @@
 
 #include <HashSpGEMM_volta.hpp>  // Include original implementation
 
+// Forward declaration of PerformanceResult structure
+struct PerformanceResult {
+    float total_time_ms;
+    float aia1_time_ms;
+    float aia2_time_ms;
+    float symbolic_time_ms;
+    float numeric_time_ms;
+    float gflops;
+    long long int flop_count;
+    std::string implementation;
+    std::string dataset;
+    float sparsity;
+    int feature_dim;
+};
+
 // MODIFIED: Add timing to the main SpGEMM function
 template <bool sort, class idType, class valType>
 void SpGEMM_Hash_AIA_Timed(CSR<idType, valType> a, CSR<idType, valType> b, CSR<idType, valType> &c,
@@ -88,7 +103,7 @@ PerformanceResult spgemm_hash_aia_timed(CSR<idType, valType> adj, CSR<idType, va
     result.implementation = "Hash_with_AIA";
     result.dataset = dataset;
     result.sparsity = sparsity;
-    result.feature_dim = features.ncol;
+    result.feature_dim = features.ncolumn;  // Use ncolumn
     
     idType i;
     long long int flop_count;
