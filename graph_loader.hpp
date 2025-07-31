@@ -93,24 +93,24 @@ CSR<idType, valType> load_graph_from_spgemm_pruning(const std::string& data_path
 }
 
 // Dataset mapping functions
-CSR<int, double> load_reddit_graph(const std::string& data_path) {
-    return load_graph_from_spgemm_pruning<int, double>(data_path, "reddit");
+CSR<IT, VT> load_reddit_graph(const std::string& data_path) {
+    return load_graph_from_spgemm_pruning<IT, VT>(data_path, "reddit");
 }
 
-CSR<int, double> load_flickr_graph(const std::string& data_path) {
-    return load_graph_from_spgemm_pruning<int, double>(data_path, "flickr");
+CSR<IT, VT> load_flickr_graph(const std::string& data_path) {
+    return load_graph_from_spgemm_pruning<IT, VT>(data_path, "flickr");
 }
 
-CSR<int, double> load_yelp_graph(const std::string& data_path) {
-    return load_graph_from_spgemm_pruning<int, double>(data_path, "yelp");
+CSR<IT, VT> load_yelp_graph(const std::string& data_path) {
+    return load_graph_from_spgemm_pruning<IT, VT>(data_path, "yelp");
 }
 
-CSR<int, double> load_ogbn_products_graph(const std::string& data_path) {
-    return load_graph_from_spgemm_pruning<int, double>(data_path, "ogbn-products");
+CSR<IT, VT> load_ogbn_products_graph(const std::string& data_path) {
+    return load_graph_from_spgemm_pruning<IT, VT>(data_path, "ogbn-products");
 }
 
-CSR<int, double> load_ogbn_proteins_graph(const std::string& data_path) {
-    return load_graph_from_spgemm_pruning<int, double>(data_path, "ogbn-proteins");
+CSR<IT, VT> load_ogbn_proteins_graph(const std::string& data_path) {
+    return load_graph_from_spgemm_pruning<IT, VT>(data_path, "ogbn-proteins");
 }
 
 #endif // GRAPH_LOADER_HPP
