@@ -22,6 +22,7 @@
 #include <HashSpGEMM_volta.hpp>      // AIA implementation
 #include <HashSpGEMM_volta_old.hpp>  // Non-AIA implementation (KEEP UNMODIFIED)
 
+// Include our additional headers
 #include "graph_loader.hpp"
 #include "spgemm_aia_timed.hpp"
 
@@ -69,7 +70,6 @@ CSR<IT, VT> generate_sparse_feature_matrix(int n_nodes, int feature_dim, float s
     values.reserve(nnz);
     
     for (int i = 0; i < n_nodes; i++) {
-        std::vector<bool> col_used(feature_dim, false);
         int row_nnz = 0;
         
         for (int j = 0; j < feature_dim; j++) {
@@ -84,14 +84,19 @@ CSR<IT, VT> generate_sparse_feature_matrix(int n_nodes, int feature_dim, float s
     
     // Initialize CSR structure
     features.nrow = n_nodes;
-    features.ncol = feature_dim;
+    features.ncolumn = feature_dim;  // Use ncolumn (not ncol)
     features.nnz = col_ids.size();
+    features.host_malloc = true;
+    features.device_malloc = false;
     
-    features.alloc_cpu_csr();
+    // Allocate CPU memory manually
+    features.rpt = new IT[n_nodes + 1];
+    features.colids = new IT[features.nnz];
+    features.values = new VT[features.nnz];
     
-    std::copy(row_ptr.begin(), row_ptr.end(), features.h_rpt);
-    std::copy(col_ids.begin(), col_ids.end(), features.h_colids);
-    std::copy(values.begin(), values.end(), features.h_values);
+    std::copy(row_ptr.begin(), row_ptr.end(), features.rpt);
+    std::copy(col_ids.begin(), col_ids.end(), features.colids);
+    std::copy(values.begin(), values.end(), features.values);
     
     return features;
 }
@@ -104,7 +109,7 @@ PerformanceResult spgemm_cusparse(CSR<idType, valType> adj, CSR<idType, valType>
     result.implementation = "cuSPARSE";
     result.dataset = dataset;
     result.sparsity = sparsity;
-    result.feature_dim = features.ncol;
+    result.feature_dim = features.ncolumn;  // Use ncolumn
     
     idType i;
     long long int flop_count;
@@ -167,7 +172,7 @@ PerformanceResult spgemm_hash_old(CSR<idType, valType> adj, CSR<idType, valType>
     result.implementation = "Hash_without_AIA";
     result.dataset = dataset;
     result.sparsity = sparsity;
-    result.feature_dim = features.ncol;
+    result.feature_dim = features.ncolumn;  // Use ncolumn
     
     idType i;
     long long int flop_count;
@@ -285,7 +290,7 @@ void run_spgemm_benchmark(const std::string& dataset_name, const std::string& da
         
         // Generate sparse feature matrix
         CSR<IT, VT> features = generate_sparse_feature_matrix(adj.nrow, feature_dim, sparsity);
-        std::cout << "Feature matrix: " << features.nrow << "x" << features.ncol 
+        std::cout << "Feature matrix: " << features.nrow << "x" << features.ncolumn 
                   << ", nnz=" << features.nnz << std::endl;
         
         // Test all three implementations
@@ -310,7 +315,7 @@ void run_spgemm_benchmark(const std::string& dataset_name, const std::string& da
         
         // Cleanup
         output1.release_cpu_csr();
-        output2.release_cpu_csr();
+        output2.release_cpu_csr(); 
         output3.release_cpu_csr();
         features.release_cpu_csr();
     }
