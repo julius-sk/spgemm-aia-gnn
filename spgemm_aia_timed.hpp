@@ -1,172 +1,225 @@
-// spgemm_aia_timed.hpp - ONLY modified parts for AIA timing
-// This file contains ONLY the functions that need modification from HashSpGEMM_volta.hpp
-// All other functions from HashSpGEMM_volta.hpp remain UNMODIFIED
+// spgemm_comparison_test.cu - EXACT copy of original pattern
+// Just copy spgemm_hash.cu three times with different implementations
 
-#ifndef SPGEMM_AIA_TIMED_HPP
-#define SPGEMM_AIA_TIMED_HPP
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/time.h>
+#include <math.h>
+#include <string>
+#include <iostream>
 
-#include <HashSpGEMM_volta.hpp>  // Include original implementation
+#include <cuda.h>
+#include <helper_cuda.h>
+#include <cusparse_v2.h>
 
-// Forward declaration of PerformanceResult structure
-struct PerformanceResult {
-    float total_time_ms;
-    float aia1_time_ms;
-    float aia2_time_ms;
-    float symbolic_time_ms;
-    float numeric_time_ms;
-    float gflops;
-    long long int flop_count;
-    std::string implementation;
-    std::string dataset;
-    float sparsity;
-    int feature_dim;
-};
+#include <nsparse.hpp>
+#include <CSR.hpp>
+#include <SpGEMM.hpp>
+#include <HashSpGEMM_volta.hpp>      // AIA implementation
+#include <HashSpGEMM_volta_old.hpp>  // Non-AIA implementation
 
-// MODIFIED: Add timing to the main SpGEMM function
-template <bool sort, class idType, class valType>
-void SpGEMM_Hash_AIA_Timed(CSR<idType, valType> a, CSR<idType, valType> b, CSR<idType, valType> &c,
-                           float &total_aia1_time, float &total_aia2_time, 
-                           float &total_symbolic_time, float &total_numeric_time)
-{
-    BIN<idType, BIN_NUM> bin(a.nrow);
-    
-    cudaEvent_t event[8];
-    float msec;
-    
-    for (int i = 0; i < 8; i++) {
-        cudaEventCreate(&(event[i]));
-    }
+typedef int IT;
+#ifdef FLOAT
+typedef float VT;
+#else
+typedef double VT;
+#endif
 
-    // AIA data structures
-    idType *aia_d_row_1, *aia_d_nnz_1;
-    cudaMalloc((void **)&aia_d_row_1, sizeof(idType) * (2 * a.nrow));
-    cudaMalloc((void **)&aia_d_nnz_1, sizeof(idType) * (2 * a.nnz));
-
-    bin.set_load_banlance(a, b);
-
-    // TIMING: First AIA phase
-    cudaEventRecord(event[0], 0);
-    read_1_new(aia_d_row_1, aia_d_nnz_1, a.d_rpt, bin.d_permutation, b.d_rpt, a.d_colids, a.nrow);
-    cudaEventRecord(event[1], 0);
-    cudaDeviceSynchronize();
-    cudaEventElapsedTime(&msec, event[0], event[1]);
-    total_aia1_time += msec;
-    cout << "AIA1 runtime: " << msec << " ms" << endl;
-
-    // TIMING: Symbolic phase
-    cudaEventRecord(event[2], 0);
-    hash_symbolic(a.d_rpt, b.d_colids, c, aia_d_row_1, aia_d_nnz_1, bin, a.nrow);
-    cudaEventRecord(event[3], 0);   
-    cudaDeviceSynchronize();
-    cudaEventElapsedTime(&msec, event[2], event[3]);
-    total_symbolic_time += msec;
-    cout << "Symbolic phase: " << msec << " ms" << endl;
-    
-    // Allocate output arrays
-    cudaMalloc((void **)&(c.d_colids), sizeof(idType) * (c.nnz));
-    cudaMalloc((void **)&(c.d_values), sizeof(valType) * (c.nnz));
-    
-    bin.set_min_bin(a.nrow, TS_N_P, TS_N_T);
-    
-    // TIMING: Second AIA phase
-    cudaEventRecord(event[4], 0);
-    read_1_new(aia_d_row_1, aia_d_nnz_1, a.d_rpt, bin.d_permutation, b.d_rpt, a.d_colids, a.nrow);
-    cudaEventRecord(event[5], 0);
-    cudaDeviceSynchronize();
-    cudaEventElapsedTime(&msec, event[4], event[5]);
-    total_aia2_time += msec;
-    cout << "AIA2 runtime: " << msec << " ms" << endl;
-
-    // TIMING: Numeric phase
-    cudaEventRecord(event[6], 0);
-    hash_numeric<idType, valType, sort>(a.d_values, b.d_colids, b.d_values, c, aia_d_row_1, aia_d_nnz_1, bin);
-    cudaEventRecord(event[7], 0);
-    cudaDeviceSynchronize();
-    cudaEventElapsedTime(&msec, event[6], event[7]);
-    total_numeric_time += msec;
-    cout << "Numeric phase: " << msec << " ms" << endl;
-
-    // Cleanup
-    cudaFree(aia_d_row_1);
-    cudaFree(aia_d_nnz_1);
-    
-    for (int i = 0; i < 8; i++) {
-        cudaEventDestroy(event[i]);
-    }
-}
-
-// Wrapper function for the benchmark
+// EXACT copy of original spgemm_hash function - just with AIA
 template <class idType, class valType>
-PerformanceResult spgemm_hash_aia_timed(CSR<idType, valType> adj, CSR<idType, valType> features, 
-                                        CSR<idType, valType> &output, const std::string& dataset, float sparsity) {
-    PerformanceResult result;
-    result.implementation = "Hash_with_AIA";
-    result.dataset = dataset;
-    result.sparsity = sparsity;
-    result.feature_dim = features.ncolumn;  // Use ncolumn
-    
+void spgemm_hash_aia(CSR<idType, valType> a, CSR<idType, valType> b, CSR<idType, valType> &c)
+{
     idType i;
     long long int flop_count;
     cudaEvent_t event[2];
-    float msec, ave_msec;
-    float total_aia1 = 0, total_aia2 = 0, total_symbolic = 0, total_numeric = 0;
-    
+    float msec, ave_msec, flops;
+  
     for (i = 0; i < 2; i++) {
         cudaEventCreate(&(event[i]));
     }
-    
-    // Copy matrices to device
-    adj.memcpyHtD();
-    features.memcpyHtD();
-    
-    // Count FLOPs
-    get_spgemm_flop(adj, features, flop_count);
-    result.flop_count = flop_count;
-    
-    // Execute SpGEMM with detailed timing
+  
+    /* Memcpy A and B from Host to Device */
+    a.memcpyHtD();
+    b.memcpyHtD();
+  
+    /* Count flop of SpGEMM computation */
+    get_spgemm_flop(a, b, flop_count);
+
+    /* Execution of SpGEMM on Device */
     ave_msec = 0;
-    
     for (i = 0; i < SpGEMM_TRI_NUM; i++) {
         if (i > 0) {
-            output.release_csr();
+            c.release_csr();
         }
-        
-        float aia1_time = 0, aia2_time = 0, symbolic_time = 0, numeric_time = 0;
-        
         cudaEventRecord(event[0], 0);
-        SpGEMM_Hash_AIA_Timed<true, idType, valType>(adj, features, output, 
-                                                     aia1_time, aia2_time, symbolic_time, numeric_time);
+        SpGEMM_Hash(a, b, c);  // Uses volta.hpp (AIA version)
         cudaEventRecord(event[1], 0);
         cudaDeviceSynchronize();
         cudaEventElapsedTime(&msec, event[0], event[1]);
-        
+    
         if (i > 0) {
             ave_msec += msec;
-            total_aia1 += aia1_time;
-            total_aia2 += aia2_time;
-            total_symbolic += symbolic_time;
-            total_numeric += numeric_time;
         }
     }
     ave_msec /= SpGEMM_TRI_NUM - 1;
-    
-    result.total_time_ms = ave_msec;
-    result.aia1_time_ms = total_aia1 / (SpGEMM_TRI_NUM - 1);
-    result.aia2_time_ms = total_aia2 / (SpGEMM_TRI_NUM - 1);
-    result.symbolic_time_ms = total_symbolic / (SpGEMM_TRI_NUM - 1);
-    result.numeric_time_ms = total_numeric / (SpGEMM_TRI_NUM - 1);
-    result.gflops = (float)(flop_count) / 1000 / 1000 / ave_msec;
-    
-    output.memcpyDtH();
-    
-    adj.release_csr();
-    features.release_csr();
-    
+
+    flops = (float)(flop_count) / 1000 / 1000 / ave_msec;
+    printf("SpGEMM using CSR format (Hash with AIA): %f[GFLOPS], %f[ms]\n", flops, ave_msec);
+
+    c.memcpyDtH();
+    c.release_csr();
+
+    a.release_csr();
+    b.release_csr();
+
     for (i = 0; i < 2; i++) {
         cudaEventDestroy(event[i]);
     }
-    
-    return result;
 }
 
-#endif // SPGEMM_AIA_TIMED_HPP
+// EXACT copy of original spgemm_hash function - no AIA 
+template <class idType, class valType>
+void spgemm_hash_old(CSR<idType, valType> a, CSR<idType, valType> b, CSR<idType, valType> &c)
+{
+    idType i;
+    long long int flop_count;
+    cudaEvent_t event[2];
+    float msec, ave_msec, flops;
+  
+    for (i = 0; i < 2; i++) {
+        cudaEventCreate(&(event[i]));
+    }
+  
+    /* Memcpy A and B from Host to Device */
+    a.memcpyHtD();
+    b.memcpyHtD();
+  
+    /* Count flop of SpGEMM computation */
+    get_spgemm_flop(a, b, flop_count);
+
+    /* Execution of SpGEMM on Device */
+    ave_msec = 0;
+    for (i = 0; i < SpGEMM_TRI_NUM; i++) {
+        if (i > 0) {
+            c.release_csr();
+        }
+        cudaEventRecord(event[0], 0);
+        SpGEMM_Hash(a, b, c);  // Uses volta_old.hpp (no AIA version)
+        cudaEventRecord(event[1], 0);
+        cudaDeviceSynchronize();
+        cudaEventElapsedTime(&msec, event[0], event[1]);
+    
+        if (i > 0) {
+            ave_msec += msec;
+        }
+    }
+    ave_msec /= SpGEMM_TRI_NUM - 1;
+
+    flops = (float)(flop_count) / 1000 / 1000 / ave_msec;
+    printf("SpGEMM using CSR format (Hash without AIA): %f[GFLOPS], %f[ms]\n", flops, ave_msec);
+
+    c.memcpyDtH();
+    c.release_csr();
+
+    a.release_csr();
+    b.release_csr();
+
+    for (i = 0; i < 2; i++) {
+        cudaEventDestroy(event[i]);
+    }
+}
+
+// EXACT copy of original cusparse pattern
+template <class idType, class valType>
+void spgemm_cusparse_test(CSR<idType, valType> a, CSR<idType, valType> b, CSR<idType, valType> &c)
+{
+    idType i;
+    long long int flop_count;
+    cudaEvent_t event[2];
+    float msec, ave_msec, flops;
+  
+    for (i = 0; i < 2; i++) {
+        cudaEventCreate(&(event[i]));
+    }
+  
+    /* Memcpy A and B from Host to Device */
+    a.memcpyHtD();
+    b.memcpyHtD();
+  
+    /* Count flop of SpGEMM computation */
+    get_spgemm_flop(a, b, flop_count);
+
+    /* Execution of SpGEMM on Device */
+    ave_msec = 0;
+    for (i = 0; i < SpGEMM_TRI_NUM; i++) {
+        if (i > 0) {
+            c.release_csr();
+        }
+        cudaEventRecord(event[0], 0);
+        SpGEMM_cuSPARSE(a, b, c);  // Uses cuSPARSE
+        cudaEventRecord(event[1], 0);
+        cudaDeviceSynchronize();
+        cudaEventElapsedTime(&msec, event[0], event[1]);
+    
+        if (i > 0) {
+            ave_msec += msec;
+        }
+    }
+    ave_msec /= SpGEMM_TRI_NUM - 1;
+
+    flops = (float)(flop_count) / 1000 / 1000 / ave_msec;
+    printf("SpGEMM using CSR format (cuSPARSE): %f[GFLOPS], %f[ms]\n", flops, ave_msec);
+
+    c.memcpyDtH();
+    c.release_csr();
+
+    a.release_csr();
+    b.release_csr();
+
+    for (i = 0; i < 2; i++) {
+        cudaEventDestroy(event[i]);
+    }
+}
+
+/*Main Function*/
+int main(int argc, char *argv[])
+{
+    if (argc != 2) {
+        printf("Usage: %s <matrix_file.mtx>\n", argv[0]);
+        return 1;
+    }
+
+    CSR<IT, VT> a, b;
+    CSR<IT, VT> c1, c2, c3;
+
+    /* Set CSR reading from MM file */
+    printf("Initialize Matrix A\n");
+    printf("Read matrix data from %s\n", argv[1]);
+    a.init_data_from_mtx(argv[1]);
+
+    printf("Initialize Matrix B\n");
+    printf("Read matrix data from %s\n", argv[1]);
+    b.init_data_from_mtx(argv[1]);
+  
+    printf("\n=== SpGEMM Comparison ===\n");
+    
+    /* 1. cuSPARSE */
+    printf("\n1. Testing cuSPARSE:\n");
+    spgemm_cusparse_test(a, b, c1);
+    
+    /* 2. Hash without AIA */
+    printf("\n2. Testing Hash without AIA:\n");
+    spgemm_hash_old(a, b, c2);
+    
+    /* 3. Hash with AIA */
+    printf("\n3. Testing Hash with AIA:\n");
+    spgemm_hash_aia(a, b, c3);
+    
+    a.release_cpu_csr();
+    b.release_cpu_csr();
+    c1.release_cpu_csr();
+    c2.release_cpu_csr();
+    c3.release_cpu_csr();
+  
+    return 0;
+}
