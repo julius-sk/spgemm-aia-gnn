@@ -18,6 +18,57 @@ INCLUDE += -I${CUDA_PATH}/samples/common/inc
 INCLUDE += -I.
 
 BIN = ./bin
+SRC = ./nsparse/cuda-cpp/sample/spgemm
+OBJ = ./obj
+
+OBJ_SUF = .o
+OS_SUF = .s.o
+OD_SUF = .d.o
+TS_SUF = _s
+TD_SUF = _d
+
+# Note: Put spgemm_comparison_test.cu in nsparse/cuda-cpp/sample/spgemm/ directory
+SAMPLE_COMPARISON = spgemm_comparison_test.cu
+SAMPLE_COMPARISON_TARGET = $(SAMPLE_COMPARISON:%.cu=%)
+
+all: comparison
+
+comparison: $(SAMPLE_COMPARISON_TARGET)$(TS_SUF) $(SAMPLE_COMPARISON_TARGET)$(TD_SUF)
+
+%$(TS_SUF): $(OBJ)/spgemm/%$(OS_SUF)
+	mkdir -p $(BIN)
+	$(NVCC) -o $(BIN)/$@ $^ $(LDFLAGS) $(INCLUDE)
+
+%$(TD_SUF): $(OBJ)/spgemm/%$(OD_SUF)
+	mkdir -p $(BIN)
+	$(NVCC) -o $(BIN)/$@ $^ $(LDFLAGS) $(INCLUDE)
+
+$(OBJ)/spgemm/%$(OS_SUF) : $(SRC)/%.cu
+	mkdir -p $(dir $@)
+	$(NVCC) -c -DFLOAT $(LDFLAGS) $(INCLUDE) -o $@ $<
+
+$(OBJ)/spgemm/%$(OD_SUF) : $(SRC)/%.cu
+	mkdir -p $(dir $@)
+	$(NVCC) -c -DDOUBLE $(LDFLAGS) $(INCLUDE) -o $@ $# Makefile for SpGEMM Comparison Testing
+# Following nsparse makefile pattern
+
+CXX = nvcc
+NVCC = nvcc
+
+CFLAGS = -O3 -g
+CFLAGS += -L. ${REAL} -lm
+LDFLAGS = ${CFLAGS}
+
+# for Device Code
+CUDA_PATH = /usr/local/cuda
+LDFLAGS += -L${CUDA_PATH}/lib64
+LDFLAGS += -arch=sm_70 -lcudart -lcusparse
+INCLUDE = -I./nsparse/cuda-cpp/inc
+INCLUDE += -I${CUDA_PATH}/include
+INCLUDE += -I${CUDA_PATH}/samples/common/inc
+INCLUDE += -I.
+
+BIN = ./bin
 SRC = ./
 OBJ = ./obj
 
