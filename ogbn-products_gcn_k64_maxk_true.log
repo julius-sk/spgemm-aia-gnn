@@ -1,0 +1,70 @@
+
+Parameters:
+DATA_PATH=./data/
+DATASET=ogbn-products
+DROPOUT=0.5
+ENABLE_LOOKAHEAD=False
+EPOCHS=1000
+EVALUATE=None
+GPU=0
+GRAPH_METADATA_PATH=kernels/w12_nz64_warp_4/
+HIDDEN_DIM=256
+HIDDEN_LAYERS=3
+KERNEL_MODE=auto
+MAXK=64
+MAXK_FALLBACK_THRESHOLD=0.001
+MAXK_NUM_WARPS=12
+MAXK_WARP_MAX_NZ=64
+MODEL=gcn
+NONLINEAR=maxk
+NORM=False
+PATH=./run/
+PLOT_PATH=./run/plots
+PROFILE_KERNELS=False
+SAVE_MODEL=False
+SEED=97
+SELFLOOP=False
+USE_MAXK_KERNELS=True
+VALIDATE_KERNELS=False
+W_LR=0.01
+W_WEIGHT_DECAY=0
+
+Training with MaxK CUDA kernel acceleration
+Graph name for metadata: products
+Kernel mode: auto
+Creating GCN model...
+Using MaxK-accelerated GCN model
+Model parameters: 235,311 total, 235,311 trainable
+Graph statistics: 2449029 nodes, 123718280 edges
+Average degree: 50.52
+Feature dimension: 100, Hidden dimension: 256
+MaxK value: 64, Nonlinearity: maxk
+Starting training...
+✅ MaxK CUDA kernels loaded for training integration
+Current process ID: 76949
+🔧 Configuring 3 GCN layers for products
+🔧 Setting GCN graph data for products
+   ✅ GCN metadata loaded: 3483769 warps
+🔧 Setting GCN graph data for products
+   ✅ GCN metadata loaded: 3483769 warps
+🔧 Setting GCN graph data for products
+   ✅ GCN metadata loaded: 3483769 warps
+✅ All GCN layers configured
+Traceback (most recent call last):
+  File "/home/labuser/MaxK-GNN/maxk_gnn_integrated.py", line 387, in <module>
+    train(g, features, labels, masks, model, config, logger, writer)
+  File "/home/labuser/MaxK-GNN/maxk_gnn_integrated.py", line 124, in train
+    logits = model(g, features)
+  File "/home/labuser/miniconda3/envs/maxkgnn/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/labuser/miniconda3/envs/maxkgnn/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/labuser/MaxK-GNN/maxk_models_integrated.py", line 665, in forward
+    x = self.gcnlayers[i](g, x_sparse, topk_values, topk_indices)
+  File "/home/labuser/miniconda3/envs/maxkgnn/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/labuser/miniconda3/envs/maxkgnn/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/labuser/MaxK-GNN/maxk_models_integrated.py", line 283, in forward
+    raise ValueError(
+ValueError: There are 0-in-degree nodes in the graph, output for those nodes will be invalid. Adding self-loop on the input graph by calling `g = dgl.add_self_loop(g)` will resolve the issue.
