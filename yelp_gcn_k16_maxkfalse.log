@@ -1,0 +1,1121 @@
+
+Parameters:
+DATA_PATH=./data/
+DATASET=yelp
+DROPOUT=0.5
+ENABLE_LOOKAHEAD=False
+EPOCHS=1000
+EVALUATE=None
+GPU=0
+GRAPH_METADATA_PATH=kernels/w12_nz64_warp_4/
+HIDDEN_DIM=256
+HIDDEN_LAYERS=3
+KERNEL_MODE=auto
+MAXK=16
+MAXK_FALLBACK_THRESHOLD=0.001
+MAXK_NUM_WARPS=12
+MAXK_WARP_MAX_NZ=64
+MODEL=gcn
+NONLINEAR=maxk
+NORM=False
+PATH=./run/
+PLOT_PATH=./run/plots
+PROFILE_KERNELS=False
+SAVE_MODEL=False
+SEED=97
+SELFLOOP=False
+USE_MAXK_KERNELS=False
+VALIDATE_KERNELS=False
+W_LR=0.01
+W_WEIGHT_DECAY=0
+
+Training with DGL built-in convolution modules
+Creating GCN model...
+Using standard DGL GCN model
+Model parameters: 300,900 total, 300,900 trainable
+Graph statistics: 716847 nodes, 13954819 edges
+Average degree: 19.47
+Feature dimension: 300, Hidden dimension: 256
+MaxK value: 16, Nonlinearity: maxk
+Starting training...
+Epoch 0000/1000| Loss 0.6954 | Train Accuracy 0.1907 | Val Accuracy 0.1900 | Test Accuracy 0.1900 | Best val. Accuracy 0.1900 | Best test Accuracy 0.1900
+Epoch 0001/1000| Loss 0.5832 | Train Accuracy 0.1646 | Val Accuracy 0.1644 | Test Accuracy 0.1647 | Best val. Accuracy 0.1900 | Best test Accuracy 0.1900
+Epoch 0002/1000| Loss 0.4600 | Train Accuracy 0.0490 | Val Accuracy 0.0491 | Test Accuracy 0.0493 | Best val. Accuracy 0.1900 | Best test Accuracy 0.1900
+Epoch 0003/1000| Loss 0.4208 | Train Accuracy 0.2404 | Val Accuracy 0.2405 | Test Accuracy 0.2401 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0004/1000| Loss 0.3995 | Train Accuracy 0.2300 | Val Accuracy 0.2305 | Test Accuracy 0.2300 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0005/1000| Loss 0.3474 | Train Accuracy 0.1986 | Val Accuracy 0.1988 | Test Accuracy 0.1985 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0006/1000| Loss 0.3391 | Train Accuracy 0.1417 | Val Accuracy 0.1424 | Test Accuracy 0.1422 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0007/1000| Loss 0.3244 | Train Accuracy 0.1455 | Val Accuracy 0.1461 | Test Accuracy 0.1459 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0008/1000| Loss 0.3167 | Train Accuracy 0.1445 | Val Accuracy 0.1450 | Test Accuracy 0.1450 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0009/1000| Loss 0.3088 | Train Accuracy 0.1657 | Val Accuracy 0.1663 | Test Accuracy 0.1661 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0010/1000| Loss 0.2998 | Train Accuracy 0.1415 | Val Accuracy 0.1421 | Test Accuracy 0.1418 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0011/1000| Loss 0.2915 | Train Accuracy 0.1415 | Val Accuracy 0.1422 | Test Accuracy 0.1419 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0012/1000| Loss 0.2859 | Train Accuracy 0.1415 | Val Accuracy 0.1422 | Test Accuracy 0.1419 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0013/1000| Loss 0.2795 | Train Accuracy 0.1415 | Val Accuracy 0.1422 | Test Accuracy 0.1419 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0014/1000| Loss 0.2775 | Train Accuracy 0.1418 | Val Accuracy 0.1424 | Test Accuracy 0.1422 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0015/1000| Loss 0.2755 | Train Accuracy 0.1428 | Val Accuracy 0.1435 | Test Accuracy 0.1433 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0016/1000| Loss 0.2753 | Train Accuracy 0.1415 | Val Accuracy 0.1422 | Test Accuracy 0.1419 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0017/1000| Loss 0.2728 | Train Accuracy 0.1415 | Val Accuracy 0.1422 | Test Accuracy 0.1419 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0018/1000| Loss 0.2711 | Train Accuracy 0.1415 | Val Accuracy 0.1422 | Test Accuracy 0.1419 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0019/1000| Loss 0.2695 | Train Accuracy 0.1415 | Val Accuracy 0.1422 | Test Accuracy 0.1419 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0020: Avg Forward 61.906ms, Avg Backward 24.609ms, Total per epoch 86.515ms
+Epoch 0020/1000| Loss 0.2685 | Train Accuracy 0.1415 | Val Accuracy 0.1422 | Test Accuracy 0.1419 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0021/1000| Loss 0.2681 | Train Accuracy 0.1415 | Val Accuracy 0.1422 | Test Accuracy 0.1419 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0022/1000| Loss 0.2677 | Train Accuracy 0.1415 | Val Accuracy 0.1422 | Test Accuracy 0.1419 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0023/1000| Loss 0.2673 | Train Accuracy 0.1416 | Val Accuracy 0.1422 | Test Accuracy 0.1420 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0024/1000| Loss 0.2667 | Train Accuracy 0.1420 | Val Accuracy 0.1427 | Test Accuracy 0.1430 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0025/1000| Loss 0.2665 | Train Accuracy 0.1422 | Val Accuracy 0.1429 | Test Accuracy 0.1432 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0026/1000| Loss 0.2661 | Train Accuracy 0.1427 | Val Accuracy 0.1434 | Test Accuracy 0.1437 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0027/1000| Loss 0.2659 | Train Accuracy 0.1445 | Val Accuracy 0.1452 | Test Accuracy 0.1457 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0028/1000| Loss 0.2656 | Train Accuracy 0.1462 | Val Accuracy 0.1470 | Test Accuracy 0.1477 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0029/1000| Loss 0.2654 | Train Accuracy 0.1455 | Val Accuracy 0.1463 | Test Accuracy 0.1471 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0030/1000| Loss 0.2651 | Train Accuracy 0.1462 | Val Accuracy 0.1471 | Test Accuracy 0.1480 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0031/1000| Loss 0.2649 | Train Accuracy 0.1473 | Val Accuracy 0.1484 | Test Accuracy 0.1492 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0032/1000| Loss 0.2647 | Train Accuracy 0.1480 | Val Accuracy 0.1492 | Test Accuracy 0.1500 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0033/1000| Loss 0.2645 | Train Accuracy 0.1498 | Val Accuracy 0.1511 | Test Accuracy 0.1520 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0034/1000| Loss 0.2643 | Train Accuracy 0.1497 | Val Accuracy 0.1510 | Test Accuracy 0.1517 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0035/1000| Loss 0.2641 | Train Accuracy 0.1567 | Val Accuracy 0.1577 | Test Accuracy 0.1590 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0036/1000| Loss 0.2639 | Train Accuracy 0.1475 | Val Accuracy 0.1486 | Test Accuracy 0.1492 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0037/1000| Loss 0.2644 | Train Accuracy 0.1592 | Val Accuracy 0.1602 | Test Accuracy 0.1615 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0038/1000| Loss 0.2635 | Train Accuracy 0.1512 | Val Accuracy 0.1523 | Test Accuracy 0.1532 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0039/1000| Loss 0.2630 | Train Accuracy 0.1693 | Val Accuracy 0.1700 | Test Accuracy 0.1717 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0040: Avg Forward 59.536ms, Avg Backward 24.599ms, Total per epoch 84.135ms
+Epoch 0040/1000| Loss 0.2639 | Train Accuracy 0.1471 | Val Accuracy 0.1483 | Test Accuracy 0.1488 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0041/1000| Loss 0.2632 | Train Accuracy 0.1494 | Val Accuracy 0.1505 | Test Accuracy 0.1512 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0042/1000| Loss 0.2624 | Train Accuracy 0.1618 | Val Accuracy 0.1626 | Test Accuracy 0.1639 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0043/1000| Loss 0.2617 | Train Accuracy 0.1664 | Val Accuracy 0.1672 | Test Accuracy 0.1685 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0044/1000| Loss 0.2617 | Train Accuracy 0.1566 | Val Accuracy 0.1575 | Test Accuracy 0.1586 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0045/1000| Loss 0.2609 | Train Accuracy 0.1498 | Val Accuracy 0.1508 | Test Accuracy 0.1514 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0046/1000| Loss 0.2613 | Train Accuracy 0.1602 | Val Accuracy 0.1609 | Test Accuracy 0.1621 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0047/1000| Loss 0.2605 | Train Accuracy 0.1738 | Val Accuracy 0.1743 | Test Accuracy 0.1758 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0048/1000| Loss 0.2608 | Train Accuracy 0.1592 | Val Accuracy 0.1600 | Test Accuracy 0.1611 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0049/1000| Loss 0.2600 | Train Accuracy 0.1571 | Val Accuracy 0.1581 | Test Accuracy 0.1588 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0050/1000| Loss 0.2599 | Train Accuracy 0.1676 | Val Accuracy 0.1681 | Test Accuracy 0.1695 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0051/1000| Loss 0.2593 | Train Accuracy 0.1865 | Val Accuracy 0.1867 | Test Accuracy 0.1878 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0052/1000| Loss 0.2595 | Train Accuracy 0.1735 | Val Accuracy 0.1739 | Test Accuracy 0.1749 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0053/1000| Loss 0.2589 | Train Accuracy 0.1563 | Val Accuracy 0.1572 | Test Accuracy 0.1579 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0054/1000| Loss 0.2601 | Train Accuracy 0.1870 | Val Accuracy 0.1872 | Test Accuracy 0.1885 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0055/1000| Loss 0.2584 | Train Accuracy 0.2001 | Val Accuracy 0.2002 | Test Accuracy 0.2019 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0056/1000| Loss 0.2588 | Train Accuracy 0.1811 | Val Accuracy 0.1814 | Test Accuracy 0.1825 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0057/1000| Loss 0.2582 | Train Accuracy 0.1763 | Val Accuracy 0.1768 | Test Accuracy 0.1777 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0058/1000| Loss 0.2584 | Train Accuracy 0.1898 | Val Accuracy 0.1902 | Test Accuracy 0.1915 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0059/1000| Loss 0.2579 | Train Accuracy 0.1989 | Val Accuracy 0.1990 | Test Accuracy 0.2007 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0060: Avg Forward 58.775ms, Avg Backward 24.596ms, Total per epoch 83.371ms
+Epoch 0060/1000| Loss 0.2578 | Train Accuracy 0.1683 | Val Accuracy 0.1687 | Test Accuracy 0.1693 | Best val. Accuracy 0.2405 | Best test Accuracy 0.2401
+Epoch 0061/1000| Loss 0.2627 | Train Accuracy 0.2466 | Val Accuracy 0.2464 | Test Accuracy 0.2485 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0062/1000| Loss 0.2619 | Train Accuracy 0.1929 | Val Accuracy 0.1933 | Test Accuracy 0.1946 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0063/1000| Loss 0.2583 | Train Accuracy 0.1656 | Val Accuracy 0.1664 | Test Accuracy 0.1671 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0064/1000| Loss 0.2600 | Train Accuracy 0.1632 | Val Accuracy 0.1640 | Test Accuracy 0.1646 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0065/1000| Loss 0.2604 | Train Accuracy 0.1795 | Val Accuracy 0.1800 | Test Accuracy 0.1813 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0066/1000| Loss 0.2591 | Train Accuracy 0.2082 | Val Accuracy 0.2086 | Test Accuracy 0.2103 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0067/1000| Loss 0.2592 | Train Accuracy 0.2252 | Val Accuracy 0.2249 | Test Accuracy 0.2274 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0068/1000| Loss 0.2591 | Train Accuracy 0.2115 | Val Accuracy 0.2115 | Test Accuracy 0.2130 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0069/1000| Loss 0.2578 | Train Accuracy 0.1901 | Val Accuracy 0.1907 | Test Accuracy 0.1913 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0070/1000| Loss 0.2593 | Train Accuracy 0.2020 | Val Accuracy 0.2020 | Test Accuracy 0.2030 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0071/1000| Loss 0.2584 | Train Accuracy 0.2277 | Val Accuracy 0.2275 | Test Accuracy 0.2296 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0072/1000| Loss 0.2587 | Train Accuracy 0.2104 | Val Accuracy 0.2105 | Test Accuracy 0.2120 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0073/1000| Loss 0.2580 | Train Accuracy 0.1884 | Val Accuracy 0.1889 | Test Accuracy 0.1897 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0074/1000| Loss 0.2576 | Train Accuracy 0.1807 | Val Accuracy 0.1812 | Test Accuracy 0.1820 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0075/1000| Loss 0.2577 | Train Accuracy 0.1941 | Val Accuracy 0.1947 | Test Accuracy 0.1955 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0076/1000| Loss 0.2576 | Train Accuracy 0.2186 | Val Accuracy 0.2188 | Test Accuracy 0.2203 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0077/1000| Loss 0.2575 | Train Accuracy 0.2009 | Val Accuracy 0.2010 | Test Accuracy 0.2023 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0078/1000| Loss 0.2571 | Train Accuracy 0.1779 | Val Accuracy 0.1782 | Test Accuracy 0.1789 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0079/1000| Loss 0.2586 | Train Accuracy 0.2346 | Val Accuracy 0.2348 | Test Accuracy 0.2367 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0080: Avg Forward 58.533ms, Avg Backward 24.591ms, Total per epoch 83.124ms
+Epoch 0080/1000| Loss 0.2591 | Train Accuracy 0.1946 | Val Accuracy 0.1951 | Test Accuracy 0.1960 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0081/1000| Loss 0.2571 | Train Accuracy 0.1652 | Val Accuracy 0.1660 | Test Accuracy 0.1664 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0082/1000| Loss 0.2584 | Train Accuracy 0.1639 | Val Accuracy 0.1648 | Test Accuracy 0.1652 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0083/1000| Loss 0.2584 | Train Accuracy 0.1836 | Val Accuracy 0.1844 | Test Accuracy 0.1850 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0084/1000| Loss 0.2572 | Train Accuracy 0.2128 | Val Accuracy 0.2130 | Test Accuracy 0.2147 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0085/1000| Loss 0.2575 | Train Accuracy 0.2237 | Val Accuracy 0.2238 | Test Accuracy 0.2257 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0086/1000| Loss 0.2574 | Train Accuracy 0.1990 | Val Accuracy 0.1995 | Test Accuracy 0.2004 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0087/1000| Loss 0.2567 | Train Accuracy 0.1846 | Val Accuracy 0.1853 | Test Accuracy 0.1859 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0088/1000| Loss 0.2575 | Train Accuracy 0.1963 | Val Accuracy 0.1967 | Test Accuracy 0.1978 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0089/1000| Loss 0.2566 | Train Accuracy 0.2237 | Val Accuracy 0.2237 | Test Accuracy 0.2258 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0090/1000| Loss 0.2567 | Train Accuracy 0.2107 | Val Accuracy 0.2107 | Test Accuracy 0.2126 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0091/1000| Loss 0.2556 | Train Accuracy 0.1844 | Val Accuracy 0.1850 | Test Accuracy 0.1857 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0092/1000| Loss 0.2559 | Train Accuracy 0.1932 | Val Accuracy 0.1936 | Test Accuracy 0.1946 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0093/1000| Loss 0.2553 | Train Accuracy 0.2269 | Val Accuracy 0.2270 | Test Accuracy 0.2290 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0094/1000| Loss 0.2558 | Train Accuracy 0.2090 | Val Accuracy 0.2094 | Test Accuracy 0.2107 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0095/1000| Loss 0.2546 | Train Accuracy 0.1935 | Val Accuracy 0.1938 | Test Accuracy 0.1948 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0096/1000| Loss 0.2555 | Train Accuracy 0.2133 | Val Accuracy 0.2136 | Test Accuracy 0.2151 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0097/1000| Loss 0.2544 | Train Accuracy 0.2214 | Val Accuracy 0.2215 | Test Accuracy 0.2234 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0098/1000| Loss 0.2548 | Train Accuracy 0.1914 | Val Accuracy 0.1918 | Test Accuracy 0.1928 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0099/1000| Loss 0.2548 | Train Accuracy 0.1962 | Val Accuracy 0.1966 | Test Accuracy 0.1979 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0100: Avg Forward 58.386ms, Avg Backward 24.590ms, Total per epoch 82.975ms
+Epoch 0100/1000| Loss 0.2544 | Train Accuracy 0.2195 | Val Accuracy 0.2198 | Test Accuracy 0.2215 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0101/1000| Loss 0.2548 | Train Accuracy 0.2071 | Val Accuracy 0.2074 | Test Accuracy 0.2089 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0102/1000| Loss 0.2541 | Train Accuracy 0.1946 | Val Accuracy 0.1949 | Test Accuracy 0.1961 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0103/1000| Loss 0.2551 | Train Accuracy 0.2347 | Val Accuracy 0.2347 | Test Accuracy 0.2369 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0104/1000| Loss 0.2550 | Train Accuracy 0.2081 | Val Accuracy 0.2085 | Test Accuracy 0.2100 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0105/1000| Loss 0.2536 | Train Accuracy 0.1841 | Val Accuracy 0.1845 | Test Accuracy 0.1856 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0106/1000| Loss 0.2547 | Train Accuracy 0.2020 | Val Accuracy 0.2025 | Test Accuracy 0.2038 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0107/1000| Loss 0.2536 | Train Accuracy 0.2320 | Val Accuracy 0.2321 | Test Accuracy 0.2340 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0108/1000| Loss 0.2550 | Train Accuracy 0.2066 | Val Accuracy 0.2069 | Test Accuracy 0.2083 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0109/1000| Loss 0.2538 | Train Accuracy 0.2014 | Val Accuracy 0.2017 | Test Accuracy 0.2030 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0110/1000| Loss 0.2542 | Train Accuracy 0.2295 | Val Accuracy 0.2296 | Test Accuracy 0.2315 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0111/1000| Loss 0.2540 | Train Accuracy 0.2214 | Val Accuracy 0.2216 | Test Accuracy 0.2234 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0112/1000| Loss 0.2534 | Train Accuracy 0.1911 | Val Accuracy 0.1916 | Test Accuracy 0.1929 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0113/1000| Loss 0.2539 | Train Accuracy 0.2108 | Val Accuracy 0.2111 | Test Accuracy 0.2126 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0114/1000| Loss 0.2528 | Train Accuracy 0.2174 | Val Accuracy 0.2176 | Test Accuracy 0.2193 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0115/1000| Loss 0.2529 | Train Accuracy 0.1882 | Val Accuracy 0.1889 | Test Accuracy 0.1900 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0116/1000| Loss 0.2538 | Train Accuracy 0.2446 | Val Accuracy 0.2444 | Test Accuracy 0.2468 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0117/1000| Loss 0.2546 | Train Accuracy 0.2011 | Val Accuracy 0.2016 | Test Accuracy 0.2026 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0118/1000| Loss 0.2537 | Train Accuracy 0.2034 | Val Accuracy 0.2038 | Test Accuracy 0.2049 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0119/1000| Loss 0.2536 | Train Accuracy 0.2357 | Val Accuracy 0.2356 | Test Accuracy 0.2377 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0120: Avg Forward 58.268ms, Avg Backward 24.588ms, Total per epoch 82.856ms
+Epoch 0120/1000| Loss 0.2540 | Train Accuracy 0.2071 | Val Accuracy 0.2076 | Test Accuracy 0.2087 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0121/1000| Loss 0.2528 | Train Accuracy 0.1936 | Val Accuracy 0.1940 | Test Accuracy 0.1953 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0122/1000| Loss 0.2532 | Train Accuracy 0.2155 | Val Accuracy 0.2158 | Test Accuracy 0.2174 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0123/1000| Loss 0.2527 | Train Accuracy 0.2319 | Val Accuracy 0.2321 | Test Accuracy 0.2340 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0124/1000| Loss 0.2534 | Train Accuracy 0.1997 | Val Accuracy 0.2001 | Test Accuracy 0.2011 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0125/1000| Loss 0.2532 | Train Accuracy 0.2064 | Val Accuracy 0.2068 | Test Accuracy 0.2079 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0126/1000| Loss 0.2529 | Train Accuracy 0.2327 | Val Accuracy 0.2327 | Test Accuracy 0.2347 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0127/1000| Loss 0.2532 | Train Accuracy 0.2076 | Val Accuracy 0.2079 | Test Accuracy 0.2093 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0128/1000| Loss 0.2524 | Train Accuracy 0.1905 | Val Accuracy 0.1913 | Test Accuracy 0.1923 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0129/1000| Loss 0.2528 | Train Accuracy 0.2297 | Val Accuracy 0.2297 | Test Accuracy 0.2318 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0130/1000| Loss 0.2525 | Train Accuracy 0.2066 | Val Accuracy 0.2072 | Test Accuracy 0.2083 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0131/1000| Loss 0.2519 | Train Accuracy 0.2176 | Val Accuracy 0.2179 | Test Accuracy 0.2191 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0132/1000| Loss 0.2515 | Train Accuracy 0.2235 | Val Accuracy 0.2236 | Test Accuracy 0.2250 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0133/1000| Loss 0.2516 | Train Accuracy 0.1927 | Val Accuracy 0.1936 | Test Accuracy 0.1944 | Best val. Accuracy 0.2464 | Best test Accuracy 0.2485
+Epoch 0134/1000| Loss 0.2527 | Train Accuracy 0.3279 | Val Accuracy 0.3269 | Test Accuracy 0.3291 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0135/1000| Loss 0.2829 | Train Accuracy 0.1487 | Val Accuracy 0.1493 | Test Accuracy 0.1494 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0136/1000| Loss 0.2694 | Train Accuracy 0.1420 | Val Accuracy 0.1426 | Test Accuracy 0.1426 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0137/1000| Loss 0.2810 | Train Accuracy 0.1420 | Val Accuracy 0.1427 | Test Accuracy 0.1429 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0138/1000| Loss 0.2703 | Train Accuracy 0.1450 | Val Accuracy 0.1458 | Test Accuracy 0.1470 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0139/1000| Loss 0.2650 | Train Accuracy 0.1617 | Val Accuracy 0.1625 | Test Accuracy 0.1643 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0140: Avg Forward 58.174ms, Avg Backward 24.587ms, Total per epoch 82.761ms
+Epoch 0140/1000| Loss 0.2698 | Train Accuracy 0.1603 | Val Accuracy 0.1612 | Test Accuracy 0.1627 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0141/1000| Loss 0.2696 | Train Accuracy 0.1464 | Val Accuracy 0.1473 | Test Accuracy 0.1483 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0142/1000| Loss 0.2653 | Train Accuracy 0.1447 | Val Accuracy 0.1454 | Test Accuracy 0.1459 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0143/1000| Loss 0.2641 | Train Accuracy 0.1541 | Val Accuracy 0.1547 | Test Accuracy 0.1551 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0144/1000| Loss 0.2639 | Train Accuracy 0.1833 | Val Accuracy 0.1842 | Test Accuracy 0.1847 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0145/1000| Loss 0.2642 | Train Accuracy 0.2163 | Val Accuracy 0.2167 | Test Accuracy 0.2178 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0146/1000| Loss 0.2614 | Train Accuracy 0.2164 | Val Accuracy 0.2167 | Test Accuracy 0.2179 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0147/1000| Loss 0.2581 | Train Accuracy 0.2044 | Val Accuracy 0.2049 | Test Accuracy 0.2058 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0148/1000| Loss 0.2569 | Train Accuracy 0.2184 | Val Accuracy 0.2186 | Test Accuracy 0.2199 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0149/1000| Loss 0.2580 | Train Accuracy 0.2094 | Val Accuracy 0.2098 | Test Accuracy 0.2106 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0150/1000| Loss 0.2567 | Train Accuracy 0.2089 | Val Accuracy 0.2094 | Test Accuracy 0.2099 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0151/1000| Loss 0.2570 | Train Accuracy 0.2400 | Val Accuracy 0.2400 | Test Accuracy 0.2419 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0152/1000| Loss 0.2573 | Train Accuracy 0.2179 | Val Accuracy 0.2186 | Test Accuracy 0.2196 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0153/1000| Loss 0.2555 | Train Accuracy 0.2023 | Val Accuracy 0.2030 | Test Accuracy 0.2037 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0154/1000| Loss 0.2560 | Train Accuracy 0.2095 | Val Accuracy 0.2101 | Test Accuracy 0.2111 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0155/1000| Loss 0.2552 | Train Accuracy 0.2202 | Val Accuracy 0.2207 | Test Accuracy 0.2223 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0156/1000| Loss 0.2553 | Train Accuracy 0.2039 | Val Accuracy 0.2043 | Test Accuracy 0.2053 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0157/1000| Loss 0.2551 | Train Accuracy 0.2144 | Val Accuracy 0.2148 | Test Accuracy 0.2161 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0158/1000| Loss 0.2553 | Train Accuracy 0.2177 | Val Accuracy 0.2181 | Test Accuracy 0.2196 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0159/1000| Loss 0.2551 | Train Accuracy 0.2018 | Val Accuracy 0.2021 | Test Accuracy 0.2028 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0160: Avg Forward 58.255ms, Avg Backward 24.587ms, Total per epoch 82.842ms
+Epoch 0160/1000| Loss 0.2546 | Train Accuracy 0.2047 | Val Accuracy 0.2049 | Test Accuracy 0.2058 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0161/1000| Loss 0.2543 | Train Accuracy 0.2054 | Val Accuracy 0.2055 | Test Accuracy 0.2066 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0162/1000| Loss 0.2547 | Train Accuracy 0.1737 | Val Accuracy 0.1744 | Test Accuracy 0.1746 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0163/1000| Loss 0.2609 | Train Accuracy 0.2710 | Val Accuracy 0.2703 | Test Accuracy 0.2723 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0164/1000| Loss 0.2677 | Train Accuracy 0.1747 | Val Accuracy 0.1759 | Test Accuracy 0.1764 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0165/1000| Loss 0.2558 | Train Accuracy 0.1457 | Val Accuracy 0.1463 | Test Accuracy 0.1464 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0166/1000| Loss 0.2619 | Train Accuracy 0.1428 | Val Accuracy 0.1435 | Test Accuracy 0.1434 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0167/1000| Loss 0.2635 | Train Accuracy 0.1432 | Val Accuracy 0.1438 | Test Accuracy 0.1441 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0168/1000| Loss 0.2619 | Train Accuracy 0.1469 | Val Accuracy 0.1477 | Test Accuracy 0.1481 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0169/1000| Loss 0.2616 | Train Accuracy 0.1633 | Val Accuracy 0.1639 | Test Accuracy 0.1647 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0170/1000| Loss 0.2624 | Train Accuracy 0.1833 | Val Accuracy 0.1841 | Test Accuracy 0.1846 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0171/1000| Loss 0.2618 | Train Accuracy 0.1830 | Val Accuracy 0.1834 | Test Accuracy 0.1843 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0172/1000| Loss 0.2596 | Train Accuracy 0.1919 | Val Accuracy 0.1927 | Test Accuracy 0.1931 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0173/1000| Loss 0.2581 | Train Accuracy 0.2258 | Val Accuracy 0.2259 | Test Accuracy 0.2274 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0174/1000| Loss 0.2582 | Train Accuracy 0.2154 | Val Accuracy 0.2155 | Test Accuracy 0.2164 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0175/1000| Loss 0.2570 | Train Accuracy 0.2324 | Val Accuracy 0.2328 | Test Accuracy 0.2338 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0176/1000| Loss 0.2563 | Train Accuracy 0.2344 | Val Accuracy 0.2347 | Test Accuracy 0.2359 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0177/1000| Loss 0.2559 | Train Accuracy 0.2223 | Val Accuracy 0.2226 | Test Accuracy 0.2233 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0178/1000| Loss 0.2560 | Train Accuracy 0.2243 | Val Accuracy 0.2245 | Test Accuracy 0.2257 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0179/1000| Loss 0.2550 | Train Accuracy 0.2223 | Val Accuracy 0.2225 | Test Accuracy 0.2241 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0180: Avg Forward 58.222ms, Avg Backward 24.585ms, Total per epoch 82.807ms
+Epoch 0180/1000| Loss 0.2550 | Train Accuracy 0.2103 | Val Accuracy 0.2106 | Test Accuracy 0.2116 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0181/1000| Loss 0.2544 | Train Accuracy 0.2081 | Val Accuracy 0.2082 | Test Accuracy 0.2095 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0182/1000| Loss 0.2540 | Train Accuracy 0.2140 | Val Accuracy 0.2140 | Test Accuracy 0.2156 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0183/1000| Loss 0.2541 | Train Accuracy 0.2160 | Val Accuracy 0.2161 | Test Accuracy 0.2178 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0184/1000| Loss 0.2539 | Train Accuracy 0.2062 | Val Accuracy 0.2065 | Test Accuracy 0.2077 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0185/1000| Loss 0.2536 | Train Accuracy 0.2062 | Val Accuracy 0.2064 | Test Accuracy 0.2078 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0186/1000| Loss 0.2536 | Train Accuracy 0.2147 | Val Accuracy 0.2149 | Test Accuracy 0.2164 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0187/1000| Loss 0.2534 | Train Accuracy 0.2120 | Val Accuracy 0.2123 | Test Accuracy 0.2139 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0188/1000| Loss 0.2534 | Train Accuracy 0.2092 | Val Accuracy 0.2096 | Test Accuracy 0.2109 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0189/1000| Loss 0.2533 | Train Accuracy 0.2119 | Val Accuracy 0.2121 | Test Accuracy 0.2134 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0190/1000| Loss 0.2534 | Train Accuracy 0.2055 | Val Accuracy 0.2059 | Test Accuracy 0.2073 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0191/1000| Loss 0.2534 | Train Accuracy 0.2166 | Val Accuracy 0.2168 | Test Accuracy 0.2184 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0192/1000| Loss 0.2528 | Train Accuracy 0.2080 | Val Accuracy 0.2083 | Test Accuracy 0.2095 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0193/1000| Loss 0.2531 | Train Accuracy 0.2235 | Val Accuracy 0.2233 | Test Accuracy 0.2256 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0194/1000| Loss 0.2530 | Train Accuracy 0.1986 | Val Accuracy 0.1988 | Test Accuracy 0.2000 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0195/1000| Loss 0.2529 | Train Accuracy 0.2062 | Val Accuracy 0.2065 | Test Accuracy 0.2079 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0196/1000| Loss 0.2523 | Train Accuracy 0.2119 | Val Accuracy 0.2120 | Test Accuracy 0.2134 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0197/1000| Loss 0.2522 | Train Accuracy 0.1837 | Val Accuracy 0.1844 | Test Accuracy 0.1853 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0198/1000| Loss 0.2533 | Train Accuracy 0.2396 | Val Accuracy 0.2393 | Test Accuracy 0.2416 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0199/1000| Loss 0.2551 | Train Accuracy 0.1972 | Val Accuracy 0.1976 | Test Accuracy 0.1986 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0200: Avg Forward 58.155ms, Avg Backward 24.584ms, Total per epoch 82.739ms
+Epoch 0200/1000| Loss 0.2522 | Train Accuracy 0.1862 | Val Accuracy 0.1866 | Test Accuracy 0.1875 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0201/1000| Loss 0.2539 | Train Accuracy 0.2086 | Val Accuracy 0.2091 | Test Accuracy 0.2100 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0202/1000| Loss 0.2525 | Train Accuracy 0.2411 | Val Accuracy 0.2409 | Test Accuracy 0.2432 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0203/1000| Loss 0.2539 | Train Accuracy 0.2119 | Val Accuracy 0.2123 | Test Accuracy 0.2133 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0204/1000| Loss 0.2518 | Train Accuracy 0.1928 | Val Accuracy 0.1934 | Test Accuracy 0.1940 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0205/1000| Loss 0.2534 | Train Accuracy 0.2059 | Val Accuracy 0.2064 | Test Accuracy 0.2073 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0206/1000| Loss 0.2522 | Train Accuracy 0.2333 | Val Accuracy 0.2332 | Test Accuracy 0.2353 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0207/1000| Loss 0.2525 | Train Accuracy 0.2251 | Val Accuracy 0.2251 | Test Accuracy 0.2269 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0208/1000| Loss 0.2521 | Train Accuracy 0.1968 | Val Accuracy 0.1974 | Test Accuracy 0.1981 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0209/1000| Loss 0.2534 | Train Accuracy 0.2084 | Val Accuracy 0.2087 | Test Accuracy 0.2096 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0210/1000| Loss 0.2517 | Train Accuracy 0.2337 | Val Accuracy 0.2336 | Test Accuracy 0.2358 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0211/1000| Loss 0.2523 | Train Accuracy 0.2237 | Val Accuracy 0.2238 | Test Accuracy 0.2256 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0212/1000| Loss 0.2514 | Train Accuracy 0.2072 | Val Accuracy 0.2075 | Test Accuracy 0.2084 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0213/1000| Loss 0.2517 | Train Accuracy 0.2158 | Val Accuracy 0.2161 | Test Accuracy 0.2175 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0214/1000| Loss 0.2515 | Train Accuracy 0.2344 | Val Accuracy 0.2342 | Test Accuracy 0.2366 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0215/1000| Loss 0.2518 | Train Accuracy 0.2283 | Val Accuracy 0.2280 | Test Accuracy 0.2302 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0216/1000| Loss 0.2515 | Train Accuracy 0.2116 | Val Accuracy 0.2117 | Test Accuracy 0.2130 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0217/1000| Loss 0.2519 | Train Accuracy 0.2176 | Val Accuracy 0.2177 | Test Accuracy 0.2194 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0218/1000| Loss 0.2511 | Train Accuracy 0.2313 | Val Accuracy 0.2308 | Test Accuracy 0.2333 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0219/1000| Loss 0.2513 | Train Accuracy 0.2187 | Val Accuracy 0.2188 | Test Accuracy 0.2204 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0220: Avg Forward 58.107ms, Avg Backward 24.583ms, Total per epoch 82.690ms
+Epoch 0220/1000| Loss 0.2512 | Train Accuracy 0.2109 | Val Accuracy 0.2110 | Test Accuracy 0.2124 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0221/1000| Loss 0.2513 | Train Accuracy 0.2212 | Val Accuracy 0.2212 | Test Accuracy 0.2228 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0222/1000| Loss 0.2507 | Train Accuracy 0.2293 | Val Accuracy 0.2289 | Test Accuracy 0.2312 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0223/1000| Loss 0.2509 | Train Accuracy 0.1813 | Val Accuracy 0.1823 | Test Accuracy 0.1829 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0224/1000| Loss 0.2562 | Train Accuracy 0.2965 | Val Accuracy 0.2954 | Test Accuracy 0.2981 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0225/1000| Loss 0.2646 | Train Accuracy 0.1787 | Val Accuracy 0.1795 | Test Accuracy 0.1804 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0226/1000| Loss 0.2533 | Train Accuracy 0.1535 | Val Accuracy 0.1541 | Test Accuracy 0.1544 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0227/1000| Loss 0.2611 | Train Accuracy 0.1554 | Val Accuracy 0.1562 | Test Accuracy 0.1566 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0228/1000| Loss 0.2581 | Train Accuracy 0.1764 | Val Accuracy 0.1775 | Test Accuracy 0.1785 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0229/1000| Loss 0.2546 | Train Accuracy 0.2234 | Val Accuracy 0.2240 | Test Accuracy 0.2254 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0230/1000| Loss 0.2571 | Train Accuracy 0.2436 | Val Accuracy 0.2435 | Test Accuracy 0.2453 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0231/1000| Loss 0.2582 | Train Accuracy 0.2162 | Val Accuracy 0.2170 | Test Accuracy 0.2180 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0232/1000| Loss 0.2551 | Train Accuracy 0.1925 | Val Accuracy 0.1935 | Test Accuracy 0.1940 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0233/1000| Loss 0.2548 | Train Accuracy 0.1897 | Val Accuracy 0.1907 | Test Accuracy 0.1910 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0234/1000| Loss 0.2557 | Train Accuracy 0.2025 | Val Accuracy 0.2032 | Test Accuracy 0.2040 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0235/1000| Loss 0.2561 | Train Accuracy 0.2283 | Val Accuracy 0.2287 | Test Accuracy 0.2301 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0236/1000| Loss 0.2546 | Train Accuracy 0.2557 | Val Accuracy 0.2550 | Test Accuracy 0.2576 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0237/1000| Loss 0.2552 | Train Accuracy 0.2385 | Val Accuracy 0.2383 | Test Accuracy 0.2404 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0238/1000| Loss 0.2533 | Train Accuracy 0.1448 | Val Accuracy 0.1456 | Test Accuracy 0.1451 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0239/1000| Loss 0.2702 | Train Accuracy 0.2697 | Val Accuracy 0.2687 | Test Accuracy 0.2716 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0240: Avg Forward 58.050ms, Avg Backward 24.582ms, Total per epoch 82.633ms
+Epoch 0240/1000| Loss 0.2574 | Train Accuracy 0.2298 | Val Accuracy 0.2299 | Test Accuracy 0.2313 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0241/1000| Loss 0.2541 | Train Accuracy 0.1795 | Val Accuracy 0.1804 | Test Accuracy 0.1807 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0242/1000| Loss 0.2544 | Train Accuracy 0.1721 | Val Accuracy 0.1729 | Test Accuracy 0.1733 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0243/1000| Loss 0.2558 | Train Accuracy 0.1821 | Val Accuracy 0.1829 | Test Accuracy 0.1836 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0244/1000| Loss 0.2545 | Train Accuracy 0.2092 | Val Accuracy 0.2097 | Test Accuracy 0.2107 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0245/1000| Loss 0.2535 | Train Accuracy 0.2399 | Val Accuracy 0.2396 | Test Accuracy 0.2415 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0246/1000| Loss 0.2553 | Train Accuracy 0.2119 | Val Accuracy 0.2121 | Test Accuracy 0.2132 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0247/1000| Loss 0.2528 | Train Accuracy 0.1823 | Val Accuracy 0.1831 | Test Accuracy 0.1832 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0248/1000| Loss 0.2534 | Train Accuracy 0.1889 | Val Accuracy 0.1897 | Test Accuracy 0.1900 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0249/1000| Loss 0.2527 | Train Accuracy 0.2193 | Val Accuracy 0.2195 | Test Accuracy 0.2206 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0250/1000| Loss 0.2520 | Train Accuracy 0.2378 | Val Accuracy 0.2376 | Test Accuracy 0.2395 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0251/1000| Loss 0.2527 | Train Accuracy 0.2197 | Val Accuracy 0.2199 | Test Accuracy 0.2209 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0252/1000| Loss 0.2513 | Train Accuracy 0.2043 | Val Accuracy 0.2049 | Test Accuracy 0.2054 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0253/1000| Loss 0.2520 | Train Accuracy 0.2247 | Val Accuracy 0.2247 | Test Accuracy 0.2260 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0254/1000| Loss 0.2514 | Train Accuracy 0.2478 | Val Accuracy 0.2471 | Test Accuracy 0.2493 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0255/1000| Loss 0.2522 | Train Accuracy 0.2183 | Val Accuracy 0.2184 | Test Accuracy 0.2197 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0256/1000| Loss 0.2514 | Train Accuracy 0.2096 | Val Accuracy 0.2099 | Test Accuracy 0.2110 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0257/1000| Loss 0.2516 | Train Accuracy 0.2366 | Val Accuracy 0.2360 | Test Accuracy 0.2378 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0258/1000| Loss 0.2517 | Train Accuracy 0.2290 | Val Accuracy 0.2285 | Test Accuracy 0.2301 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0259/1000| Loss 0.2511 | Train Accuracy 0.2011 | Val Accuracy 0.2012 | Test Accuracy 0.2025 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0260: Avg Forward 57.945ms, Avg Backward 24.582ms, Total per epoch 82.527ms
+Epoch 0260/1000| Loss 0.2514 | Train Accuracy 0.2422 | Val Accuracy 0.2414 | Test Accuracy 0.2434 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0261/1000| Loss 0.2519 | Train Accuracy 0.2122 | Val Accuracy 0.2121 | Test Accuracy 0.2136 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0262/1000| Loss 0.2512 | Train Accuracy 0.2049 | Val Accuracy 0.2050 | Test Accuracy 0.2062 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0263/1000| Loss 0.2511 | Train Accuracy 0.2380 | Val Accuracy 0.2370 | Test Accuracy 0.2392 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0264/1000| Loss 0.2511 | Train Accuracy 0.2209 | Val Accuracy 0.2205 | Test Accuracy 0.2221 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0265/1000| Loss 0.2505 | Train Accuracy 0.2063 | Val Accuracy 0.2064 | Test Accuracy 0.2076 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0266/1000| Loss 0.2508 | Train Accuracy 0.2167 | Val Accuracy 0.2165 | Test Accuracy 0.2180 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0267/1000| Loss 0.2502 | Train Accuracy 0.2288 | Val Accuracy 0.2280 | Test Accuracy 0.2301 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0268/1000| Loss 0.2507 | Train Accuracy 0.2170 | Val Accuracy 0.2166 | Test Accuracy 0.2184 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0269/1000| Loss 0.2501 | Train Accuracy 0.2152 | Val Accuracy 0.2151 | Test Accuracy 0.2165 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0270/1000| Loss 0.2506 | Train Accuracy 0.2308 | Val Accuracy 0.2302 | Test Accuracy 0.2324 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0271/1000| Loss 0.2503 | Train Accuracy 0.2344 | Val Accuracy 0.2337 | Test Accuracy 0.2360 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0272/1000| Loss 0.2500 | Train Accuracy 0.2156 | Val Accuracy 0.2156 | Test Accuracy 0.2170 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0273/1000| Loss 0.2502 | Train Accuracy 0.2240 | Val Accuracy 0.2239 | Test Accuracy 0.2254 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0274/1000| Loss 0.2498 | Train Accuracy 0.2360 | Val Accuracy 0.2349 | Test Accuracy 0.2375 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0275/1000| Loss 0.2498 | Train Accuracy 0.2084 | Val Accuracy 0.2081 | Test Accuracy 0.2100 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0276/1000| Loss 0.2501 | Train Accuracy 0.2396 | Val Accuracy 0.2386 | Test Accuracy 0.2409 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0277/1000| Loss 0.2494 | Train Accuracy 0.2281 | Val Accuracy 0.2277 | Test Accuracy 0.2294 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0278/1000| Loss 0.2490 | Train Accuracy 0.2216 | Val Accuracy 0.2212 | Test Accuracy 0.2229 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0279/1000| Loss 0.2490 | Train Accuracy 0.2585 | Val Accuracy 0.2576 | Test Accuracy 0.2602 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0280: Avg Forward 57.908ms, Avg Backward 24.582ms, Total per epoch 82.490ms
+Epoch 0280/1000| Loss 0.2499 | Train Accuracy 0.1955 | Val Accuracy 0.1959 | Test Accuracy 0.1969 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0281/1000| Loss 0.2514 | Train Accuracy 0.2768 | Val Accuracy 0.2760 | Test Accuracy 0.2787 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0282/1000| Loss 0.2517 | Train Accuracy 0.2194 | Val Accuracy 0.2188 | Test Accuracy 0.2207 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0283/1000| Loss 0.2495 | Train Accuracy 0.2054 | Val Accuracy 0.2053 | Test Accuracy 0.2068 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0284/1000| Loss 0.2501 | Train Accuracy 0.2425 | Val Accuracy 0.2414 | Test Accuracy 0.2440 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0285/1000| Loss 0.2496 | Train Accuracy 0.2441 | Val Accuracy 0.2431 | Test Accuracy 0.2455 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0286/1000| Loss 0.2499 | Train Accuracy 0.2078 | Val Accuracy 0.2079 | Test Accuracy 0.2093 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0287/1000| Loss 0.2499 | Train Accuracy 0.2140 | Val Accuracy 0.2139 | Test Accuracy 0.2154 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0288/1000| Loss 0.2498 | Train Accuracy 0.2463 | Val Accuracy 0.2454 | Test Accuracy 0.2482 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0289/1000| Loss 0.2493 | Train Accuracy 0.2519 | Val Accuracy 0.2509 | Test Accuracy 0.2539 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0290/1000| Loss 0.2493 | Train Accuracy 0.2202 | Val Accuracy 0.2198 | Test Accuracy 0.2220 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0291/1000| Loss 0.2489 | Train Accuracy 0.2129 | Val Accuracy 0.2127 | Test Accuracy 0.2145 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0292/1000| Loss 0.2489 | Train Accuracy 0.2357 | Val Accuracy 0.2349 | Test Accuracy 0.2372 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0293/1000| Loss 0.2487 | Train Accuracy 0.2440 | Val Accuracy 0.2430 | Test Accuracy 0.2459 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0294/1000| Loss 0.2486 | Train Accuracy 0.2207 | Val Accuracy 0.2200 | Test Accuracy 0.2220 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0295/1000| Loss 0.2488 | Train Accuracy 0.2308 | Val Accuracy 0.2303 | Test Accuracy 0.2323 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0296/1000| Loss 0.2481 | Train Accuracy 0.2632 | Val Accuracy 0.2621 | Test Accuracy 0.2651 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0297/1000| Loss 0.2489 | Train Accuracy 0.2264 | Val Accuracy 0.2258 | Test Accuracy 0.2278 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0298/1000| Loss 0.2483 | Train Accuracy 0.2338 | Val Accuracy 0.2333 | Test Accuracy 0.2352 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0299/1000| Loss 0.2478 | Train Accuracy 0.2554 | Val Accuracy 0.2545 | Test Accuracy 0.2571 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0300: Avg Forward 57.851ms, Avg Backward 24.583ms, Total per epoch 82.434ms
+Epoch 0300/1000| Loss 0.2485 | Train Accuracy 0.2244 | Val Accuracy 0.2238 | Test Accuracy 0.2259 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0301/1000| Loss 0.2479 | Train Accuracy 0.2209 | Val Accuracy 0.2202 | Test Accuracy 0.2223 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0302/1000| Loss 0.2475 | Train Accuracy 0.2519 | Val Accuracy 0.2511 | Test Accuracy 0.2535 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0303/1000| Loss 0.2481 | Train Accuracy 0.2308 | Val Accuracy 0.2300 | Test Accuracy 0.2321 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0304/1000| Loss 0.2471 | Train Accuracy 0.2284 | Val Accuracy 0.2276 | Test Accuracy 0.2298 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0305/1000| Loss 0.2474 | Train Accuracy 0.2557 | Val Accuracy 0.2548 | Test Accuracy 0.2574 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0306/1000| Loss 0.2477 | Train Accuracy 0.2292 | Val Accuracy 0.2283 | Test Accuracy 0.2305 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0307/1000| Loss 0.2472 | Train Accuracy 0.2288 | Val Accuracy 0.2279 | Test Accuracy 0.2301 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0308/1000| Loss 0.2470 | Train Accuracy 0.2555 | Val Accuracy 0.2543 | Test Accuracy 0.2570 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0309/1000| Loss 0.2476 | Train Accuracy 0.2060 | Val Accuracy 0.2057 | Test Accuracy 0.2071 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0310/1000| Loss 0.2492 | Train Accuracy 0.2713 | Val Accuracy 0.2703 | Test Accuracy 0.2733 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0311/1000| Loss 0.2486 | Train Accuracy 0.2326 | Val Accuracy 0.2316 | Test Accuracy 0.2338 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0312/1000| Loss 0.2468 | Train Accuracy 0.2028 | Val Accuracy 0.2025 | Test Accuracy 0.2041 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0313/1000| Loss 0.2481 | Train Accuracy 0.2332 | Val Accuracy 0.2324 | Test Accuracy 0.2346 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0314/1000| Loss 0.2470 | Train Accuracy 0.2696 | Val Accuracy 0.2686 | Test Accuracy 0.2717 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0315/1000| Loss 0.2479 | Train Accuracy 0.2283 | Val Accuracy 0.2275 | Test Accuracy 0.2295 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0316/1000| Loss 0.2471 | Train Accuracy 0.2223 | Val Accuracy 0.2216 | Test Accuracy 0.2236 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0317/1000| Loss 0.2471 | Train Accuracy 0.2544 | Val Accuracy 0.2535 | Test Accuracy 0.2559 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0318/1000| Loss 0.2469 | Train Accuracy 0.2521 | Val Accuracy 0.2512 | Test Accuracy 0.2534 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0319/1000| Loss 0.2469 | Train Accuracy 0.2198 | Val Accuracy 0.2191 | Test Accuracy 0.2208 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0320: Avg Forward 57.851ms, Avg Backward 24.582ms, Total per epoch 82.434ms
+Epoch 0320/1000| Loss 0.2465 | Train Accuracy 0.2336 | Val Accuracy 0.2326 | Test Accuracy 0.2348 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0321/1000| Loss 0.2462 | Train Accuracy 0.2685 | Val Accuracy 0.2675 | Test Accuracy 0.2706 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0322/1000| Loss 0.2471 | Train Accuracy 0.2342 | Val Accuracy 0.2333 | Test Accuracy 0.2352 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0323/1000| Loss 0.2463 | Train Accuracy 0.2390 | Val Accuracy 0.2381 | Test Accuracy 0.2402 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0324/1000| Loss 0.2461 | Train Accuracy 0.2744 | Val Accuracy 0.2735 | Test Accuracy 0.2765 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0325/1000| Loss 0.2471 | Train Accuracy 0.2194 | Val Accuracy 0.2187 | Test Accuracy 0.2203 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0326/1000| Loss 0.2469 | Train Accuracy 0.2460 | Val Accuracy 0.2448 | Test Accuracy 0.2471 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0327/1000| Loss 0.2458 | Train Accuracy 0.2722 | Val Accuracy 0.2712 | Test Accuracy 0.2742 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0328/1000| Loss 0.2467 | Train Accuracy 0.2229 | Val Accuracy 0.2221 | Test Accuracy 0.2238 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0329/1000| Loss 0.2465 | Train Accuracy 0.2265 | Val Accuracy 0.2257 | Test Accuracy 0.2275 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0330/1000| Loss 0.2460 | Train Accuracy 0.2687 | Val Accuracy 0.2677 | Test Accuracy 0.2702 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0331/1000| Loss 0.2467 | Train Accuracy 0.2449 | Val Accuracy 0.2440 | Test Accuracy 0.2462 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0332/1000| Loss 0.2455 | Train Accuracy 0.2212 | Val Accuracy 0.2203 | Test Accuracy 0.2220 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0333/1000| Loss 0.2464 | Train Accuracy 0.2567 | Val Accuracy 0.2557 | Test Accuracy 0.2584 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0334/1000| Loss 0.2457 | Train Accuracy 0.2743 | Val Accuracy 0.2733 | Test Accuracy 0.2760 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0335/1000| Loss 0.2466 | Train Accuracy 0.2277 | Val Accuracy 0.2268 | Test Accuracy 0.2287 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0336/1000| Loss 0.2457 | Train Accuracy 0.2248 | Val Accuracy 0.2240 | Test Accuracy 0.2257 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0337/1000| Loss 0.2457 | Train Accuracy 0.2610 | Val Accuracy 0.2600 | Test Accuracy 0.2623 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0338/1000| Loss 0.2464 | Train Accuracy 0.2382 | Val Accuracy 0.2372 | Test Accuracy 0.2390 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0339/1000| Loss 0.2454 | Train Accuracy 0.2302 | Val Accuracy 0.2294 | Test Accuracy 0.2308 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0340: Avg Forward 57.879ms, Avg Backward 24.582ms, Total per epoch 82.461ms
+Epoch 0340/1000| Loss 0.2459 | Train Accuracy 0.2673 | Val Accuracy 0.2664 | Test Accuracy 0.2688 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0341/1000| Loss 0.2456 | Train Accuracy 0.2680 | Val Accuracy 0.2671 | Test Accuracy 0.2697 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0342/1000| Loss 0.2457 | Train Accuracy 0.2189 | Val Accuracy 0.2183 | Test Accuracy 0.2198 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0343/1000| Loss 0.2467 | Train Accuracy 0.2529 | Val Accuracy 0.2518 | Test Accuracy 0.2542 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0344/1000| Loss 0.2455 | Train Accuracy 0.2599 | Val Accuracy 0.2589 | Test Accuracy 0.2612 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0345/1000| Loss 0.2459 | Train Accuracy 0.2189 | Val Accuracy 0.2180 | Test Accuracy 0.2197 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0346/1000| Loss 0.2459 | Train Accuracy 0.2417 | Val Accuracy 0.2405 | Test Accuracy 0.2427 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0347/1000| Loss 0.2452 | Train Accuracy 0.2867 | Val Accuracy 0.2855 | Test Accuracy 0.2887 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0348/1000| Loss 0.2466 | Train Accuracy 0.2278 | Val Accuracy 0.2267 | Test Accuracy 0.2285 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0349/1000| Loss 0.2460 | Train Accuracy 0.2372 | Val Accuracy 0.2362 | Test Accuracy 0.2379 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0350/1000| Loss 0.2450 | Train Accuracy 0.2807 | Val Accuracy 0.2795 | Test Accuracy 0.2823 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0351/1000| Loss 0.2465 | Train Accuracy 0.2299 | Val Accuracy 0.2289 | Test Accuracy 0.2306 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0352/1000| Loss 0.2450 | Train Accuracy 0.2221 | Val Accuracy 0.2214 | Test Accuracy 0.2228 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0353/1000| Loss 0.2454 | Train Accuracy 0.2692 | Val Accuracy 0.2681 | Test Accuracy 0.2712 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0354/1000| Loss 0.2452 | Train Accuracy 0.2638 | Val Accuracy 0.2626 | Test Accuracy 0.2654 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0355/1000| Loss 0.2450 | Train Accuracy 0.2319 | Val Accuracy 0.2308 | Test Accuracy 0.2326 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0356/1000| Loss 0.2448 | Train Accuracy 0.2460 | Val Accuracy 0.2449 | Test Accuracy 0.2471 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0357/1000| Loss 0.2446 | Train Accuracy 0.2791 | Val Accuracy 0.2780 | Test Accuracy 0.2812 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0358/1000| Loss 0.2460 | Train Accuracy 0.2333 | Val Accuracy 0.2319 | Test Accuracy 0.2339 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0359/1000| Loss 0.2448 | Train Accuracy 0.2333 | Val Accuracy 0.2322 | Test Accuracy 0.2339 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0360: Avg Forward 57.912ms, Avg Backward 24.582ms, Total per epoch 82.494ms
+Epoch 0360/1000| Loss 0.2449 | Train Accuracy 0.2769 | Val Accuracy 0.2756 | Test Accuracy 0.2787 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0361/1000| Loss 0.2451 | Train Accuracy 0.2503 | Val Accuracy 0.2491 | Test Accuracy 0.2516 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0362/1000| Loss 0.2441 | Train Accuracy 0.2395 | Val Accuracy 0.2383 | Test Accuracy 0.2403 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0363/1000| Loss 0.2446 | Train Accuracy 0.2764 | Val Accuracy 0.2752 | Test Accuracy 0.2785 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0364/1000| Loss 0.2445 | Train Accuracy 0.2621 | Val Accuracy 0.2610 | Test Accuracy 0.2637 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0365/1000| Loss 0.2443 | Train Accuracy 0.2267 | Val Accuracy 0.2256 | Test Accuracy 0.2273 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0366/1000| Loss 0.2450 | Train Accuracy 0.2594 | Val Accuracy 0.2582 | Test Accuracy 0.2607 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0367/1000| Loss 0.2440 | Train Accuracy 0.2728 | Val Accuracy 0.2714 | Test Accuracy 0.2745 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0368/1000| Loss 0.2446 | Train Accuracy 0.2307 | Val Accuracy 0.2294 | Test Accuracy 0.2313 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0369/1000| Loss 0.2448 | Train Accuracy 0.2579 | Val Accuracy 0.2567 | Test Accuracy 0.2591 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0370/1000| Loss 0.2442 | Train Accuracy 0.2920 | Val Accuracy 0.2908 | Test Accuracy 0.2938 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0371/1000| Loss 0.2456 | Train Accuracy 0.2250 | Val Accuracy 0.2238 | Test Accuracy 0.2257 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0372/1000| Loss 0.2451 | Train Accuracy 0.2397 | Val Accuracy 0.2382 | Test Accuracy 0.2405 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0373/1000| Loss 0.2441 | Train Accuracy 0.2890 | Val Accuracy 0.2876 | Test Accuracy 0.2910 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0374/1000| Loss 0.2454 | Train Accuracy 0.2346 | Val Accuracy 0.2335 | Test Accuracy 0.2351 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0375/1000| Loss 0.2443 | Train Accuracy 0.2336 | Val Accuracy 0.2324 | Test Accuracy 0.2341 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0376/1000| Loss 0.2442 | Train Accuracy 0.2795 | Val Accuracy 0.2784 | Test Accuracy 0.2814 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0377/1000| Loss 0.2447 | Train Accuracy 0.2593 | Val Accuracy 0.2582 | Test Accuracy 0.2608 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0378/1000| Loss 0.2437 | Train Accuracy 0.2465 | Val Accuracy 0.2453 | Test Accuracy 0.2477 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0379/1000| Loss 0.2436 | Train Accuracy 0.2575 | Val Accuracy 0.2564 | Test Accuracy 0.2591 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0380: Avg Forward 57.930ms, Avg Backward 24.582ms, Total per epoch 82.512ms
+Epoch 0380/1000| Loss 0.2435 | Train Accuracy 0.2690 | Val Accuracy 0.2678 | Test Accuracy 0.2707 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0381/1000| Loss 0.2438 | Train Accuracy 0.2446 | Val Accuracy 0.2434 | Test Accuracy 0.2455 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0382/1000| Loss 0.2438 | Train Accuracy 0.2524 | Val Accuracy 0.2513 | Test Accuracy 0.2535 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0383/1000| Loss 0.2434 | Train Accuracy 0.2726 | Val Accuracy 0.2713 | Test Accuracy 0.2743 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0384/1000| Loss 0.2436 | Train Accuracy 0.2535 | Val Accuracy 0.2521 | Test Accuracy 0.2547 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0385/1000| Loss 0.2435 | Train Accuracy 0.2596 | Val Accuracy 0.2584 | Test Accuracy 0.2610 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0386/1000| Loss 0.2435 | Train Accuracy 0.2810 | Val Accuracy 0.2797 | Test Accuracy 0.2826 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0387/1000| Loss 0.2437 | Train Accuracy 0.2315 | Val Accuracy 0.2304 | Test Accuracy 0.2321 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0388/1000| Loss 0.2442 | Train Accuracy 0.2947 | Val Accuracy 0.2933 | Test Accuracy 0.2965 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0389/1000| Loss 0.2446 | Train Accuracy 0.2422 | Val Accuracy 0.2408 | Test Accuracy 0.2434 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0390/1000| Loss 0.2442 | Train Accuracy 0.2614 | Val Accuracy 0.2600 | Test Accuracy 0.2632 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0391/1000| Loss 0.2434 | Train Accuracy 0.2773 | Val Accuracy 0.2761 | Test Accuracy 0.2791 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0392/1000| Loss 0.2440 | Train Accuracy 0.2339 | Val Accuracy 0.2327 | Test Accuracy 0.2346 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0393/1000| Loss 0.2437 | Train Accuracy 0.2524 | Val Accuracy 0.2510 | Test Accuracy 0.2533 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0394/1000| Loss 0.2434 | Train Accuracy 0.2914 | Val Accuracy 0.2899 | Test Accuracy 0.2930 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0395/1000| Loss 0.2446 | Train Accuracy 0.2356 | Val Accuracy 0.2344 | Test Accuracy 0.2363 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0396/1000| Loss 0.2438 | Train Accuracy 0.2390 | Val Accuracy 0.2377 | Test Accuracy 0.2399 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0397/1000| Loss 0.2436 | Train Accuracy 0.2866 | Val Accuracy 0.2852 | Test Accuracy 0.2885 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0398/1000| Loss 0.2444 | Train Accuracy 0.2458 | Val Accuracy 0.2444 | Test Accuracy 0.2466 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0399/1000| Loss 0.2436 | Train Accuracy 0.2449 | Val Accuracy 0.2436 | Test Accuracy 0.2459 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0400: Avg Forward 57.959ms, Avg Backward 24.581ms, Total per epoch 82.540ms
+Epoch 0400/1000| Loss 0.2434 | Train Accuracy 0.2856 | Val Accuracy 0.2842 | Test Accuracy 0.2875 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0401/1000| Loss 0.2435 | Train Accuracy 0.2675 | Val Accuracy 0.2663 | Test Accuracy 0.2694 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0402/1000| Loss 0.2430 | Train Accuracy 0.2403 | Val Accuracy 0.2392 | Test Accuracy 0.2411 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0403/1000| Loss 0.2435 | Train Accuracy 0.2786 | Val Accuracy 0.2777 | Test Accuracy 0.2803 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0404/1000| Loss 0.2433 | Train Accuracy 0.2722 | Val Accuracy 0.2712 | Test Accuracy 0.2738 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0405/1000| Loss 0.2429 | Train Accuracy 0.2383 | Val Accuracy 0.2370 | Test Accuracy 0.2388 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0406/1000| Loss 0.2435 | Train Accuracy 0.2748 | Val Accuracy 0.2737 | Test Accuracy 0.2768 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0407/1000| Loss 0.2430 | Train Accuracy 0.2896 | Val Accuracy 0.2883 | Test Accuracy 0.2913 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0408/1000| Loss 0.2434 | Train Accuracy 0.2330 | Val Accuracy 0.2320 | Test Accuracy 0.2339 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0409/1000| Loss 0.2437 | Train Accuracy 0.2622 | Val Accuracy 0.2607 | Test Accuracy 0.2635 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0410/1000| Loss 0.2427 | Train Accuracy 0.2893 | Val Accuracy 0.2879 | Test Accuracy 0.2911 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0411/1000| Loss 0.2436 | Train Accuracy 0.2285 | Val Accuracy 0.2274 | Test Accuracy 0.2290 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0412/1000| Loss 0.2437 | Train Accuracy 0.2549 | Val Accuracy 0.2533 | Test Accuracy 0.2557 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0413/1000| Loss 0.2428 | Train Accuracy 0.3072 | Val Accuracy 0.3058 | Test Accuracy 0.3088 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0414/1000| Loss 0.2446 | Train Accuracy 0.2468 | Val Accuracy 0.2456 | Test Accuracy 0.2477 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0415/1000| Loss 0.2426 | Train Accuracy 0.2304 | Val Accuracy 0.2293 | Test Accuracy 0.2308 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0416/1000| Loss 0.2434 | Train Accuracy 0.2768 | Val Accuracy 0.2756 | Test Accuracy 0.2785 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0417/1000| Loss 0.2430 | Train Accuracy 0.2737 | Val Accuracy 0.2726 | Test Accuracy 0.2753 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0418/1000| Loss 0.2428 | Train Accuracy 0.2417 | Val Accuracy 0.2407 | Test Accuracy 0.2426 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0419/1000| Loss 0.2431 | Train Accuracy 0.2635 | Val Accuracy 0.2623 | Test Accuracy 0.2650 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0420: Avg Forward 57.966ms, Avg Backward 24.581ms, Total per epoch 82.547ms
+Epoch 0420/1000| Loss 0.2427 | Train Accuracy 0.2975 | Val Accuracy 0.2963 | Test Accuracy 0.2993 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0421/1000| Loss 0.2434 | Train Accuracy 0.2553 | Val Accuracy 0.2542 | Test Accuracy 0.2566 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0422/1000| Loss 0.2421 | Train Accuracy 0.2420 | Val Accuracy 0.2411 | Test Accuracy 0.2429 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0423/1000| Loss 0.2428 | Train Accuracy 0.2870 | Val Accuracy 0.2860 | Test Accuracy 0.2888 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0424/1000| Loss 0.2432 | Train Accuracy 0.2711 | Val Accuracy 0.2700 | Test Accuracy 0.2729 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0425/1000| Loss 0.2422 | Train Accuracy 0.2391 | Val Accuracy 0.2381 | Test Accuracy 0.2398 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0426/1000| Loss 0.2427 | Train Accuracy 0.2694 | Val Accuracy 0.2682 | Test Accuracy 0.2711 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0427/1000| Loss 0.2420 | Train Accuracy 0.2944 | Val Accuracy 0.2930 | Test Accuracy 0.2960 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0428/1000| Loss 0.2428 | Train Accuracy 0.2555 | Val Accuracy 0.2539 | Test Accuracy 0.2565 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0429/1000| Loss 0.2421 | Train Accuracy 0.2490 | Val Accuracy 0.2477 | Test Accuracy 0.2498 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0430/1000| Loss 0.2424 | Train Accuracy 0.2865 | Val Accuracy 0.2851 | Test Accuracy 0.2883 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0431/1000| Loss 0.2426 | Train Accuracy 0.2656 | Val Accuracy 0.2643 | Test Accuracy 0.2672 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0432/1000| Loss 0.2418 | Train Accuracy 0.2538 | Val Accuracy 0.2527 | Test Accuracy 0.2547 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0433/1000| Loss 0.2422 | Train Accuracy 0.2875 | Val Accuracy 0.2863 | Test Accuracy 0.2893 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0434/1000| Loss 0.2422 | Train Accuracy 0.2779 | Val Accuracy 0.2765 | Test Accuracy 0.2797 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0435/1000| Loss 0.2418 | Train Accuracy 0.2525 | Val Accuracy 0.2513 | Test Accuracy 0.2537 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0436/1000| Loss 0.2421 | Train Accuracy 0.2738 | Val Accuracy 0.2723 | Test Accuracy 0.2754 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0437/1000| Loss 0.2417 | Train Accuracy 0.2822 | Val Accuracy 0.2806 | Test Accuracy 0.2839 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0438/1000| Loss 0.2417 | Train Accuracy 0.1881 | Val Accuracy 0.1877 | Test Accuracy 0.1890 | Best val. Accuracy 0.3269 | Best test Accuracy 0.3291
+Epoch 0439/1000| Loss 0.2485 | Train Accuracy 0.3607 | Val Accuracy 0.3600 | Test Accuracy 0.3627 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0440: Avg Forward 57.967ms, Avg Backward 24.581ms, Total per epoch 82.548ms
+Epoch 0440/1000| Loss 0.2675 | Train Accuracy 0.0995 | Val Accuracy 0.1000 | Test Accuracy 0.1000 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0441/1000| Loss 0.2655 | Train Accuracy 0.1763 | Val Accuracy 0.1770 | Test Accuracy 0.1771 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0442/1000| Loss 0.2504 | Train Accuracy 0.2636 | Val Accuracy 0.2632 | Test Accuracy 0.2646 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0443/1000| Loss 0.2547 | Train Accuracy 0.2679 | Val Accuracy 0.2678 | Test Accuracy 0.2690 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0444/1000| Loss 0.2570 | Train Accuracy 0.1990 | Val Accuracy 0.1991 | Test Accuracy 0.2000 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0445/1000| Loss 0.2522 | Train Accuracy 0.2426 | Val Accuracy 0.2413 | Test Accuracy 0.2435 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0446/1000| Loss 0.2520 | Train Accuracy 0.2220 | Val Accuracy 0.2208 | Test Accuracy 0.2228 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0447/1000| Loss 0.2533 | Train Accuracy 0.1960 | Val Accuracy 0.1954 | Test Accuracy 0.1968 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0448/1000| Loss 0.2538 | Train Accuracy 0.2205 | Val Accuracy 0.2198 | Test Accuracy 0.2212 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0449/1000| Loss 0.2529 | Train Accuracy 0.3038 | Val Accuracy 0.3026 | Test Accuracy 0.3048 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0450/1000| Loss 0.2577 | Train Accuracy 0.1738 | Val Accuracy 0.1744 | Test Accuracy 0.1741 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0451/1000| Loss 0.2584 | Train Accuracy 0.1890 | Val Accuracy 0.1895 | Test Accuracy 0.1897 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0452/1000| Loss 0.2541 | Train Accuracy 0.2960 | Val Accuracy 0.2951 | Test Accuracy 0.2975 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0453/1000| Loss 0.2558 | Train Accuracy 0.2404 | Val Accuracy 0.2404 | Test Accuracy 0.2414 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0454/1000| Loss 0.2514 | Train Accuracy 0.1879 | Val Accuracy 0.1887 | Test Accuracy 0.1886 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0455/1000| Loss 0.2532 | Train Accuracy 0.1893 | Val Accuracy 0.1899 | Test Accuracy 0.1897 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0456/1000| Loss 0.2533 | Train Accuracy 0.2400 | Val Accuracy 0.2397 | Test Accuracy 0.2413 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0457/1000| Loss 0.2504 | Train Accuracy 0.2811 | Val Accuracy 0.2806 | Test Accuracy 0.2830 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0458/1000| Loss 0.2530 | Train Accuracy 0.2292 | Val Accuracy 0.2284 | Test Accuracy 0.2298 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0459/1000| Loss 0.2498 | Train Accuracy 0.1989 | Val Accuracy 0.1993 | Test Accuracy 0.1993 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0460: Avg Forward 58.022ms, Avg Backward 24.581ms, Total per epoch 82.603ms
+Epoch 0460/1000| Loss 0.2522 | Train Accuracy 0.2220 | Val Accuracy 0.2218 | Test Accuracy 0.2228 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0461/1000| Loss 0.2498 | Train Accuracy 0.2781 | Val Accuracy 0.2775 | Test Accuracy 0.2798 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0462/1000| Loss 0.2514 | Train Accuracy 0.2453 | Val Accuracy 0.2444 | Test Accuracy 0.2462 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0463/1000| Loss 0.2488 | Train Accuracy 0.2098 | Val Accuracy 0.2096 | Test Accuracy 0.2104 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0464/1000| Loss 0.2497 | Train Accuracy 0.2304 | Val Accuracy 0.2299 | Test Accuracy 0.2312 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0465/1000| Loss 0.2487 | Train Accuracy 0.2702 | Val Accuracy 0.2691 | Test Accuracy 0.2713 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0466/1000| Loss 0.2496 | Train Accuracy 0.2365 | Val Accuracy 0.2359 | Test Accuracy 0.2370 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0467/1000| Loss 0.2480 | Train Accuracy 0.2209 | Val Accuracy 0.2206 | Test Accuracy 0.2216 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0468/1000| Loss 0.2485 | Train Accuracy 0.2485 | Val Accuracy 0.2479 | Test Accuracy 0.2493 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0469/1000| Loss 0.2476 | Train Accuracy 0.2677 | Val Accuracy 0.2667 | Test Accuracy 0.2691 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0470/1000| Loss 0.2482 | Train Accuracy 0.2357 | Val Accuracy 0.2349 | Test Accuracy 0.2360 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0471/1000| Loss 0.2470 | Train Accuracy 0.2257 | Val Accuracy 0.2250 | Test Accuracy 0.2260 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0472/1000| Loss 0.2475 | Train Accuracy 0.2557 | Val Accuracy 0.2547 | Test Accuracy 0.2565 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0473/1000| Loss 0.2466 | Train Accuracy 0.2587 | Val Accuracy 0.2574 | Test Accuracy 0.2599 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0474/1000| Loss 0.2467 | Train Accuracy 0.2328 | Val Accuracy 0.2318 | Test Accuracy 0.2331 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0475/1000| Loss 0.2462 | Train Accuracy 0.2316 | Val Accuracy 0.2306 | Test Accuracy 0.2319 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0476/1000| Loss 0.2463 | Train Accuracy 0.2563 | Val Accuracy 0.2553 | Test Accuracy 0.2574 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0477/1000| Loss 0.2457 | Train Accuracy 0.2669 | Val Accuracy 0.2656 | Test Accuracy 0.2683 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0478/1000| Loss 0.2455 | Train Accuracy 0.2432 | Val Accuracy 0.2420 | Test Accuracy 0.2439 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0479/1000| Loss 0.2456 | Train Accuracy 0.2573 | Val Accuracy 0.2561 | Test Accuracy 0.2586 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0480: Avg Forward 58.045ms, Avg Backward 24.580ms, Total per epoch 82.625ms
+Epoch 0480/1000| Loss 0.2447 | Train Accuracy 0.2731 | Val Accuracy 0.2718 | Test Accuracy 0.2744 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0481/1000| Loss 0.2451 | Train Accuracy 0.2492 | Val Accuracy 0.2479 | Test Accuracy 0.2501 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0482/1000| Loss 0.2449 | Train Accuracy 0.2427 | Val Accuracy 0.2414 | Test Accuracy 0.2433 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0483/1000| Loss 0.2448 | Train Accuracy 0.2674 | Val Accuracy 0.2658 | Test Accuracy 0.2687 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0484/1000| Loss 0.2450 | Train Accuracy 0.2686 | Val Accuracy 0.2671 | Test Accuracy 0.2701 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0485/1000| Loss 0.2445 | Train Accuracy 0.2469 | Val Accuracy 0.2457 | Test Accuracy 0.2477 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0486/1000| Loss 0.2444 | Train Accuracy 0.2622 | Val Accuracy 0.2612 | Test Accuracy 0.2633 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0487/1000| Loss 0.2443 | Train Accuracy 0.2742 | Val Accuracy 0.2730 | Test Accuracy 0.2757 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0488/1000| Loss 0.2443 | Train Accuracy 0.2448 | Val Accuracy 0.2439 | Test Accuracy 0.2453 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0489/1000| Loss 0.2443 | Train Accuracy 0.2548 | Val Accuracy 0.2536 | Test Accuracy 0.2558 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0490/1000| Loss 0.2441 | Train Accuracy 0.2740 | Val Accuracy 0.2727 | Test Accuracy 0.2756 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0491/1000| Loss 0.2446 | Train Accuracy 0.2471 | Val Accuracy 0.2462 | Test Accuracy 0.2477 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0492/1000| Loss 0.2438 | Train Accuracy 0.2522 | Val Accuracy 0.2511 | Test Accuracy 0.2529 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0493/1000| Loss 0.2439 | Train Accuracy 0.2813 | Val Accuracy 0.2800 | Test Accuracy 0.2827 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0494/1000| Loss 0.2440 | Train Accuracy 0.2585 | Val Accuracy 0.2571 | Test Accuracy 0.2594 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0495/1000| Loss 0.2436 | Train Accuracy 0.2412 | Val Accuracy 0.2401 | Test Accuracy 0.2421 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0496/1000| Loss 0.2439 | Train Accuracy 0.2862 | Val Accuracy 0.2847 | Test Accuracy 0.2878 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0497/1000| Loss 0.2445 | Train Accuracy 0.2575 | Val Accuracy 0.2562 | Test Accuracy 0.2584 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0498/1000| Loss 0.2432 | Train Accuracy 0.2437 | Val Accuracy 0.2424 | Test Accuracy 0.2444 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0499/1000| Loss 0.2436 | Train Accuracy 0.2675 | Val Accuracy 0.2663 | Test Accuracy 0.2687 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0500: Avg Forward 58.040ms, Avg Backward 24.580ms, Total per epoch 82.621ms
+Epoch 0500/1000| Loss 0.2433 | Train Accuracy 0.2771 | Val Accuracy 0.2757 | Test Accuracy 0.2789 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0501/1000| Loss 0.2435 | Train Accuracy 0.2417 | Val Accuracy 0.2405 | Test Accuracy 0.2425 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0502/1000| Loss 0.2434 | Train Accuracy 0.2542 | Val Accuracy 0.2530 | Test Accuracy 0.2550 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0503/1000| Loss 0.2431 | Train Accuracy 0.2883 | Val Accuracy 0.2868 | Test Accuracy 0.2899 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0504/1000| Loss 0.2437 | Train Accuracy 0.2563 | Val Accuracy 0.2551 | Test Accuracy 0.2571 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0505/1000| Loss 0.2428 | Train Accuracy 0.2422 | Val Accuracy 0.2411 | Test Accuracy 0.2429 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0506/1000| Loss 0.2432 | Train Accuracy 0.2707 | Val Accuracy 0.2692 | Test Accuracy 0.2725 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0507/1000| Loss 0.2429 | Train Accuracy 0.2690 | Val Accuracy 0.2677 | Test Accuracy 0.2708 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0508/1000| Loss 0.2427 | Train Accuracy 0.2528 | Val Accuracy 0.2513 | Test Accuracy 0.2536 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0509/1000| Loss 0.2423 | Train Accuracy 0.2588 | Val Accuracy 0.2574 | Test Accuracy 0.2599 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0510/1000| Loss 0.2426 | Train Accuracy 0.2796 | Val Accuracy 0.2781 | Test Accuracy 0.2816 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0511/1000| Loss 0.2427 | Train Accuracy 0.2661 | Val Accuracy 0.2647 | Test Accuracy 0.2677 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0512/1000| Loss 0.2424 | Train Accuracy 0.2474 | Val Accuracy 0.2461 | Test Accuracy 0.2480 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0513/1000| Loss 0.2426 | Train Accuracy 0.2701 | Val Accuracy 0.2687 | Test Accuracy 0.2719 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0514/1000| Loss 0.2423 | Train Accuracy 0.2837 | Val Accuracy 0.2821 | Test Accuracy 0.2859 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0515/1000| Loss 0.2431 | Train Accuracy 0.2481 | Val Accuracy 0.2467 | Test Accuracy 0.2490 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0516/1000| Loss 0.2429 | Train Accuracy 0.2566 | Val Accuracy 0.2552 | Test Accuracy 0.2575 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0517/1000| Loss 0.2425 | Train Accuracy 0.2950 | Val Accuracy 0.2937 | Test Accuracy 0.2969 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0518/1000| Loss 0.2430 | Train Accuracy 0.2648 | Val Accuracy 0.2635 | Test Accuracy 0.2661 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0519/1000| Loss 0.2422 | Train Accuracy 0.2556 | Val Accuracy 0.2542 | Test Accuracy 0.2566 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0520: Avg Forward 58.048ms, Avg Backward 24.580ms, Total per epoch 82.628ms
+Epoch 0520/1000| Loss 0.2423 | Train Accuracy 0.2718 | Val Accuracy 0.2704 | Test Accuracy 0.2735 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0521/1000| Loss 0.2420 | Train Accuracy 0.2820 | Val Accuracy 0.2804 | Test Accuracy 0.2838 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0522/1000| Loss 0.2425 | Train Accuracy 0.2518 | Val Accuracy 0.2505 | Test Accuracy 0.2525 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0523/1000| Loss 0.2424 | Train Accuracy 0.2592 | Val Accuracy 0.2580 | Test Accuracy 0.2603 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0524/1000| Loss 0.2420 | Train Accuracy 0.2777 | Val Accuracy 0.2761 | Test Accuracy 0.2794 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0525/1000| Loss 0.2422 | Train Accuracy 0.2615 | Val Accuracy 0.2601 | Test Accuracy 0.2627 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0526/1000| Loss 0.2422 | Train Accuracy 0.2727 | Val Accuracy 0.2712 | Test Accuracy 0.2744 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0527/1000| Loss 0.2422 | Train Accuracy 0.2812 | Val Accuracy 0.2795 | Test Accuracy 0.2832 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0528/1000| Loss 0.2425 | Train Accuracy 0.2643 | Val Accuracy 0.2628 | Test Accuracy 0.2656 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0529/1000| Loss 0.2416 | Train Accuracy 0.2597 | Val Accuracy 0.2582 | Test Accuracy 0.2610 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0530/1000| Loss 0.2417 | Train Accuracy 0.3019 | Val Accuracy 0.3002 | Test Accuracy 0.3036 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0531/1000| Loss 0.2435 | Train Accuracy 0.2383 | Val Accuracy 0.2372 | Test Accuracy 0.2390 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0532/1000| Loss 0.2425 | Train Accuracy 0.2447 | Val Accuracy 0.2436 | Test Accuracy 0.2457 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0533/1000| Loss 0.2422 | Train Accuracy 0.2948 | Val Accuracy 0.2935 | Test Accuracy 0.2965 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0534/1000| Loss 0.2427 | Train Accuracy 0.2695 | Val Accuracy 0.2682 | Test Accuracy 0.2711 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0535/1000| Loss 0.2416 | Train Accuracy 0.2463 | Val Accuracy 0.2451 | Test Accuracy 0.2473 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0536/1000| Loss 0.2427 | Train Accuracy 0.2778 | Val Accuracy 0.2763 | Test Accuracy 0.2798 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0537/1000| Loss 0.2415 | Train Accuracy 0.2940 | Val Accuracy 0.2928 | Test Accuracy 0.2959 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0538/1000| Loss 0.2422 | Train Accuracy 0.2551 | Val Accuracy 0.2537 | Test Accuracy 0.2562 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0539/1000| Loss 0.2419 | Train Accuracy 0.2448 | Val Accuracy 0.2437 | Test Accuracy 0.2456 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0540: Avg Forward 58.048ms, Avg Backward 24.580ms, Total per epoch 82.629ms
+Epoch 0540/1000| Loss 0.2422 | Train Accuracy 0.2783 | Val Accuracy 0.2770 | Test Accuracy 0.2804 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0541/1000| Loss 0.2419 | Train Accuracy 0.2835 | Val Accuracy 0.2820 | Test Accuracy 0.2856 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0542/1000| Loss 0.2421 | Train Accuracy 0.2461 | Val Accuracy 0.2450 | Test Accuracy 0.2471 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0543/1000| Loss 0.2422 | Train Accuracy 0.2610 | Val Accuracy 0.2596 | Test Accuracy 0.2624 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0544/1000| Loss 0.2417 | Train Accuracy 0.2905 | Val Accuracy 0.2892 | Test Accuracy 0.2925 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0545/1000| Loss 0.2422 | Train Accuracy 0.2682 | Val Accuracy 0.2669 | Test Accuracy 0.2700 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0546/1000| Loss 0.2412 | Train Accuracy 0.2565 | Val Accuracy 0.2550 | Test Accuracy 0.2575 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0547/1000| Loss 0.2415 | Train Accuracy 0.2839 | Val Accuracy 0.2824 | Test Accuracy 0.2859 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0548/1000| Loss 0.2422 | Train Accuracy 0.2547 | Val Accuracy 0.2532 | Test Accuracy 0.2558 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0549/1000| Loss 0.2418 | Train Accuracy 0.2762 | Val Accuracy 0.2748 | Test Accuracy 0.2782 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0550/1000| Loss 0.2415 | Train Accuracy 0.2844 | Val Accuracy 0.2828 | Test Accuracy 0.2863 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0551/1000| Loss 0.2417 | Train Accuracy 0.2776 | Val Accuracy 0.2761 | Test Accuracy 0.2797 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0552/1000| Loss 0.2413 | Train Accuracy 0.2559 | Val Accuracy 0.2545 | Test Accuracy 0.2573 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0553/1000| Loss 0.2420 | Train Accuracy 0.2992 | Val Accuracy 0.2975 | Test Accuracy 0.3011 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0554/1000| Loss 0.2424 | Train Accuracy 0.2574 | Val Accuracy 0.2559 | Test Accuracy 0.2586 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0555/1000| Loss 0.2417 | Train Accuracy 0.2546 | Val Accuracy 0.2533 | Test Accuracy 0.2557 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0556/1000| Loss 0.2416 | Train Accuracy 0.2885 | Val Accuracy 0.2869 | Test Accuracy 0.2905 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0557/1000| Loss 0.2418 | Train Accuracy 0.2684 | Val Accuracy 0.2672 | Test Accuracy 0.2701 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0558/1000| Loss 0.2410 | Train Accuracy 0.2583 | Val Accuracy 0.2569 | Test Accuracy 0.2598 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0559/1000| Loss 0.2415 | Train Accuracy 0.2791 | Val Accuracy 0.2776 | Test Accuracy 0.2810 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0560: Avg Forward 58.047ms, Avg Backward 24.580ms, Total per epoch 82.627ms
+Epoch 0560/1000| Loss 0.2415 | Train Accuracy 0.2900 | Val Accuracy 0.2886 | Test Accuracy 0.2919 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0561/1000| Loss 0.2412 | Train Accuracy 0.2726 | Val Accuracy 0.2713 | Test Accuracy 0.2743 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0562/1000| Loss 0.2413 | Train Accuracy 0.2566 | Val Accuracy 0.2554 | Test Accuracy 0.2581 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0563/1000| Loss 0.2413 | Train Accuracy 0.2794 | Val Accuracy 0.2780 | Test Accuracy 0.2814 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0564/1000| Loss 0.2412 | Train Accuracy 0.2901 | Val Accuracy 0.2886 | Test Accuracy 0.2921 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0565/1000| Loss 0.2414 | Train Accuracy 0.2558 | Val Accuracy 0.2546 | Test Accuracy 0.2569 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0566/1000| Loss 0.2414 | Train Accuracy 0.2708 | Val Accuracy 0.2694 | Test Accuracy 0.2727 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0567/1000| Loss 0.2406 | Train Accuracy 0.2934 | Val Accuracy 0.2918 | Test Accuracy 0.2955 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0568/1000| Loss 0.2415 | Train Accuracy 0.2686 | Val Accuracy 0.2673 | Test Accuracy 0.2702 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0569/1000| Loss 0.2409 | Train Accuracy 0.2443 | Val Accuracy 0.2431 | Test Accuracy 0.2451 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0570/1000| Loss 0.2419 | Train Accuracy 0.2875 | Val Accuracy 0.2861 | Test Accuracy 0.2895 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0571/1000| Loss 0.2413 | Train Accuracy 0.2904 | Val Accuracy 0.2889 | Test Accuracy 0.2923 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0572/1000| Loss 0.2410 | Train Accuracy 0.2510 | Val Accuracy 0.2497 | Test Accuracy 0.2520 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0573/1000| Loss 0.2417 | Train Accuracy 0.2638 | Val Accuracy 0.2624 | Test Accuracy 0.2655 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0574/1000| Loss 0.2408 | Train Accuracy 0.2929 | Val Accuracy 0.2913 | Test Accuracy 0.2948 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0575/1000| Loss 0.2411 | Train Accuracy 0.2731 | Val Accuracy 0.2718 | Test Accuracy 0.2751 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0576/1000| Loss 0.2405 | Train Accuracy 0.2475 | Val Accuracy 0.2463 | Test Accuracy 0.2487 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0577/1000| Loss 0.2413 | Train Accuracy 0.2710 | Val Accuracy 0.2697 | Test Accuracy 0.2727 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0578/1000| Loss 0.2407 | Train Accuracy 0.3025 | Val Accuracy 0.3008 | Test Accuracy 0.3043 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0579/1000| Loss 0.2419 | Train Accuracy 0.2566 | Val Accuracy 0.2553 | Test Accuracy 0.2580 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0580: Avg Forward 58.027ms, Avg Backward 24.580ms, Total per epoch 82.607ms
+Epoch 0580/1000| Loss 0.2407 | Train Accuracy 0.2503 | Val Accuracy 0.2491 | Test Accuracy 0.2516 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0581/1000| Loss 0.2415 | Train Accuracy 0.3009 | Val Accuracy 0.2993 | Test Accuracy 0.3028 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0582/1000| Loss 0.2419 | Train Accuracy 0.2773 | Val Accuracy 0.2759 | Test Accuracy 0.2793 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0583/1000| Loss 0.2405 | Train Accuracy 0.2510 | Val Accuracy 0.2496 | Test Accuracy 0.2521 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0584/1000| Loss 0.2413 | Train Accuracy 0.2736 | Val Accuracy 0.2723 | Test Accuracy 0.2753 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0585/1000| Loss 0.2405 | Train Accuracy 0.2925 | Val Accuracy 0.2909 | Test Accuracy 0.2943 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0586/1000| Loss 0.2410 | Train Accuracy 0.2614 | Val Accuracy 0.2601 | Test Accuracy 0.2629 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0587/1000| Loss 0.2405 | Train Accuracy 0.2562 | Val Accuracy 0.2548 | Test Accuracy 0.2575 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0588/1000| Loss 0.2410 | Train Accuracy 0.2958 | Val Accuracy 0.2940 | Test Accuracy 0.2975 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0589/1000| Loss 0.2409 | Train Accuracy 0.2834 | Val Accuracy 0.2818 | Test Accuracy 0.2853 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0590/1000| Loss 0.2404 | Train Accuracy 0.2382 | Val Accuracy 0.2370 | Test Accuracy 0.2391 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0591/1000| Loss 0.2421 | Train Accuracy 0.2750 | Val Accuracy 0.2736 | Test Accuracy 0.2769 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0592/1000| Loss 0.2405 | Train Accuracy 0.3111 | Val Accuracy 0.3093 | Test Accuracy 0.3130 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0593/1000| Loss 0.2423 | Train Accuracy 0.2609 | Val Accuracy 0.2594 | Test Accuracy 0.2622 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0594/1000| Loss 0.2408 | Train Accuracy 0.2450 | Val Accuracy 0.2439 | Test Accuracy 0.2459 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0595/1000| Loss 0.2414 | Train Accuracy 0.2848 | Val Accuracy 0.2832 | Test Accuracy 0.2866 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0596/1000| Loss 0.2406 | Train Accuracy 0.2974 | Val Accuracy 0.2956 | Test Accuracy 0.2994 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0597/1000| Loss 0.2413 | Train Accuracy 0.2523 | Val Accuracy 0.2509 | Test Accuracy 0.2535 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0598/1000| Loss 0.2405 | Train Accuracy 0.2469 | Val Accuracy 0.2456 | Test Accuracy 0.2480 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0599/1000| Loss 0.2413 | Train Accuracy 0.2916 | Val Accuracy 0.2900 | Test Accuracy 0.2935 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0600: Avg Forward 58.009ms, Avg Backward 24.580ms, Total per epoch 82.589ms
+Epoch 0600/1000| Loss 0.2405 | Train Accuracy 0.2981 | Val Accuracy 0.2962 | Test Accuracy 0.3000 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0601/1000| Loss 0.2408 | Train Accuracy 0.2607 | Val Accuracy 0.2593 | Test Accuracy 0.2622 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0602/1000| Loss 0.2405 | Train Accuracy 0.2567 | Val Accuracy 0.2554 | Test Accuracy 0.2583 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0603/1000| Loss 0.2405 | Train Accuracy 0.2850 | Val Accuracy 0.2833 | Test Accuracy 0.2870 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0604/1000| Loss 0.2403 | Train Accuracy 0.2960 | Val Accuracy 0.2941 | Test Accuracy 0.2979 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0605/1000| Loss 0.2403 | Train Accuracy 0.2695 | Val Accuracy 0.2682 | Test Accuracy 0.2712 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0606/1000| Loss 0.2402 | Train Accuracy 0.2573 | Val Accuracy 0.2561 | Test Accuracy 0.2587 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0607/1000| Loss 0.2403 | Train Accuracy 0.2859 | Val Accuracy 0.2845 | Test Accuracy 0.2878 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0608/1000| Loss 0.2402 | Train Accuracy 0.2970 | Val Accuracy 0.2951 | Test Accuracy 0.2987 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0609/1000| Loss 0.2408 | Train Accuracy 0.2531 | Val Accuracy 0.2519 | Test Accuracy 0.2545 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0610/1000| Loss 0.2406 | Train Accuracy 0.2729 | Val Accuracy 0.2716 | Test Accuracy 0.2748 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0611/1000| Loss 0.2400 | Train Accuracy 0.2942 | Val Accuracy 0.2926 | Test Accuracy 0.2962 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0612/1000| Loss 0.2402 | Train Accuracy 0.2757 | Val Accuracy 0.2744 | Test Accuracy 0.2776 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0613/1000| Loss 0.2399 | Train Accuracy 0.2645 | Val Accuracy 0.2632 | Test Accuracy 0.2661 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0614/1000| Loss 0.2402 | Train Accuracy 0.2808 | Val Accuracy 0.2793 | Test Accuracy 0.2826 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0615/1000| Loss 0.2399 | Train Accuracy 0.2894 | Val Accuracy 0.2879 | Test Accuracy 0.2913 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0616/1000| Loss 0.2403 | Train Accuracy 0.2717 | Val Accuracy 0.2705 | Test Accuracy 0.2733 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0617/1000| Loss 0.2399 | Train Accuracy 0.2700 | Val Accuracy 0.2689 | Test Accuracy 0.2716 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0618/1000| Loss 0.2398 | Train Accuracy 0.2834 | Val Accuracy 0.2821 | Test Accuracy 0.2851 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0619/1000| Loss 0.2396 | Train Accuracy 0.2831 | Val Accuracy 0.2816 | Test Accuracy 0.2850 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0620: Avg Forward 57.997ms, Avg Backward 24.581ms, Total per epoch 82.577ms
+Epoch 0620/1000| Loss 0.2399 | Train Accuracy 0.2703 | Val Accuracy 0.2692 | Test Accuracy 0.2722 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0621/1000| Loss 0.2397 | Train Accuracy 0.2763 | Val Accuracy 0.2748 | Test Accuracy 0.2780 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0622/1000| Loss 0.2398 | Train Accuracy 0.2850 | Val Accuracy 0.2833 | Test Accuracy 0.2869 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0623/1000| Loss 0.2401 | Train Accuracy 0.2524 | Val Accuracy 0.2511 | Test Accuracy 0.2537 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0624/1000| Loss 0.2402 | Train Accuracy 0.2883 | Val Accuracy 0.2869 | Test Accuracy 0.2902 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0625/1000| Loss 0.2395 | Train Accuracy 0.3021 | Val Accuracy 0.3004 | Test Accuracy 0.3041 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0626/1000| Loss 0.2401 | Train Accuracy 0.2754 | Val Accuracy 0.2742 | Test Accuracy 0.2774 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0627/1000| Loss 0.2397 | Train Accuracy 0.2648 | Val Accuracy 0.2638 | Test Accuracy 0.2665 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0628/1000| Loss 0.2400 | Train Accuracy 0.2874 | Val Accuracy 0.2858 | Test Accuracy 0.2893 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0629/1000| Loss 0.2395 | Train Accuracy 0.2907 | Val Accuracy 0.2892 | Test Accuracy 0.2928 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0630/1000| Loss 0.2398 | Train Accuracy 0.2540 | Val Accuracy 0.2527 | Test Accuracy 0.2555 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0631/1000| Loss 0.2402 | Train Accuracy 0.2848 | Val Accuracy 0.2833 | Test Accuracy 0.2867 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0632/1000| Loss 0.2394 | Train Accuracy 0.2892 | Val Accuracy 0.2876 | Test Accuracy 0.2915 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0633/1000| Loss 0.2396 | Train Accuracy 0.2706 | Val Accuracy 0.2694 | Test Accuracy 0.2724 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0634/1000| Loss 0.2397 | Train Accuracy 0.2794 | Val Accuracy 0.2781 | Test Accuracy 0.2813 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0635/1000| Loss 0.2393 | Train Accuracy 0.2934 | Val Accuracy 0.2917 | Test Accuracy 0.2956 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0636/1000| Loss 0.2395 | Train Accuracy 0.2708 | Val Accuracy 0.2696 | Test Accuracy 0.2727 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0637/1000| Loss 0.2397 | Train Accuracy 0.2798 | Val Accuracy 0.2781 | Test Accuracy 0.2817 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0638/1000| Loss 0.2393 | Train Accuracy 0.2890 | Val Accuracy 0.2874 | Test Accuracy 0.2911 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0639/1000| Loss 0.2395 | Train Accuracy 0.2731 | Val Accuracy 0.2718 | Test Accuracy 0.2747 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0640: Avg Forward 57.983ms, Avg Backward 24.581ms, Total per epoch 82.564ms
+Epoch 0640/1000| Loss 0.2394 | Train Accuracy 0.2612 | Val Accuracy 0.2600 | Test Accuracy 0.2627 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0641/1000| Loss 0.2396 | Train Accuracy 0.2944 | Val Accuracy 0.2926 | Test Accuracy 0.2962 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0642/1000| Loss 0.2398 | Train Accuracy 0.2820 | Val Accuracy 0.2806 | Test Accuracy 0.2837 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0643/1000| Loss 0.2390 | Train Accuracy 0.2615 | Val Accuracy 0.2602 | Test Accuracy 0.2631 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0644/1000| Loss 0.2399 | Train Accuracy 0.3019 | Val Accuracy 0.3003 | Test Accuracy 0.3042 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0645/1000| Loss 0.2398 | Train Accuracy 0.2837 | Val Accuracy 0.2822 | Test Accuracy 0.2854 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0646/1000| Loss 0.2392 | Train Accuracy 0.2559 | Val Accuracy 0.2544 | Test Accuracy 0.2572 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0647/1000| Loss 0.2401 | Train Accuracy 0.2914 | Val Accuracy 0.2896 | Test Accuracy 0.2934 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0648/1000| Loss 0.2395 | Train Accuracy 0.2889 | Val Accuracy 0.2874 | Test Accuracy 0.2910 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0649/1000| Loss 0.2392 | Train Accuracy 0.2596 | Val Accuracy 0.2584 | Test Accuracy 0.2611 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0650/1000| Loss 0.2398 | Train Accuracy 0.2879 | Val Accuracy 0.2865 | Test Accuracy 0.2897 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0651/1000| Loss 0.2389 | Train Accuracy 0.3079 | Val Accuracy 0.3060 | Test Accuracy 0.3099 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0652/1000| Loss 0.2400 | Train Accuracy 0.2630 | Val Accuracy 0.2618 | Test Accuracy 0.2645 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0653/1000| Loss 0.2397 | Train Accuracy 0.2784 | Val Accuracy 0.2768 | Test Accuracy 0.2802 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0654/1000| Loss 0.2391 | Train Accuracy 0.3031 | Val Accuracy 0.3012 | Test Accuracy 0.3051 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0655/1000| Loss 0.2395 | Train Accuracy 0.2827 | Val Accuracy 0.2812 | Test Accuracy 0.2845 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0656/1000| Loss 0.2391 | Train Accuracy 0.2666 | Val Accuracy 0.2653 | Test Accuracy 0.2682 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0657/1000| Loss 0.2395 | Train Accuracy 0.2917 | Val Accuracy 0.2901 | Test Accuracy 0.2939 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0658/1000| Loss 0.2393 | Train Accuracy 0.2792 | Val Accuracy 0.2774 | Test Accuracy 0.2808 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0659/1000| Loss 0.2391 | Train Accuracy 0.2724 | Val Accuracy 0.2709 | Test Accuracy 0.2740 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0660: Avg Forward 57.974ms, Avg Backward 24.581ms, Total per epoch 82.555ms
+Epoch 0660/1000| Loss 0.2390 | Train Accuracy 0.2925 | Val Accuracy 0.2909 | Test Accuracy 0.2944 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0661/1000| Loss 0.2391 | Train Accuracy 0.2866 | Val Accuracy 0.2848 | Test Accuracy 0.2883 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0662/1000| Loss 0.2387 | Train Accuracy 0.2652 | Val Accuracy 0.2640 | Test Accuracy 0.2673 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0663/1000| Loss 0.2394 | Train Accuracy 0.3275 | Val Accuracy 0.3254 | Test Accuracy 0.3293 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0664/1000| Loss 0.2415 | Train Accuracy 0.2565 | Val Accuracy 0.2550 | Test Accuracy 0.2580 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0665/1000| Loss 0.2398 | Train Accuracy 0.2500 | Val Accuracy 0.2487 | Test Accuracy 0.2514 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0666/1000| Loss 0.2403 | Train Accuracy 0.3105 | Val Accuracy 0.3088 | Test Accuracy 0.3124 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0667/1000| Loss 0.2410 | Train Accuracy 0.2724 | Val Accuracy 0.2711 | Test Accuracy 0.2739 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0668/1000| Loss 0.2393 | Train Accuracy 0.2614 | Val Accuracy 0.2601 | Test Accuracy 0.2629 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0669/1000| Loss 0.2396 | Train Accuracy 0.2899 | Val Accuracy 0.2886 | Test Accuracy 0.2919 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0670/1000| Loss 0.2393 | Train Accuracy 0.2917 | Val Accuracy 0.2904 | Test Accuracy 0.2937 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0671/1000| Loss 0.2394 | Train Accuracy 0.2629 | Val Accuracy 0.2618 | Test Accuracy 0.2644 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0672/1000| Loss 0.2393 | Train Accuracy 0.2667 | Val Accuracy 0.2656 | Test Accuracy 0.2681 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0673/1000| Loss 0.2393 | Train Accuracy 0.2926 | Val Accuracy 0.2909 | Test Accuracy 0.2946 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0674/1000| Loss 0.2395 | Train Accuracy 0.2834 | Val Accuracy 0.2818 | Test Accuracy 0.2851 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0675/1000| Loss 0.2393 | Train Accuracy 0.2691 | Val Accuracy 0.2678 | Test Accuracy 0.2708 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0676/1000| Loss 0.2393 | Train Accuracy 0.2801 | Val Accuracy 0.2785 | Test Accuracy 0.2818 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0677/1000| Loss 0.2391 | Train Accuracy 0.2941 | Val Accuracy 0.2925 | Test Accuracy 0.2961 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0678/1000| Loss 0.2394 | Train Accuracy 0.2793 | Val Accuracy 0.2778 | Test Accuracy 0.2810 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0679/1000| Loss 0.2390 | Train Accuracy 0.2647 | Val Accuracy 0.2636 | Test Accuracy 0.2662 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0680: Avg Forward 57.968ms, Avg Backward 24.581ms, Total per epoch 82.549ms
+Epoch 0680/1000| Loss 0.2393 | Train Accuracy 0.2890 | Val Accuracy 0.2875 | Test Accuracy 0.2909 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0681/1000| Loss 0.2390 | Train Accuracy 0.2858 | Val Accuracy 0.2841 | Test Accuracy 0.2876 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0682/1000| Loss 0.2390 | Train Accuracy 0.2725 | Val Accuracy 0.2711 | Test Accuracy 0.2740 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0683/1000| Loss 0.2387 | Train Accuracy 0.2754 | Val Accuracy 0.2739 | Test Accuracy 0.2769 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0684/1000| Loss 0.2390 | Train Accuracy 0.2954 | Val Accuracy 0.2936 | Test Accuracy 0.2974 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0685/1000| Loss 0.2389 | Train Accuracy 0.2929 | Val Accuracy 0.2911 | Test Accuracy 0.2949 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0686/1000| Loss 0.2388 | Train Accuracy 0.2666 | Val Accuracy 0.2653 | Test Accuracy 0.2685 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0687/1000| Loss 0.2392 | Train Accuracy 0.3006 | Val Accuracy 0.2990 | Test Accuracy 0.3027 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0688/1000| Loss 0.2389 | Train Accuracy 0.2919 | Val Accuracy 0.2901 | Test Accuracy 0.2938 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0689/1000| Loss 0.2387 | Train Accuracy 0.2507 | Val Accuracy 0.2493 | Test Accuracy 0.2524 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0690/1000| Loss 0.2398 | Train Accuracy 0.3116 | Val Accuracy 0.3100 | Test Accuracy 0.3137 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0691/1000| Loss 0.2397 | Train Accuracy 0.2921 | Val Accuracy 0.2903 | Test Accuracy 0.2942 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0692/1000| Loss 0.2386 | Train Accuracy 0.2547 | Val Accuracy 0.2536 | Test Accuracy 0.2566 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0693/1000| Loss 0.2398 | Train Accuracy 0.2799 | Val Accuracy 0.2783 | Test Accuracy 0.2817 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0694/1000| Loss 0.2386 | Train Accuracy 0.3077 | Val Accuracy 0.3058 | Test Accuracy 0.3099 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0695/1000| Loss 0.2403 | Train Accuracy 0.2606 | Val Accuracy 0.2595 | Test Accuracy 0.2622 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0696/1000| Loss 0.2389 | Train Accuracy 0.2471 | Val Accuracy 0.2459 | Test Accuracy 0.2485 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0697/1000| Loss 0.2404 | Train Accuracy 0.3029 | Val Accuracy 0.3012 | Test Accuracy 0.3049 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0698/1000| Loss 0.2396 | Train Accuracy 0.3083 | Val Accuracy 0.3065 | Test Accuracy 0.3104 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0699/1000| Loss 0.2397 | Train Accuracy 0.2549 | Val Accuracy 0.2536 | Test Accuracy 0.2563 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0700: Avg Forward 57.964ms, Avg Backward 24.581ms, Total per epoch 82.545ms
+Epoch 0700/1000| Loss 0.2393 | Train Accuracy 0.2556 | Val Accuracy 0.2543 | Test Accuracy 0.2570 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0701/1000| Loss 0.2393 | Train Accuracy 0.3031 | Val Accuracy 0.3011 | Test Accuracy 0.3051 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0702/1000| Loss 0.2391 | Train Accuracy 0.3088 | Val Accuracy 0.3068 | Test Accuracy 0.3109 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0703/1000| Loss 0.2396 | Train Accuracy 0.2523 | Val Accuracy 0.2509 | Test Accuracy 0.2539 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0704/1000| Loss 0.2400 | Train Accuracy 0.2605 | Val Accuracy 0.2592 | Test Accuracy 0.2623 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0705/1000| Loss 0.2397 | Train Accuracy 0.3160 | Val Accuracy 0.3142 | Test Accuracy 0.3180 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0706/1000| Loss 0.2401 | Train Accuracy 0.2909 | Val Accuracy 0.2895 | Test Accuracy 0.2929 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0707/1000| Loss 0.2385 | Train Accuracy 0.2550 | Val Accuracy 0.2537 | Test Accuracy 0.2566 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0708/1000| Loss 0.2397 | Train Accuracy 0.2781 | Val Accuracy 0.2767 | Test Accuracy 0.2801 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0709/1000| Loss 0.2386 | Train Accuracy 0.3081 | Val Accuracy 0.3062 | Test Accuracy 0.3099 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0710/1000| Loss 0.2396 | Train Accuracy 0.2837 | Val Accuracy 0.2821 | Test Accuracy 0.2856 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0711/1000| Loss 0.2385 | Train Accuracy 0.2551 | Val Accuracy 0.2538 | Test Accuracy 0.2568 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0712/1000| Loss 0.2394 | Train Accuracy 0.2807 | Val Accuracy 0.2793 | Test Accuracy 0.2825 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0713/1000| Loss 0.2386 | Train Accuracy 0.3077 | Val Accuracy 0.3061 | Test Accuracy 0.3097 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0714/1000| Loss 0.2393 | Train Accuracy 0.2774 | Val Accuracy 0.2757 | Test Accuracy 0.2789 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0715/1000| Loss 0.2383 | Train Accuracy 0.2637 | Val Accuracy 0.2623 | Test Accuracy 0.2654 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0716/1000| Loss 0.2392 | Train Accuracy 0.3082 | Val Accuracy 0.3062 | Test Accuracy 0.3102 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0717/1000| Loss 0.2392 | Train Accuracy 0.2993 | Val Accuracy 0.2974 | Test Accuracy 0.3012 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0718/1000| Loss 0.2386 | Train Accuracy 0.2652 | Val Accuracy 0.2638 | Test Accuracy 0.2668 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0719/1000| Loss 0.2392 | Train Accuracy 0.2806 | Val Accuracy 0.2789 | Test Accuracy 0.2820 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0720: Avg Forward 57.961ms, Avg Backward 24.581ms, Total per epoch 82.541ms
+Epoch 0720/1000| Loss 0.2384 | Train Accuracy 0.3082 | Val Accuracy 0.3065 | Test Accuracy 0.3101 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0721/1000| Loss 0.2390 | Train Accuracy 0.2826 | Val Accuracy 0.2810 | Test Accuracy 0.2842 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0722/1000| Loss 0.2386 | Train Accuracy 0.2680 | Val Accuracy 0.2666 | Test Accuracy 0.2694 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0723/1000| Loss 0.2389 | Train Accuracy 0.2845 | Val Accuracy 0.2826 | Test Accuracy 0.2864 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0724/1000| Loss 0.2385 | Train Accuracy 0.2959 | Val Accuracy 0.2939 | Test Accuracy 0.2977 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0725/1000| Loss 0.2387 | Train Accuracy 0.2856 | Val Accuracy 0.2837 | Test Accuracy 0.2874 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0726/1000| Loss 0.2384 | Train Accuracy 0.2657 | Val Accuracy 0.2643 | Test Accuracy 0.2672 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0727/1000| Loss 0.2386 | Train Accuracy 0.2971 | Val Accuracy 0.2952 | Test Accuracy 0.2993 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0728/1000| Loss 0.2384 | Train Accuracy 0.3009 | Val Accuracy 0.2990 | Test Accuracy 0.3030 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0729/1000| Loss 0.2384 | Train Accuracy 0.2860 | Val Accuracy 0.2841 | Test Accuracy 0.2878 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0730/1000| Loss 0.2385 | Train Accuracy 0.3031 | Val Accuracy 0.3013 | Test Accuracy 0.3051 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0731/1000| Loss 0.2384 | Train Accuracy 0.2927 | Val Accuracy 0.2908 | Test Accuracy 0.2945 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0732/1000| Loss 0.2383 | Train Accuracy 0.2703 | Val Accuracy 0.2689 | Test Accuracy 0.2718 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0733/1000| Loss 0.2387 | Train Accuracy 0.2951 | Val Accuracy 0.2934 | Test Accuracy 0.2970 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0734/1000| Loss 0.2381 | Train Accuracy 0.3026 | Val Accuracy 0.3007 | Test Accuracy 0.3044 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0735/1000| Loss 0.2384 | Train Accuracy 0.2776 | Val Accuracy 0.2760 | Test Accuracy 0.2796 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0736/1000| Loss 0.2385 | Train Accuracy 0.2956 | Val Accuracy 0.2935 | Test Accuracy 0.2975 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0737/1000| Loss 0.2385 | Train Accuracy 0.2790 | Val Accuracy 0.2775 | Test Accuracy 0.2808 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0738/1000| Loss 0.2383 | Train Accuracy 0.2855 | Val Accuracy 0.2838 | Test Accuracy 0.2873 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0739/1000| Loss 0.2382 | Train Accuracy 0.2996 | Val Accuracy 0.2975 | Test Accuracy 0.3015 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0740: Avg Forward 57.963ms, Avg Backward 24.581ms, Total per epoch 82.543ms
+Epoch 0740/1000| Loss 0.2382 | Train Accuracy 0.2710 | Val Accuracy 0.2695 | Test Accuracy 0.2728 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0741/1000| Loss 0.2382 | Train Accuracy 0.3018 | Val Accuracy 0.2999 | Test Accuracy 0.3040 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0742/1000| Loss 0.2384 | Train Accuracy 0.2983 | Val Accuracy 0.2963 | Test Accuracy 0.3004 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0743/1000| Loss 0.2380 | Train Accuracy 0.2766 | Val Accuracy 0.2750 | Test Accuracy 0.2780 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0744/1000| Loss 0.2385 | Train Accuracy 0.2872 | Val Accuracy 0.2852 | Test Accuracy 0.2888 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0745/1000| Loss 0.2382 | Train Accuracy 0.3008 | Val Accuracy 0.2988 | Test Accuracy 0.3024 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0746/1000| Loss 0.2383 | Train Accuracy 0.2878 | Val Accuracy 0.2859 | Test Accuracy 0.2897 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0747/1000| Loss 0.2381 | Train Accuracy 0.2712 | Val Accuracy 0.2696 | Test Accuracy 0.2727 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0748/1000| Loss 0.2385 | Train Accuracy 0.2977 | Val Accuracy 0.2959 | Test Accuracy 0.3000 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0749/1000| Loss 0.2385 | Train Accuracy 0.3332 | Val Accuracy 0.3313 | Test Accuracy 0.3352 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0750/1000| Loss 0.2411 | Train Accuracy 0.2462 | Val Accuracy 0.2449 | Test Accuracy 0.2473 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0751/1000| Loss 0.2403 | Train Accuracy 0.2474 | Val Accuracy 0.2459 | Test Accuracy 0.2483 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0752/1000| Loss 0.2397 | Train Accuracy 0.3110 | Val Accuracy 0.3092 | Test Accuracy 0.3129 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0753/1000| Loss 0.2398 | Train Accuracy 0.3055 | Val Accuracy 0.3035 | Test Accuracy 0.3072 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0754/1000| Loss 0.2394 | Train Accuracy 0.2512 | Val Accuracy 0.2498 | Test Accuracy 0.2523 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0755/1000| Loss 0.2394 | Train Accuracy 0.2519 | Val Accuracy 0.2505 | Test Accuracy 0.2532 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0756/1000| Loss 0.2396 | Train Accuracy 0.3000 | Val Accuracy 0.2985 | Test Accuracy 0.3022 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0757/1000| Loss 0.2391 | Train Accuracy 0.3059 | Val Accuracy 0.3042 | Test Accuracy 0.3080 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0758/1000| Loss 0.2394 | Train Accuracy 0.2621 | Val Accuracy 0.2608 | Test Accuracy 0.2636 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0759/1000| Loss 0.2392 | Train Accuracy 0.2586 | Val Accuracy 0.2572 | Test Accuracy 0.2601 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0760: Avg Forward 57.964ms, Avg Backward 24.581ms, Total per epoch 82.545ms
+Epoch 0760/1000| Loss 0.2391 | Train Accuracy 0.2864 | Val Accuracy 0.2846 | Test Accuracy 0.2887 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0761/1000| Loss 0.2387 | Train Accuracy 0.2911 | Val Accuracy 0.2893 | Test Accuracy 0.2932 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0762/1000| Loss 0.2386 | Train Accuracy 0.2779 | Val Accuracy 0.2763 | Test Accuracy 0.2796 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0763/1000| Loss 0.2388 | Train Accuracy 0.2772 | Val Accuracy 0.2758 | Test Accuracy 0.2789 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0764/1000| Loss 0.2385 | Train Accuracy 0.2940 | Val Accuracy 0.2923 | Test Accuracy 0.2964 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0765/1000| Loss 0.2386 | Train Accuracy 0.2886 | Val Accuracy 0.2871 | Test Accuracy 0.2908 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0766/1000| Loss 0.2384 | Train Accuracy 0.2773 | Val Accuracy 0.2758 | Test Accuracy 0.2790 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0767/1000| Loss 0.2384 | Train Accuracy 0.2789 | Val Accuracy 0.2773 | Test Accuracy 0.2806 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0768/1000| Loss 0.2383 | Train Accuracy 0.3029 | Val Accuracy 0.3011 | Test Accuracy 0.3049 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0769/1000| Loss 0.2387 | Train Accuracy 0.2765 | Val Accuracy 0.2747 | Test Accuracy 0.2783 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0770/1000| Loss 0.2384 | Train Accuracy 0.2817 | Val Accuracy 0.2800 | Test Accuracy 0.2834 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0771/1000| Loss 0.2382 | Train Accuracy 0.2990 | Val Accuracy 0.2970 | Test Accuracy 0.3010 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0772/1000| Loss 0.2386 | Train Accuracy 0.2644 | Val Accuracy 0.2630 | Test Accuracy 0.2659 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0773/1000| Loss 0.2391 | Train Accuracy 0.3009 | Val Accuracy 0.2989 | Test Accuracy 0.3029 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0774/1000| Loss 0.2385 | Train Accuracy 0.2993 | Val Accuracy 0.2974 | Test Accuracy 0.3014 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0775/1000| Loss 0.2382 | Train Accuracy 0.2675 | Val Accuracy 0.2659 | Test Accuracy 0.2689 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0776/1000| Loss 0.2384 | Train Accuracy 0.2751 | Val Accuracy 0.2732 | Test Accuracy 0.2764 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0777/1000| Loss 0.2383 | Train Accuracy 0.3051 | Val Accuracy 0.3033 | Test Accuracy 0.3070 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0778/1000| Loss 0.2391 | Train Accuracy 0.2665 | Val Accuracy 0.2648 | Test Accuracy 0.2680 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0779/1000| Loss 0.2386 | Train Accuracy 0.2798 | Val Accuracy 0.2779 | Test Accuracy 0.2813 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0780: Avg Forward 57.961ms, Avg Backward 24.581ms, Total per epoch 82.542ms
+Epoch 0780/1000| Loss 0.2382 | Train Accuracy 0.2991 | Val Accuracy 0.2974 | Test Accuracy 0.3011 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0781/1000| Loss 0.2383 | Train Accuracy 0.2882 | Val Accuracy 0.2864 | Test Accuracy 0.2901 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0782/1000| Loss 0.2379 | Train Accuracy 0.2682 | Val Accuracy 0.2667 | Test Accuracy 0.2697 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0783/1000| Loss 0.2386 | Train Accuracy 0.3040 | Val Accuracy 0.3023 | Test Accuracy 0.3062 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0784/1000| Loss 0.2383 | Train Accuracy 0.2935 | Val Accuracy 0.2916 | Test Accuracy 0.2956 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0785/1000| Loss 0.2381 | Train Accuracy 0.2746 | Val Accuracy 0.2732 | Test Accuracy 0.2763 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0786/1000| Loss 0.2382 | Train Accuracy 0.2799 | Val Accuracy 0.2784 | Test Accuracy 0.2818 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0787/1000| Loss 0.2379 | Train Accuracy 0.2966 | Val Accuracy 0.2949 | Test Accuracy 0.2985 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0788/1000| Loss 0.2381 | Train Accuracy 0.2899 | Val Accuracy 0.2881 | Test Accuracy 0.2916 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0789/1000| Loss 0.2379 | Train Accuracy 0.2690 | Val Accuracy 0.2676 | Test Accuracy 0.2704 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0790/1000| Loss 0.2380 | Train Accuracy 0.2849 | Val Accuracy 0.2832 | Test Accuracy 0.2866 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0791/1000| Loss 0.2378 | Train Accuracy 0.2973 | Val Accuracy 0.2957 | Test Accuracy 0.2993 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0792/1000| Loss 0.2381 | Train Accuracy 0.2768 | Val Accuracy 0.2751 | Test Accuracy 0.2787 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0793/1000| Loss 0.2379 | Train Accuracy 0.2826 | Val Accuracy 0.2808 | Test Accuracy 0.2844 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0794/1000| Loss 0.2376 | Train Accuracy 0.3017 | Val Accuracy 0.2997 | Test Accuracy 0.3037 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0795/1000| Loss 0.2379 | Train Accuracy 0.2946 | Val Accuracy 0.2930 | Test Accuracy 0.2968 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0796/1000| Loss 0.2380 | Train Accuracy 0.2953 | Val Accuracy 0.2936 | Test Accuracy 0.2973 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0797/1000| Loss 0.2377 | Train Accuracy 0.2816 | Val Accuracy 0.2799 | Test Accuracy 0.2836 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0798/1000| Loss 0.2377 | Train Accuracy 0.3110 | Val Accuracy 0.3092 | Test Accuracy 0.3132 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0799/1000| Loss 0.2384 | Train Accuracy 0.2350 | Val Accuracy 0.2334 | Test Accuracy 0.2357 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0800: Avg Forward 57.962ms, Avg Backward 24.581ms, Total per epoch 82.542ms
+Epoch 0800/1000| Loss 0.2411 | Train Accuracy 0.3539 | Val Accuracy 0.3520 | Test Accuracy 0.3558 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0801/1000| Loss 0.2441 | Train Accuracy 0.2547 | Val Accuracy 0.2536 | Test Accuracy 0.2560 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0802/1000| Loss 0.2400 | Train Accuracy 0.2376 | Val Accuracy 0.2364 | Test Accuracy 0.2386 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0803/1000| Loss 0.2410 | Train Accuracy 0.2985 | Val Accuracy 0.2968 | Test Accuracy 0.3006 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0804/1000| Loss 0.2400 | Train Accuracy 0.3060 | Val Accuracy 0.3043 | Test Accuracy 0.3079 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0805/1000| Loss 0.2406 | Train Accuracy 0.2567 | Val Accuracy 0.2558 | Test Accuracy 0.2581 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0806/1000| Loss 0.2394 | Train Accuracy 0.2437 | Val Accuracy 0.2424 | Test Accuracy 0.2448 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0807/1000| Loss 0.2398 | Train Accuracy 0.2717 | Val Accuracy 0.2706 | Test Accuracy 0.2736 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0808/1000| Loss 0.2394 | Train Accuracy 0.3052 | Val Accuracy 0.3036 | Test Accuracy 0.3076 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0809/1000| Loss 0.2399 | Train Accuracy 0.2849 | Val Accuracy 0.2835 | Test Accuracy 0.2867 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0810/1000| Loss 0.2391 | Train Accuracy 0.2565 | Val Accuracy 0.2551 | Test Accuracy 0.2579 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0811/1000| Loss 0.2393 | Train Accuracy 0.2620 | Val Accuracy 0.2607 | Test Accuracy 0.2632 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0812/1000| Loss 0.2390 | Train Accuracy 0.2913 | Val Accuracy 0.2894 | Test Accuracy 0.2931 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0813/1000| Loss 0.2393 | Train Accuracy 0.3043 | Val Accuracy 0.3021 | Test Accuracy 0.3064 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0814/1000| Loss 0.2396 | Train Accuracy 0.2730 | Val Accuracy 0.2715 | Test Accuracy 0.2748 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0815/1000| Loss 0.2391 | Train Accuracy 0.2668 | Val Accuracy 0.2653 | Test Accuracy 0.2682 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0816/1000| Loss 0.2391 | Train Accuracy 0.2947 | Val Accuracy 0.2932 | Test Accuracy 0.2969 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0817/1000| Loss 0.2387 | Train Accuracy 0.3052 | Val Accuracy 0.3034 | Test Accuracy 0.3074 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0818/1000| Loss 0.2393 | Train Accuracy 0.2709 | Val Accuracy 0.2695 | Test Accuracy 0.2725 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0819/1000| Loss 0.2388 | Train Accuracy 0.2521 | Val Accuracy 0.2505 | Test Accuracy 0.2530 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0820: Avg Forward 57.961ms, Avg Backward 24.581ms, Total per epoch 82.542ms
+Epoch 0820/1000| Loss 0.2394 | Train Accuracy 0.2852 | Val Accuracy 0.2835 | Test Accuracy 0.2869 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0821/1000| Loss 0.2386 | Train Accuracy 0.3018 | Val Accuracy 0.3001 | Test Accuracy 0.3038 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0822/1000| Loss 0.2392 | Train Accuracy 0.2766 | Val Accuracy 0.2750 | Test Accuracy 0.2783 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0823/1000| Loss 0.2384 | Train Accuracy 0.2642 | Val Accuracy 0.2629 | Test Accuracy 0.2657 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0824/1000| Loss 0.2386 | Train Accuracy 0.2824 | Val Accuracy 0.2809 | Test Accuracy 0.2840 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0825/1000| Loss 0.2385 | Train Accuracy 0.3092 | Val Accuracy 0.3076 | Test Accuracy 0.3114 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0826/1000| Loss 0.2392 | Train Accuracy 0.2831 | Val Accuracy 0.2817 | Test Accuracy 0.2848 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0827/1000| Loss 0.2386 | Train Accuracy 0.2627 | Val Accuracy 0.2614 | Test Accuracy 0.2642 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0828/1000| Loss 0.2392 | Train Accuracy 0.2880 | Val Accuracy 0.2862 | Test Accuracy 0.2899 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0829/1000| Loss 0.2383 | Train Accuracy 0.3086 | Val Accuracy 0.3067 | Test Accuracy 0.3108 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0830/1000| Loss 0.2395 | Train Accuracy 0.2688 | Val Accuracy 0.2672 | Test Accuracy 0.2704 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0831/1000| Loss 0.2385 | Train Accuracy 0.2612 | Val Accuracy 0.2597 | Test Accuracy 0.2627 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0832/1000| Loss 0.2387 | Train Accuracy 0.2893 | Val Accuracy 0.2873 | Test Accuracy 0.2914 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0833/1000| Loss 0.2385 | Train Accuracy 0.3060 | Val Accuracy 0.3041 | Test Accuracy 0.3083 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0834/1000| Loss 0.2390 | Train Accuracy 0.2794 | Val Accuracy 0.2776 | Test Accuracy 0.2810 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0835/1000| Loss 0.2385 | Train Accuracy 0.2732 | Val Accuracy 0.2716 | Test Accuracy 0.2749 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0836/1000| Loss 0.2385 | Train Accuracy 0.2924 | Val Accuracy 0.2904 | Test Accuracy 0.2946 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0837/1000| Loss 0.2382 | Train Accuracy 0.3078 | Val Accuracy 0.3058 | Test Accuracy 0.3102 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0838/1000| Loss 0.2394 | Train Accuracy 0.2670 | Val Accuracy 0.2656 | Test Accuracy 0.2684 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0839/1000| Loss 0.2386 | Train Accuracy 0.2628 | Val Accuracy 0.2613 | Test Accuracy 0.2640 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0840: Avg Forward 57.960ms, Avg Backward 24.581ms, Total per epoch 82.541ms
+Epoch 0840/1000| Loss 0.2387 | Train Accuracy 0.2916 | Val Accuracy 0.2898 | Test Accuracy 0.2936 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0841/1000| Loss 0.2382 | Train Accuracy 0.3028 | Val Accuracy 0.3012 | Test Accuracy 0.3049 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0842/1000| Loss 0.2389 | Train Accuracy 0.2685 | Val Accuracy 0.2671 | Test Accuracy 0.2700 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0843/1000| Loss 0.2387 | Train Accuracy 0.2731 | Val Accuracy 0.2716 | Test Accuracy 0.2747 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0844/1000| Loss 0.2381 | Train Accuracy 0.3009 | Val Accuracy 0.2992 | Test Accuracy 0.3031 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0845/1000| Loss 0.2386 | Train Accuracy 0.2899 | Val Accuracy 0.2882 | Test Accuracy 0.2917 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0846/1000| Loss 0.2379 | Train Accuracy 0.2718 | Val Accuracy 0.2702 | Test Accuracy 0.2734 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0847/1000| Loss 0.2384 | Train Accuracy 0.2840 | Val Accuracy 0.2822 | Test Accuracy 0.2857 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0848/1000| Loss 0.2380 | Train Accuracy 0.2989 | Val Accuracy 0.2972 | Test Accuracy 0.3010 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0849/1000| Loss 0.2384 | Train Accuracy 0.2758 | Val Accuracy 0.2742 | Test Accuracy 0.2774 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0850/1000| Loss 0.2381 | Train Accuracy 0.2751 | Val Accuracy 0.2733 | Test Accuracy 0.2767 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0851/1000| Loss 0.2381 | Train Accuracy 0.2976 | Val Accuracy 0.2957 | Test Accuracy 0.2996 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0852/1000| Loss 0.2379 | Train Accuracy 0.3059 | Val Accuracy 0.3040 | Test Accuracy 0.3082 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0853/1000| Loss 0.2383 | Train Accuracy 0.2760 | Val Accuracy 0.2742 | Test Accuracy 0.2772 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0854/1000| Loss 0.2381 | Train Accuracy 0.2706 | Val Accuracy 0.2691 | Test Accuracy 0.2721 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0855/1000| Loss 0.2383 | Train Accuracy 0.3027 | Val Accuracy 0.3008 | Test Accuracy 0.3050 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0856/1000| Loss 0.2381 | Train Accuracy 0.3034 | Val Accuracy 0.3016 | Test Accuracy 0.3056 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0857/1000| Loss 0.2382 | Train Accuracy 0.2755 | Val Accuracy 0.2738 | Test Accuracy 0.2772 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0858/1000| Loss 0.2381 | Train Accuracy 0.2678 | Val Accuracy 0.2664 | Test Accuracy 0.2693 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0859/1000| Loss 0.2383 | Train Accuracy 0.2993 | Val Accuracy 0.2973 | Test Accuracy 0.3015 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0860: Avg Forward 57.962ms, Avg Backward 24.581ms, Total per epoch 82.543ms
+Epoch 0860/1000| Loss 0.2380 | Train Accuracy 0.3027 | Val Accuracy 0.3006 | Test Accuracy 0.3049 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0861/1000| Loss 0.2379 | Train Accuracy 0.2771 | Val Accuracy 0.2751 | Test Accuracy 0.2788 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0862/1000| Loss 0.2379 | Train Accuracy 0.2727 | Val Accuracy 0.2709 | Test Accuracy 0.2743 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0863/1000| Loss 0.2380 | Train Accuracy 0.2984 | Val Accuracy 0.2965 | Test Accuracy 0.3006 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0864/1000| Loss 0.2377 | Train Accuracy 0.3095 | Val Accuracy 0.3075 | Test Accuracy 0.3118 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0865/1000| Loss 0.2381 | Train Accuracy 0.2856 | Val Accuracy 0.2839 | Test Accuracy 0.2874 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0866/1000| Loss 0.2376 | Train Accuracy 0.2691 | Val Accuracy 0.2676 | Test Accuracy 0.2708 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0867/1000| Loss 0.2385 | Train Accuracy 0.2996 | Val Accuracy 0.2977 | Test Accuracy 0.3019 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0868/1000| Loss 0.2378 | Train Accuracy 0.3011 | Val Accuracy 0.2993 | Test Accuracy 0.3033 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0869/1000| Loss 0.2380 | Train Accuracy 0.2786 | Val Accuracy 0.2769 | Test Accuracy 0.2802 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0870/1000| Loss 0.2381 | Train Accuracy 0.2760 | Val Accuracy 0.2744 | Test Accuracy 0.2776 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0871/1000| Loss 0.2380 | Train Accuracy 0.2950 | Val Accuracy 0.2931 | Test Accuracy 0.2969 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0872/1000| Loss 0.2377 | Train Accuracy 0.2967 | Val Accuracy 0.2948 | Test Accuracy 0.2988 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0873/1000| Loss 0.2377 | Train Accuracy 0.2800 | Val Accuracy 0.2783 | Test Accuracy 0.2815 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0874/1000| Loss 0.2378 | Train Accuracy 0.2872 | Val Accuracy 0.2854 | Test Accuracy 0.2888 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0875/1000| Loss 0.2376 | Train Accuracy 0.3015 | Val Accuracy 0.2995 | Test Accuracy 0.3037 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0876/1000| Loss 0.2377 | Train Accuracy 0.2957 | Val Accuracy 0.2938 | Test Accuracy 0.2977 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0877/1000| Loss 0.2375 | Train Accuracy 0.2844 | Val Accuracy 0.2823 | Test Accuracy 0.2861 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0878/1000| Loss 0.2374 | Train Accuracy 0.2768 | Val Accuracy 0.2750 | Test Accuracy 0.2783 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0879/1000| Loss 0.2380 | Train Accuracy 0.3079 | Val Accuracy 0.3060 | Test Accuracy 0.3101 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0880: Avg Forward 57.966ms, Avg Backward 24.581ms, Total per epoch 82.546ms
+Epoch 0880/1000| Loss 0.2378 | Train Accuracy 0.3053 | Val Accuracy 0.3035 | Test Accuracy 0.3075 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0881/1000| Loss 0.2379 | Train Accuracy 0.2667 | Val Accuracy 0.2651 | Test Accuracy 0.2681 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0882/1000| Loss 0.2381 | Train Accuracy 0.2812 | Val Accuracy 0.2794 | Test Accuracy 0.2828 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0883/1000| Loss 0.2377 | Train Accuracy 0.3127 | Val Accuracy 0.3107 | Test Accuracy 0.3150 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0884/1000| Loss 0.2382 | Train Accuracy 0.2918 | Val Accuracy 0.2898 | Test Accuracy 0.2937 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0885/1000| Loss 0.2375 | Train Accuracy 0.2745 | Val Accuracy 0.2728 | Test Accuracy 0.2761 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0886/1000| Loss 0.2375 | Train Accuracy 0.2818 | Val Accuracy 0.2801 | Test Accuracy 0.2834 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0887/1000| Loss 0.2376 | Train Accuracy 0.3140 | Val Accuracy 0.3119 | Test Accuracy 0.3163 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0888/1000| Loss 0.2380 | Train Accuracy 0.2947 | Val Accuracy 0.2928 | Test Accuracy 0.2968 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0889/1000| Loss 0.2373 | Train Accuracy 0.2709 | Val Accuracy 0.2694 | Test Accuracy 0.2722 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0890/1000| Loss 0.2377 | Train Accuracy 0.2930 | Val Accuracy 0.2910 | Test Accuracy 0.2948 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0891/1000| Loss 0.2373 | Train Accuracy 0.3165 | Val Accuracy 0.3146 | Test Accuracy 0.3188 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0892/1000| Loss 0.2382 | Train Accuracy 0.2866 | Val Accuracy 0.2847 | Test Accuracy 0.2882 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0893/1000| Loss 0.2371 | Train Accuracy 0.2689 | Val Accuracy 0.2673 | Test Accuracy 0.2703 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0894/1000| Loss 0.2381 | Train Accuracy 0.3001 | Val Accuracy 0.2980 | Test Accuracy 0.3022 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0895/1000| Loss 0.2373 | Train Accuracy 0.3085 | Val Accuracy 0.3065 | Test Accuracy 0.3105 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0896/1000| Loss 0.2383 | Train Accuracy 0.2617 | Val Accuracy 0.2599 | Test Accuracy 0.2629 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0897/1000| Loss 0.2382 | Train Accuracy 0.2763 | Val Accuracy 0.2745 | Test Accuracy 0.2781 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0898/1000| Loss 0.2373 | Train Accuracy 0.3132 | Val Accuracy 0.3114 | Test Accuracy 0.3154 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0899/1000| Loss 0.2382 | Train Accuracy 0.2933 | Val Accuracy 0.2913 | Test Accuracy 0.2952 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0900: Avg Forward 57.968ms, Avg Backward 24.580ms, Total per epoch 82.549ms
+Epoch 0900/1000| Loss 0.2371 | Train Accuracy 0.2652 | Val Accuracy 0.2636 | Test Accuracy 0.2667 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0901/1000| Loss 0.2380 | Train Accuracy 0.2949 | Val Accuracy 0.2929 | Test Accuracy 0.2968 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0902/1000| Loss 0.2371 | Train Accuracy 0.3109 | Val Accuracy 0.3087 | Test Accuracy 0.3131 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0903/1000| Loss 0.2379 | Train Accuracy 0.2713 | Val Accuracy 0.2693 | Test Accuracy 0.2729 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0904/1000| Loss 0.2375 | Train Accuracy 0.2731 | Val Accuracy 0.2712 | Test Accuracy 0.2749 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0905/1000| Loss 0.2373 | Train Accuracy 0.3032 | Val Accuracy 0.3011 | Test Accuracy 0.3055 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0906/1000| Loss 0.2376 | Train Accuracy 0.2885 | Val Accuracy 0.2864 | Test Accuracy 0.2903 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0907/1000| Loss 0.2371 | Train Accuracy 0.2840 | Val Accuracy 0.2818 | Test Accuracy 0.2855 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0908/1000| Loss 0.2372 | Train Accuracy 0.2949 | Val Accuracy 0.2927 | Test Accuracy 0.2968 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0909/1000| Loss 0.2370 | Train Accuracy 0.2966 | Val Accuracy 0.2945 | Test Accuracy 0.2987 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0910/1000| Loss 0.2372 | Train Accuracy 0.2894 | Val Accuracy 0.2873 | Test Accuracy 0.2911 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0911/1000| Loss 0.2373 | Train Accuracy 0.3034 | Val Accuracy 0.3012 | Test Accuracy 0.3055 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0912/1000| Loss 0.2371 | Train Accuracy 0.3064 | Val Accuracy 0.3045 | Test Accuracy 0.3087 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0913/1000| Loss 0.2374 | Train Accuracy 0.2898 | Val Accuracy 0.2877 | Test Accuracy 0.2915 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0914/1000| Loss 0.2371 | Train Accuracy 0.2924 | Val Accuracy 0.2903 | Test Accuracy 0.2941 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0915/1000| Loss 0.2371 | Train Accuracy 0.2892 | Val Accuracy 0.2871 | Test Accuracy 0.2907 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0916/1000| Loss 0.2370 | Train Accuracy 0.2928 | Val Accuracy 0.2909 | Test Accuracy 0.2944 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0917/1000| Loss 0.2371 | Train Accuracy 0.3069 | Val Accuracy 0.3048 | Test Accuracy 0.3089 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0918/1000| Loss 0.2370 | Train Accuracy 0.2989 | Val Accuracy 0.2967 | Test Accuracy 0.3008 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0919/1000| Loss 0.2367 | Train Accuracy 0.2868 | Val Accuracy 0.2848 | Test Accuracy 0.2884 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0920: Avg Forward 57.972ms, Avg Backward 24.580ms, Total per epoch 82.552ms
+Epoch 0920/1000| Loss 0.2373 | Train Accuracy 0.3070 | Val Accuracy 0.3051 | Test Accuracy 0.3094 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0921/1000| Loss 0.2373 | Train Accuracy 0.2921 | Val Accuracy 0.2901 | Test Accuracy 0.2938 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0922/1000| Loss 0.2368 | Train Accuracy 0.2729 | Val Accuracy 0.2711 | Test Accuracy 0.2744 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0923/1000| Loss 0.2377 | Train Accuracy 0.3212 | Val Accuracy 0.3192 | Test Accuracy 0.3234 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0924/1000| Loss 0.2376 | Train Accuracy 0.2955 | Val Accuracy 0.2936 | Test Accuracy 0.2973 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0925/1000| Loss 0.2367 | Train Accuracy 0.2676 | Val Accuracy 0.2658 | Test Accuracy 0.2688 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0926/1000| Loss 0.2380 | Train Accuracy 0.3096 | Val Accuracy 0.3076 | Test Accuracy 0.3119 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0927/1000| Loss 0.2374 | Train Accuracy 0.3083 | Val Accuracy 0.3061 | Test Accuracy 0.3104 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0928/1000| Loss 0.2371 | Train Accuracy 0.2806 | Val Accuracy 0.2787 | Test Accuracy 0.2818 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0929/1000| Loss 0.2370 | Train Accuracy 0.2952 | Val Accuracy 0.2933 | Test Accuracy 0.2970 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0930/1000| Loss 0.2368 | Train Accuracy 0.3109 | Val Accuracy 0.3090 | Test Accuracy 0.3133 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0931/1000| Loss 0.2371 | Train Accuracy 0.2871 | Val Accuracy 0.2852 | Test Accuracy 0.2888 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0932/1000| Loss 0.2368 | Train Accuracy 0.2781 | Val Accuracy 0.2764 | Test Accuracy 0.2796 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0933/1000| Loss 0.2371 | Train Accuracy 0.3086 | Val Accuracy 0.3066 | Test Accuracy 0.3106 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0934/1000| Loss 0.2373 | Train Accuracy 0.2887 | Val Accuracy 0.2870 | Test Accuracy 0.2903 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0935/1000| Loss 0.2370 | Train Accuracy 0.2836 | Val Accuracy 0.2820 | Test Accuracy 0.2853 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0936/1000| Loss 0.2371 | Train Accuracy 0.3125 | Val Accuracy 0.3106 | Test Accuracy 0.3148 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0937/1000| Loss 0.2368 | Train Accuracy 0.3131 | Val Accuracy 0.3112 | Test Accuracy 0.3155 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0938/1000| Loss 0.2371 | Train Accuracy 0.2707 | Val Accuracy 0.2689 | Test Accuracy 0.2719 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0939/1000| Loss 0.2371 | Train Accuracy 0.2812 | Val Accuracy 0.2793 | Test Accuracy 0.2827 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0940: Avg Forward 57.976ms, Avg Backward 24.581ms, Total per epoch 82.556ms
+Epoch 0940/1000| Loss 0.2370 | Train Accuracy 0.3254 | Val Accuracy 0.3235 | Test Accuracy 0.3277 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0941/1000| Loss 0.2382 | Train Accuracy 0.2805 | Val Accuracy 0.2786 | Test Accuracy 0.2821 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0942/1000| Loss 0.2369 | Train Accuracy 0.2735 | Val Accuracy 0.2716 | Test Accuracy 0.2751 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0943/1000| Loss 0.2372 | Train Accuracy 0.3078 | Val Accuracy 0.3058 | Test Accuracy 0.3100 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0944/1000| Loss 0.2370 | Train Accuracy 0.3095 | Val Accuracy 0.3074 | Test Accuracy 0.3119 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0945/1000| Loss 0.2370 | Train Accuracy 0.2746 | Val Accuracy 0.2730 | Test Accuracy 0.2760 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0946/1000| Loss 0.2370 | Train Accuracy 0.2837 | Val Accuracy 0.2819 | Test Accuracy 0.2854 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0947/1000| Loss 0.2368 | Train Accuracy 0.3121 | Val Accuracy 0.3103 | Test Accuracy 0.3145 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0948/1000| Loss 0.2370 | Train Accuracy 0.3007 | Val Accuracy 0.2988 | Test Accuracy 0.3029 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0949/1000| Loss 0.2368 | Train Accuracy 0.2737 | Val Accuracy 0.2719 | Test Accuracy 0.2751 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0950/1000| Loss 0.2372 | Train Accuracy 0.2949 | Val Accuracy 0.2930 | Test Accuracy 0.2969 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0951/1000| Loss 0.2367 | Train Accuracy 0.3056 | Val Accuracy 0.3036 | Test Accuracy 0.3079 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0952/1000| Loss 0.2367 | Train Accuracy 0.2872 | Val Accuracy 0.2857 | Test Accuracy 0.2887 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0953/1000| Loss 0.2370 | Train Accuracy 0.2893 | Val Accuracy 0.2875 | Test Accuracy 0.2908 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0954/1000| Loss 0.2367 | Train Accuracy 0.3150 | Val Accuracy 0.3131 | Test Accuracy 0.3175 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0955/1000| Loss 0.2370 | Train Accuracy 0.2969 | Val Accuracy 0.2950 | Test Accuracy 0.2987 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0956/1000| Loss 0.2368 | Train Accuracy 0.2655 | Val Accuracy 0.2640 | Test Accuracy 0.2670 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0957/1000| Loss 0.2376 | Train Accuracy 0.3010 | Val Accuracy 0.2990 | Test Accuracy 0.3030 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0958/1000| Loss 0.2366 | Train Accuracy 0.3168 | Val Accuracy 0.3149 | Test Accuracy 0.3193 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0959/1000| Loss 0.2373 | Train Accuracy 0.2865 | Val Accuracy 0.2847 | Test Accuracy 0.2882 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0960: Avg Forward 57.979ms, Avg Backward 24.581ms, Total per epoch 82.560ms
+Epoch 0960/1000| Loss 0.2366 | Train Accuracy 0.2726 | Val Accuracy 0.2710 | Test Accuracy 0.2743 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0961/1000| Loss 0.2370 | Train Accuracy 0.3008 | Val Accuracy 0.2990 | Test Accuracy 0.3031 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0962/1000| Loss 0.2366 | Train Accuracy 0.3108 | Val Accuracy 0.3086 | Test Accuracy 0.3132 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0963/1000| Loss 0.2367 | Train Accuracy 0.2863 | Val Accuracy 0.2845 | Test Accuracy 0.2883 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0964/1000| Loss 0.2371 | Train Accuracy 0.2962 | Val Accuracy 0.2944 | Test Accuracy 0.2984 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0965/1000| Loss 0.2366 | Train Accuracy 0.2954 | Val Accuracy 0.2937 | Test Accuracy 0.2974 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0966/1000| Loss 0.2370 | Train Accuracy 0.2881 | Val Accuracy 0.2865 | Test Accuracy 0.2900 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0967/1000| Loss 0.2366 | Train Accuracy 0.2936 | Val Accuracy 0.2917 | Test Accuracy 0.2955 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0968/1000| Loss 0.2366 | Train Accuracy 0.3064 | Val Accuracy 0.3044 | Test Accuracy 0.3086 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0969/1000| Loss 0.2368 | Train Accuracy 0.2965 | Val Accuracy 0.2945 | Test Accuracy 0.2985 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0970/1000| Loss 0.2365 | Train Accuracy 0.2932 | Val Accuracy 0.2914 | Test Accuracy 0.2949 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0971/1000| Loss 0.2365 | Train Accuracy 0.2998 | Val Accuracy 0.2978 | Test Accuracy 0.3017 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0972/1000| Loss 0.2364 | Train Accuracy 0.3044 | Val Accuracy 0.3023 | Test Accuracy 0.3065 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0973/1000| Loss 0.2364 | Train Accuracy 0.2946 | Val Accuracy 0.2927 | Test Accuracy 0.2966 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0974/1000| Loss 0.2368 | Train Accuracy 0.3053 | Val Accuracy 0.3032 | Test Accuracy 0.3074 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0975/1000| Loss 0.2364 | Train Accuracy 0.2788 | Val Accuracy 0.2770 | Test Accuracy 0.2803 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0976/1000| Loss 0.2368 | Train Accuracy 0.3002 | Val Accuracy 0.2982 | Test Accuracy 0.3022 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0977/1000| Loss 0.2365 | Train Accuracy 0.3124 | Val Accuracy 0.3104 | Test Accuracy 0.3146 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0978/1000| Loss 0.2366 | Train Accuracy 0.2707 | Val Accuracy 0.2689 | Test Accuracy 0.2720 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0979/1000| Loss 0.2373 | Train Accuracy 0.3134 | Val Accuracy 0.3113 | Test Accuracy 0.3154 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0980: Avg Forward 57.984ms, Avg Backward 24.581ms, Total per epoch 82.564ms
+Epoch 0980/1000| Loss 0.2367 | Train Accuracy 0.2949 | Val Accuracy 0.2930 | Test Accuracy 0.2968 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0981/1000| Loss 0.2366 | Train Accuracy 0.2868 | Val Accuracy 0.2850 | Test Accuracy 0.2884 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0982/1000| Loss 0.2366 | Train Accuracy 0.3089 | Val Accuracy 0.3068 | Test Accuracy 0.3110 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0983/1000| Loss 0.2366 | Train Accuracy 0.3042 | Val Accuracy 0.3023 | Test Accuracy 0.3063 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0984/1000| Loss 0.2366 | Train Accuracy 0.2848 | Val Accuracy 0.2830 | Test Accuracy 0.2861 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0985/1000| Loss 0.2364 | Train Accuracy 0.2960 | Val Accuracy 0.2942 | Test Accuracy 0.2976 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0986/1000| Loss 0.2366 | Train Accuracy 0.3096 | Val Accuracy 0.3074 | Test Accuracy 0.3117 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0987/1000| Loss 0.2363 | Train Accuracy 0.3008 | Val Accuracy 0.2988 | Test Accuracy 0.3028 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0988/1000| Loss 0.2366 | Train Accuracy 0.2921 | Val Accuracy 0.2903 | Test Accuracy 0.2938 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0989/1000| Loss 0.2364 | Train Accuracy 0.3009 | Val Accuracy 0.2989 | Test Accuracy 0.3027 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0990/1000| Loss 0.2365 | Train Accuracy 0.2853 | Val Accuracy 0.2835 | Test Accuracy 0.2869 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0991/1000| Loss 0.2366 | Train Accuracy 0.3043 | Val Accuracy 0.3023 | Test Accuracy 0.3063 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0992/1000| Loss 0.2366 | Train Accuracy 0.3134 | Val Accuracy 0.3114 | Test Accuracy 0.3155 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0993/1000| Loss 0.2364 | Train Accuracy 0.2961 | Val Accuracy 0.2942 | Test Accuracy 0.2979 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0994/1000| Loss 0.2365 | Train Accuracy 0.2995 | Val Accuracy 0.2976 | Test Accuracy 0.3016 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0995/1000| Loss 0.2366 | Train Accuracy 0.3001 | Val Accuracy 0.2979 | Test Accuracy 0.3019 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0996/1000| Loss 0.2361 | Train Accuracy 0.2990 | Val Accuracy 0.2967 | Test Accuracy 0.3009 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0997/1000| Loss 0.2365 | Train Accuracy 0.2976 | Val Accuracy 0.2956 | Test Accuracy 0.2994 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0998/1000| Loss 0.2362 | Train Accuracy 0.2979 | Val Accuracy 0.2959 | Test Accuracy 0.2997 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+Epoch 0999/1000| Loss 0.2362 | Train Accuracy 0.3036 | Val Accuracy 0.3015 | Test Accuracy 0.3058 | Best val. Accuracy 0.3600 | Best test Accuracy 0.3627
+============================================================
+ORIGINAL DGL TRAINING - FINAL TIMING REPORT
+============================================================
+Model: GCN
+Dataset: yelp
+MaxK value: 16
+Hidden layers: 3
+Hidden dimension: 256
+Average Forward Pass:  57.987ms
+Average Backward Pass: 24.581ms
+Total per epoch:       82.568ms
+Epochs measured:       990
+Forward/Backward ratio: 2.36
+Best validation accuracy: 0.3600
+Best test accuracy: 0.3627
+============================================================
+Testing...
+Test accuracy 0.3058
+============================================================
+TRAINING SUMMARY
+============================================================
+Dataset: yelp
+Model: GCN
+MaxK acceleration: No
+Final test accuracy: 0.3058
+Total epochs: 1000
+Hidden layers: 3
+Hidden dimension: 256
+MaxK value: 16
+============================================================
+✅ MaxK CUDA kernels loaded for training integration
+Current process ID: 29109
